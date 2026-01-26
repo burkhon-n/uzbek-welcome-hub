@@ -34,12 +34,8 @@ const HeroSection: React.FC = () => {
 
   return (
     <section id="home" className="relative min-h-screen overflow-hidden pt-20 lg:pt-24 bg-gradient-to-br from-secondary/50 via-background to-background">
-      {/* Background Product Images - Right Side */}
-      {/*
-        Mobile: keep images in the bottom area so content never overlaps.
-        Desktop: images take the right side of the hero.
-      */}
-      <div className="absolute bottom-0 right-0 h-[42%] w-full md:inset-y-0 md:h-auto md:w-3/5 lg:w-1/2 xl:w-[55%] pointer-events-none">
+      {/* Background Product Images - Full background on mobile, right side on desktop */}
+      <div className="absolute inset-0 md:inset-y-0 md:left-auto md:right-0 md:w-3/5 lg:w-1/2 xl:w-[55%] pointer-events-none">
         {productImages.map((image, index) => (
           <div
             key={index}
@@ -52,13 +48,13 @@ const HeroSection: React.FC = () => {
             <img
               src={image.src}
               alt={image.alt}
-              className="w-full h-full object-contain object-center md:object-right-bottom p-4 sm:p-6 md:p-12 lg:p-16"
+              className="w-full h-full object-contain object-bottom md:object-right-bottom p-4 pt-24 sm:p-6 sm:pt-28 md:p-12 lg:p-16"
             />
           </div>
         ))}
         
-        {/* Gradient overlay for text readability on mobile */}
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent md:bg-gradient-to-r md:from-background md:via-background/40 md:to-transparent" />
+        {/* Gradient overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/70 to-transparent md:bg-gradient-to-r md:from-background md:via-background/50 md:to-transparent" />
       </div>
 
       {/* Background decorative elements */}
@@ -66,7 +62,7 @@ const HeroSection: React.FC = () => {
       <div className="absolute top-40 right-1/3 w-48 md:w-72 h-48 md:h-72 bg-accent/20 rounded-full blur-3xl pointer-events-none" />
 
       <div className="container-main relative z-10 py-8 sm:py-12 md:py-16 lg:py-20">
-        <div className="flex flex-col justify-start md:justify-center min-h-[calc(100vh-8rem)] pb-[42vh] md:pb-0">
+        <div className="flex flex-col justify-start md:justify-center min-h-[calc(100vh-8rem)]">
           {/* Content - Left Side */}
           <div className="text-left max-w-xl lg:max-w-2xl">
             {/* Badge */}
@@ -99,13 +95,13 @@ const HeroSection: React.FC = () => {
               </Button>
             </div>
 
-            {/* Sachets badge */}
+            {/* Sachets badge - Left aligned */}
             <div className="inline-flex mt-8 md:mt-10 bg-primary text-primary-foreground px-5 py-2.5 md:px-6 md:py-3 rounded-full font-bold shadow-pink text-sm md:text-base animate-fade-in" style={{ animationDelay: '0.4s' }}>
               {t('hero.sachets')}
             </div>
 
-            {/* Dots Indicator */}
-            <div className="flex gap-2 mt-8 md:mt-10 animate-fade-in" style={{ animationDelay: '0.5s' }}>
+            {/* Dots Indicator - Left aligned */}
+            <div className="flex gap-2 mt-6 md:mt-8 animate-fade-in" style={{ animationDelay: '0.5s' }}>
               {productImages.map((_, index) => (
                 <button
                   key={index}
