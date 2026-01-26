@@ -9,7 +9,7 @@ import PartnersSection from '@/components/landing/PartnersSection';
 import FAQSection from '@/components/landing/FAQSection';
 import Footer from '@/components/landing/Footer';
 
-const Index = () => {
+const Index: React.FC = () => {
   return (
     <LanguageProvider>
       <div className="min-h-screen bg-background">
