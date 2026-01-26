@@ -91,6 +91,17 @@ const translations: Record<Language, Record<string, string>> = {
     'faq.q6': 'Сколько саше в упаковке?',
     'faq.a6': 'В одной упаковке содержится 30 саше с апельсиновым вкусом.',
     
+    // Certificates Section
+    'certificates.title': 'Сертификаты качества',
+    'certificates.subtitle': 'Ферфер® соответствует международным стандартам качества и безопасности',
+    'certificates.cert1.title': 'Сертификат соответствия',
+    'certificates.cert1.desc': 'Официальный сертификат соответствия требованиям технических регламентов.',
+    'certificates.cert2.title': 'Регистрационное удостоверение',
+    'certificates.cert2.desc': 'Государственная регистрация БАД в Республике Узбекистан.',
+    'certificates.cert3.title': 'Сертификат GMP',
+    'certificates.cert3.desc': 'Производство соответствует международным стандартам надлежащей производственной практики.',
+    'certificates.view': 'Смотреть PDF',
+
     // Footer
     'footer.description': 'Ферфер® — инновационная биологически активная добавка для эффективного восполнения дефицита железа.',
     'footer.quickLinks': 'Быстрые ссылки',
@@ -184,6 +195,17 @@ const translations: Record<Language, Record<string, string>> = {
     'faq.q6': 'Qadoqda nechta paket bor?',
     'faq.a6': 'Bir qadoqda apelsin ta\'mli 30 ta paket mavjud.',
     
+    // Certificates Section
+    'certificates.title': 'Sifat sertifikatlari',
+    'certificates.subtitle': 'Ferfer® xalqaro sifat va xavfsizlik standartlariga mos keladi',
+    'certificates.cert1.title': 'Muvofiqlik sertifikati',
+    'certificates.cert1.desc': 'Texnik reglamentlar talablariga muvofiqlikning rasmiy sertifikati.',
+    'certificates.cert2.title': 'Ro\'yxatdan o\'tish guvohnomasi',
+    'certificates.cert2.desc': 'O\'zbekiston Respublikasida BFQ davlat ro\'yxatidan o\'tkazildi.',
+    'certificates.cert3.title': 'GMP sertifikati',
+    'certificates.cert3.desc': 'Ishlab chiqarish xalqaro GMP standartlariga mos keladi.',
+    'certificates.view': 'PDF ni ko\'rish',
+
     // Footer
     'footer.description': 'Ferfer® — temir tanqisligini samarali to\'ldirish uchun innovatsion biologik faol qo\'shimcha.',
     'footer.quickLinks': 'Tezkor havolalar',
