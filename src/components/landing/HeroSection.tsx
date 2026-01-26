@@ -35,7 +35,11 @@ const HeroSection: React.FC = () => {
   return (
     <section id="home" className="relative min-h-screen overflow-hidden pt-20 lg:pt-24 bg-gradient-to-br from-secondary/50 via-background to-background">
       {/* Background Product Images - Right Side */}
-      <div className="absolute inset-y-0 right-0 w-full md:w-3/5 lg:w-1/2 xl:w-[55%]">
+      {/*
+        Mobile: keep images in the bottom area so content never overlaps.
+        Desktop: images take the right side of the hero.
+      */}
+      <div className="absolute bottom-0 right-0 h-[42%] w-full md:inset-y-0 md:h-auto md:w-3/5 lg:w-1/2 xl:w-[55%] pointer-events-none">
         {productImages.map((image, index) => (
           <div
             key={index}
@@ -48,13 +52,13 @@ const HeroSection: React.FC = () => {
             <img
               src={image.src}
               alt={image.alt}
-              className="w-full h-full object-contain object-right-bottom md:object-right p-8 md:p-12 lg:p-16"
+              className="w-full h-full object-contain object-center md:object-right-bottom p-4 sm:p-6 md:p-12 lg:p-16"
             />
           </div>
         ))}
         
         {/* Gradient overlay for text readability on mobile */}
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent md:via-background/40 md:to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent md:bg-gradient-to-r md:from-background md:via-background/40 md:to-transparent" />
       </div>
 
       {/* Background decorative elements */}
@@ -62,7 +66,7 @@ const HeroSection: React.FC = () => {
       <div className="absolute top-40 right-1/3 w-48 md:w-72 h-48 md:h-72 bg-accent/20 rounded-full blur-3xl pointer-events-none" />
 
       <div className="container-main relative z-10 py-8 sm:py-12 md:py-16 lg:py-20">
-        <div className="flex flex-col justify-center min-h-[calc(100vh-8rem)]">
+        <div className="flex flex-col justify-start md:justify-center min-h-[calc(100vh-8rem)] pb-[42vh] md:pb-0">
           {/* Content - Left Side */}
           <div className="text-left max-w-xl lg:max-w-2xl">
             {/* Badge */}
