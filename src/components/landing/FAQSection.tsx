@@ -6,7 +6,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { HelpCircle } from 'lucide-react';
 
 const FAQSection: React.FC = () => {
   const { t } = useLanguage();
@@ -21,18 +20,15 @@ const FAQSection: React.FC = () => {
   ];
 
   return (
-    <section id="faq" className="section-padding bg-muted/30 relative overflow-hidden">
+    <section id="faq" className="section-padding bg-secondary/30 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-20 right-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 left-0 w-80 h-80 bg-accent/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 left-0 w-80 h-80 bg-accent/20 rounded-full blur-3xl" />
 
       <div className="container-main relative z-10">
         {/* Section header */}
         <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl gradient-bg mb-6">
-            <HelpCircle className="w-8 h-8 text-white" />
-          </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-foreground">
             {t('faq.title')}
           </h2>
           <p className="text-lg text-muted-foreground">
@@ -47,7 +43,7 @@ const FAQSection: React.FC = () => {
               <AccordionItem
                 key={faq.question}
                 value={`item-${index}`}
-                className="bg-card border border-border/50 rounded-2xl px-6 shadow-sm hover:shadow-md transition-shadow duration-300 data-[state=open]:shadow-lg data-[state=open]:border-primary/20"
+                className="bg-card border border-border/50 rounded-2xl px-6 shadow-sm hover:shadow-md transition-shadow duration-300 data-[state=open]:shadow-lg data-[state=open]:border-primary/30"
               >
                 <AccordionTrigger className="text-left text-lg font-semibold py-6 hover:no-underline hover:text-primary transition-colors">
                   {t(faq.question)}

@@ -2,8 +2,9 @@ import React from 'react';
 import { LanguageProvider } from '@/contexts/LanguageContext';
 import Header from '@/components/landing/Header';
 import HeroSection from '@/components/landing/HeroSection';
-import FeaturesSection from '@/components/landing/FeaturesSection';
-import StatsSection from '@/components/landing/StatsSection';
+import AboutSection from '@/components/landing/AboutSection';
+import BenefitsSection from '@/components/landing/BenefitsSection';
+import PartnersSection from '@/components/landing/PartnersSection';
 import FAQSection from '@/components/landing/FAQSection';
 import Footer from '@/components/landing/Footer';
 
@@ -14,8 +15,9 @@ const Index = () => {
         <Header />
         <main>
           <HeroSection />
-          <FeaturesSection />
-          <StatsSection />
+          <AboutSection />
+          <BenefitsSection />
+          <PartnersSection />
           <FAQSection />
         </main>
         <Footer />

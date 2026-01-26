@@ -1,16 +1,16 @@
 import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Mail, Phone, MapPin, Send, Facebook, Instagram, Youtube } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 
 const Footer: React.FC = () => {
   const { t } = useLanguage();
 
   const navLinks = [
     { key: 'nav.home', href: '#home' },
-    { key: 'nav.services', href: '#services' },
+    { key: 'nav.about', href: '#about' },
+    { key: 'nav.benefits', href: '#benefits' },
+    { key: 'nav.buy', href: '#partners' },
     { key: 'nav.faq', href: '#faq' },
-    { key: 'nav.contact', href: '#contact' },
   ];
 
   const socialLinks = [
@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer id="contact" className="bg-foreground text-background relative overflow-hidden">
+    <footer className="bg-foreground text-background relative overflow-hidden">
       {/* Pattern overlay */}
       <div className="absolute inset-0 opacity-5" style={{
         backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
@@ -31,14 +31,18 @@ const Footer: React.FC = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {/* Brand column */}
           <div className="lg:col-span-2">
-            <a href="#home" className="inline-flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl gradient-bg flex items-center justify-center">
-                <span className="text-2xl font-bold text-white">F</span>
-              </div>
-              <span className="text-2xl font-bold">Ferfer.uz</span>
+            <a href="#home" className="inline-flex items-center gap-2 mb-6">
+              <span className="text-2xl font-bold text-primary">Ферфер</span>
+              <span className="text-2xl font-bold">®</span>
             </a>
-            <p className="text-background/70 max-w-md mb-6 leading-relaxed">
+            <p className="text-background/70 max-w-md mb-4 leading-relaxed">
               {t('footer.description')}
+            </p>
+            <p className="text-background/50 text-sm mb-6 italic">
+              {t('footer.warning')}
+            </p>
+            <p className="text-primary text-sm font-medium mb-6">
+              {t('footer.pharmevo')}
             </p>
             
             {/* Social links */}
