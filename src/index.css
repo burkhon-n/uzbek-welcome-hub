@@ -6,61 +6,62 @@
 
 @layer base {
   :root {
-    /* Ferfer Brand Colors - Modern Purple/Orange Theme */
+    /* Ferfer Brand Colors - Pink/Magenta Theme */
     --background: 0 0% 100%;
-    --foreground: 240 10% 7%;
+    --foreground: 240 10% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 240 10% 7%;
+    --card-foreground: 240 10% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 7%;
+    --popover-foreground: 240 10% 15%;
 
-    /* Primary Purple */
-    --primary: 277 62% 40%;
+    /* Primary Pink/Magenta - #D63384 */
+    --primary: 330 65% 52%;
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary - Light purple tint */
-    --secondary: 277 30% 95%;
-    --secondary-foreground: 277 62% 40%;
+    /* Light Pink Background */
+    --secondary: 330 30% 97%;
+    --secondary-foreground: 330 65% 45%;
 
-    --muted: 240 5% 96%;
+    --muted: 330 15% 96%;
     --muted-foreground: 240 4% 46%;
 
-    /* Accent Orange */
-    --accent: 9 99% 54%;
-    --accent-foreground: 0 0% 100%;
+    /* Accent - Soft Pink */
+    --accent: 330 50% 92%;
+    --accent-foreground: 330 65% 45%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 240 6% 90%;
-    --input: 240 6% 90%;
-    --ring: 277 62% 40%;
+    --border: 330 20% 90%;
+    --input: 330 20% 90%;
+    --ring: 330 65% 52%;
 
     --radius: 0.75rem;
 
     /* Custom gradient variables */
-    --gradient-primary: linear-gradient(135deg, hsl(240, 100%, 56%) 0%, hsl(9, 99%, 54%) 100%);
-    --gradient-hero: linear-gradient(180deg, hsl(277, 62%, 98%) 0%, hsl(0, 0%, 100%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(277, 30%, 98%) 0%, hsl(0, 0%, 100%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(330, 65%, 52%) 0%, hsl(340, 80%, 60%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(330, 30%, 98%) 0%, hsl(0, 0%, 100%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0, 0%, 100%) 0%, hsl(330, 20%, 99%) 100%);
     
     /* Shadows */
     --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
     --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
     --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
     --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-    --shadow-glow: 0 0 40px -10px hsl(277 62% 40% / 0.3);
+    --shadow-glow: 0 0 40px -10px hsl(330 65% 52% / 0.3);
+    --shadow-pink: 0 4px 20px -4px hsl(330 65% 52% / 0.25);
 
     /* Sidebar defaults */
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 277 62% 40%;
+    --sidebar-primary: 330 65% 52%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 277 30% 95%;
-    --sidebar-accent-foreground: 277 62% 40%;
-    --sidebar-border: 240 6% 90%;
-    --sidebar-ring: 277 62% 40%;
+    --sidebar-accent: 330 30% 95%;
+    --sidebar-accent-foreground: 330 65% 45%;
+    --sidebar-border: 330 20% 90%;
+    --sidebar-ring: 330 65% 52%;
   }
 
   .dark {
@@ -73,7 +74,7 @@
     --popover: 240 10% 6%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 277 62% 55%;
+    --primary: 330 65% 60%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 240 5% 15%;
@@ -82,28 +83,28 @@
     --muted: 240 5% 18%;
     --muted-foreground: 240 5% 65%;
 
-    --accent: 9 99% 60%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 330 40% 20%;
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 63% 31%;
     --destructive-foreground: 0 0% 98%;
 
     --border: 240 5% 18%;
     --input: 240 5% 18%;
-    --ring: 277 62% 55%;
+    --ring: 330 65% 60%;
 
-    --gradient-primary: linear-gradient(135deg, hsl(240, 100%, 65%) 0%, hsl(9, 99%, 60%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(330, 65%, 55%) 0%, hsl(340, 80%, 65%) 100%);
     --gradient-hero: linear-gradient(180deg, hsl(240, 10%, 6%) 0%, hsl(240, 10%, 4%) 100%);
     --gradient-card: linear-gradient(145deg, hsl(240, 10%, 8%) 0%, hsl(240, 10%, 6%) 100%);
 
     --sidebar-background: 240 10% 6%;
     --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 277 62% 55%;
+    --sidebar-primary: 330 65% 60%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 240 5% 15%;
     --sidebar-accent-foreground: 0 0% 98%;
     --sidebar-border: 240 5% 18%;
-    --sidebar-ring: 277 62% 55%;
+    --sidebar-ring: 330 65% 60%;
   }
 }
 
@@ -144,6 +145,10 @@
     box-shadow: var(--shadow-glow);
   }
 
+  .shadow-pink {
+    box-shadow: var(--shadow-pink);
+  }
+
   .text-balance {
     text-wrap: balance;
   }
@@ -151,17 +156,16 @@
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold text-primary-foreground transition-all duration-300 hover:scale-105 hover:shadow-xl;
+    @apply inline-flex items-center justify-center px-8 py-3 rounded-full font-semibold text-primary-foreground transition-all duration-300 hover:scale-105 shadow-pink hover:shadow-xl;
     background-image: var(--gradient-primary);
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold border-2 border-primary text-primary bg-transparent transition-all duration-300 hover:bg-primary hover:text-primary-foreground;
+    @apply inline-flex items-center justify-center px-8 py-3 rounded-full font-semibold border-2 border-primary text-primary bg-transparent transition-all duration-300 hover:bg-primary hover:text-primary-foreground;
   }
 
   .card-elevated {
     @apply bg-card rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-border/50;
-    background-image: var(--gradient-card);
   }
 
   .section-padding {
@@ -170,5 +174,9 @@
 
   .container-main {
     @apply container mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .pharmacy-card {
+    @apply bg-card rounded-3xl p-8 shadow-md hover:shadow-xl transition-all duration-300 border border-border/30 flex flex-col items-center text-center;
   }
 }
