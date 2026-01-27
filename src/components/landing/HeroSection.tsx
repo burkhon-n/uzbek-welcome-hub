@@ -57,9 +57,9 @@ const HeroSection: React.FC = () => {
           {/* Gradient overlay for text readability */}
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/50 to-transparent" />
           
-          {/* Sachets badge - Bottom right of images on desktop */}
-          <div className="absolute bottom-4 md:bottom-6 lg:bottom-[10%] right-8 md:right-12 lg:right-16 z-20 animate-fade-in" style={{ animationDelay: '0.5s' }}>
-            <div className="bg-primary text-primary-foreground px-5 py-2.5 md:px-6 md:py-3 rounded-full font-bold shadow-pink text-sm md:text-base whitespace-nowrap">
+          {/* Sachets badge - Bottom right of carousel */}
+          <div className="absolute bottom-8 right-8 z-20 animate-fade-in" style={{ animationDelay: '0.5s' }}>
+            <div className="bg-primary text-primary-foreground px-5 py-2.5 rounded-full font-bold shadow-pink text-sm whitespace-nowrap">
               {t('hero.sachets')}
             </div>
           </div>
@@ -109,8 +109,8 @@ const HeroSection: React.FC = () => {
               ))}
             </div>
 
-            {/* Sachets badge - Bottom right of carousel on mobile */}
-            <div className="absolute bottom-8 right-4 animate-fade-in" style={{ animationDelay: '0.5s' }}>
+            {/* Sachets badge - Bottom right of carousel */}
+            <div className="absolute bottom-8 right-4 z-20 animate-fade-in" style={{ animationDelay: '0.5s' }}>
               <div className="bg-primary text-primary-foreground px-5 py-2.5 rounded-full font-bold shadow-pink text-sm whitespace-nowrap">
                 {t('hero.sachets')}
               </div>
