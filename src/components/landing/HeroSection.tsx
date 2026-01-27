@@ -34,13 +34,6 @@ const HeroSection: React.FC = () => {
 
   return (
     <section id="home" className="relative min-h-screen overflow-hidden bg-gradient-to-br from-secondary/50 via-background to-background">
-      {/* Sachets badge - Absolute bottom right of hero section */}
-      <div className="absolute bottom-8 right-4 md:bottom-12 md:right-8 lg:right-16 z-20 animate-fade-in" style={{ animationDelay: '0.5s' }}>
-        <div className="bg-primary text-primary-foreground px-5 py-2.5 md:px-6 md:py-3 rounded-full font-bold shadow-pink text-sm md:text-base whitespace-nowrap">
-          {t('hero.sachets')}
-        </div>
-      </div>
-
       {/* Background Product Images - Hidden on mobile, right side on desktop */}
       <div className="hidden md:block absolute inset-y-0 left-auto right-0 w-3/5 lg:w-1/2 xl:w-[55%] pointer-events-none">
         <div className="relative h-full flex items-center justify-center">
@@ -63,6 +56,13 @@ const HeroSection: React.FC = () => {
           
           {/* Gradient overlay for text readability */}
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/50 to-transparent" />
+          
+          {/* Sachets badge - Bottom right of carousel on desktop */}
+          <div className="absolute bottom-[15%] right-8 lg:right-12 z-20 pointer-events-auto animate-fade-in" style={{ animationDelay: '0.5s' }}>
+            <div className="bg-primary text-primary-foreground px-6 py-3 rounded-full font-bold shadow-pink text-base whitespace-nowrap">
+              {t('hero.sachets')}
+            </div>
+          </div>
         </div>
       </div>
 
@@ -91,6 +91,13 @@ const HeroSection: React.FC = () => {
                   />
                 </div>
               ))}
+              
+              {/* Sachets badge - Bottom right of carousel on mobile */}
+              <div className="absolute bottom-2 right-0 z-20 animate-fade-in" style={{ animationDelay: '0.5s' }}>
+                <div className="bg-primary text-primary-foreground px-5 py-2.5 rounded-full font-bold shadow-pink text-sm whitespace-nowrap">
+                  {t('hero.sachets')}
+                </div>
+              </div>
             </div>
             
             {/* Dots Indicator - Mobile below carousel */}
