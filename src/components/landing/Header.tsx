@@ -30,12 +30,12 @@ const Header: React.FC = () => {
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-4 lg:gap-8">
             {navItems.map((item) => (
               <a
                 key={item.key}
                 href={item.href}
-                className="text-muted-foreground hover:text-primary transition-colors duration-200 font-medium text-sm"
+                className="text-muted-foreground hover:text-primary transition-colors duration-200 font-medium text-xs md:text-sm whitespace-nowrap"
               >
                 {t(item.key)}
               </a>
