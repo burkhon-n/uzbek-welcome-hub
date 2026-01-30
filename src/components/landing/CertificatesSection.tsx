@@ -17,19 +17,19 @@ const CertificatesSection: React.FC = () => {
       icon: Award,
       titleKey: 'certificates.cert1.title',
       descKey: 'certificates.cert1.desc',
-      pdfUrl: '/certificates/certificate-1.pdf',
+      pdfUrl: '/certificate.pdf',
     },
     {
       icon: Shield,
       titleKey: 'certificates.cert2.title',
       descKey: 'certificates.cert2.desc',
-      pdfUrl: '/certificates/certificate-2.pdf',
+      pdfUrl: '/certificate.pdf',
     },
     {
       icon: FileText,
       titleKey: 'certificates.cert3.title',
       descKey: 'certificates.cert3.desc',
-      pdfUrl: '/certificates/certificate-3.pdf',
+      pdfUrl: '/certificate.pdf',
     },
   ];
 
