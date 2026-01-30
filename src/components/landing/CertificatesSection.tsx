@@ -1,27 +1,51 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { FileText, Award, Shield } from 'lucide-react';
+import { FileText, Award, Shield, X } from 'lucide-react';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
 
 const CertificatesSection: React.FC = () => {
   const { t } = useLanguage();
+  const [selectedCertificate, setSelectedCertificate] = useState<string | null>(null);
 
   const certificates = [
     {
       icon: Award,
       titleKey: 'certificates.cert1.title',
       descKey: 'certificates.cert1.desc',
+      pdfUrl: '/certificates/certificate-1.pdf',
     },
     {
       icon: Shield,
       titleKey: 'certificates.cert2.title',
       descKey: 'certificates.cert2.desc',
+      pdfUrl: '/certificates/certificate-2.pdf',
     },
     {
       icon: FileText,
       titleKey: 'certificates.cert3.title',
       descKey: 'certificates.cert3.desc',
+      pdfUrl: '/certificates/certificate-3.pdf',
     },
   ];
+
+  const handleViewCertificate = (pdfUrl: string) => {
+    setSelectedCertificate(pdfUrl);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedCertificate(null);
+  };
+
+  // Prevent right-click context menu on the PDF viewer
+  const handleContextMenu = (e: React.MouseEvent) => {
+    e.preventDefault();
+    return false;
+  };
 
   return (
     <section id="certificates" className="section-padding bg-secondary/30">
@@ -52,7 +76,10 @@ const CertificatesSection: React.FC = () => {
                 <p className="text-sm text-muted-foreground">
                   {t(cert.descKey)}
                 </p>
-                <button className="mt-4 sm:mt-6 text-primary font-medium text-sm hover:underline flex items-center gap-2">
+                <button 
+                  onClick={() => handleViewCertificate(cert.pdfUrl)}
+                  className="mt-4 sm:mt-6 text-primary font-medium text-sm hover:underline flex items-center gap-2"
+                >
                   <FileText className="w-4 h-4" />
                   {t('certificates.view')}
                 </button>
@@ -61,6 +88,36 @@ const CertificatesSection: React.FC = () => {
           })}
         </div>
       </div>
+
+      {/* PDF Preview Modal */}
+      <Dialog open={!!selectedCertificate} onOpenChange={handleCloseModal}>
+        <DialogContent 
+          className="max-w-4xl w-[95vw] h-[85vh] p-0 overflow-hidden"
+          onContextMenu={handleContextMenu}
+        >
+          <DialogHeader className="p-4 pb-0">
+            <DialogTitle className="text-lg font-semibold">
+              {t('certificates.title')}
+            </DialogTitle>
+          </DialogHeader>
+          <div 
+            className="flex-1 w-full h-full min-h-0 p-4 pt-2"
+            onContextMenu={handleContextMenu}
+          >
+            {selectedCertificate && (
+              <iframe
+                src={`${selectedCertificate}#toolbar=0&navpanes=0&scrollbar=1&view=FitH`}
+                className="w-full h-full rounded-lg border border-border"
+                title="Certificate PDF"
+                style={{ 
+                  minHeight: 'calc(85vh - 80px)',
+                  pointerEvents: 'auto'
+                }}
+              />
+            )}
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
