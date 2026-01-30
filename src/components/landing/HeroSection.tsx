@@ -2,6 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { FileText } from 'lucide-react';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
 
 // Product images for carousel
 import ferferBoxSachet from '@/assets/products/ferfer-box-sachet.jpg';
@@ -19,6 +25,7 @@ const productImages = [
 const HeroSection: React.FC = () => {
   const { t } = useLanguage();
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isInstructionsOpen, setIsInstructionsOpen] = useState(false);
 
   // Auto-advance carousel
   useEffect(() => {
@@ -27,6 +34,12 @@ const HeroSection: React.FC = () => {
     }, 4000);
     return () => clearInterval(timer);
   }, []);
+
+  // Prevent right-click context menu on the PDF viewer
+  const handleContextMenu = (e: React.MouseEvent) => {
+    e.preventDefault();
+    return false;
+  };
 
   const goToSlide = (index: number) => {
     setCurrentSlide(index);
@@ -144,7 +157,11 @@ const HeroSection: React.FC = () => {
               <Button className="btn-primary text-sm md:text-base w-full sm:w-auto">
                 {t('hero.cta')}
               </Button>
-              <Button variant="outline" className="btn-secondary text-sm md:text-base w-full sm:w-auto">
+              <Button 
+                variant="outline" 
+                className="btn-secondary text-sm md:text-base w-full sm:w-auto"
+                onClick={() => setIsInstructionsOpen(true)}
+              >
                 <FileText className="mr-2 w-4 h-4 md:w-5 md:h-5" />
                 {t('hero.instructions')}
               </Button>
@@ -168,6 +185,34 @@ const HeroSection: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* Instructions PDF Modal */}
+      <Dialog open={isInstructionsOpen} onOpenChange={setIsInstructionsOpen}>
+        <DialogContent 
+          className="max-w-4xl w-[95vw] h-[85vh] p-0 overflow-hidden"
+          onContextMenu={handleContextMenu}
+        >
+          <DialogHeader className="p-4 pb-0">
+            <DialogTitle className="text-lg font-semibold">
+              {t('hero.instructions')}
+            </DialogTitle>
+          </DialogHeader>
+          <div 
+            className="flex-1 w-full h-full min-h-0 p-4 pt-2"
+            onContextMenu={handleContextMenu}
+          >
+            <iframe
+              src="/certificate.pdf#toolbar=0&navpanes=0&scrollbar=1&view=FitH"
+              className="w-full h-full rounded-lg border border-border"
+              title="Instructions PDF"
+              style={{ 
+                minHeight: 'calc(85vh - 80px)',
+                pointerEvents: 'auto'
+              }}
+            />
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
