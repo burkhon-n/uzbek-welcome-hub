@@ -35,12 +35,6 @@ const HeroSection: React.FC = () => {
     return () => clearInterval(timer);
   }, []);
 
-  // Prevent right-click context menu on the PDF viewer
-  const handleContextMenu = (e: React.MouseEvent) => {
-    e.preventDefault();
-    return false;
-  };
-
   const goToSlide = (index: number) => {
     setCurrentSlide(index);
   };
@@ -186,30 +180,45 @@ const HeroSection: React.FC = () => {
         </div>
       </div>
 
-      {/* Instructions PDF Modal */}
+      {/* Instructions Modal */}
       <Dialog open={isInstructionsOpen} onOpenChange={setIsInstructionsOpen}>
-        <DialogContent 
-          className="max-w-4xl w-[95vw] h-[85vh] p-0 overflow-hidden"
-          onContextMenu={handleContextMenu}
-        >
-          <DialogHeader className="p-4 pb-0">
-            <DialogTitle className="text-lg font-semibold">
-              {t('hero.instructions')}
+        <DialogContent className="max-w-2xl w-[95vw] max-h-[85vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="text-xl font-bold text-primary">
+              {t('hero.instructions.title')}
             </DialogTitle>
           </DialogHeader>
-          <div 
-            className="flex-1 w-full h-full min-h-0 p-4 pt-2"
-            onContextMenu={handleContextMenu}
-          >
-            <iframe
-              src="/certificate.pdf#toolbar=0&navpanes=0&scrollbar=1&view=FitH"
-              className="w-full h-full rounded-lg border border-border"
-              title="Instructions PDF"
-              style={{ 
-                minHeight: 'calc(85vh - 80px)',
-                pointerEvents: 'auto'
-              }}
-            />
+          <div className="space-y-6 pt-4">
+            <div>
+              <h4 className="font-semibold text-foreground mb-2">{t('hero.instructions.composition')}</h4>
+              <p className="text-sm text-muted-foreground">{t('hero.instructions.compositionText')}</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-foreground mb-2">{t('hero.instructions.indication')}</h4>
+              <p className="text-sm text-muted-foreground">{t('hero.instructions.indicationText')}</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-foreground mb-2">{t('hero.instructions.dosage')}</h4>
+              <p className="text-sm text-muted-foreground">{t('hero.instructions.dosageText')}</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-foreground mb-2">{t('hero.instructions.contraindications')}</h4>
+              <p className="text-sm text-muted-foreground">{t('hero.instructions.contraindicationsText')}</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-foreground mb-2">{t('hero.instructions.storage')}</h4>
+              <p className="text-sm text-muted-foreground">{t('hero.instructions.storageText')}</p>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <h4 className="font-semibold text-foreground mb-2">{t('hero.instructions.shelfLife')}</h4>
+                <p className="text-sm text-muted-foreground">{t('hero.instructions.shelfLifeText')}</p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-foreground mb-2">{t('hero.instructions.package')}</h4>
+                <p className="text-sm text-muted-foreground">{t('hero.instructions.packageText')}</p>
+              </div>
+            </div>
           </div>
         </DialogContent>
       </Dialog>
