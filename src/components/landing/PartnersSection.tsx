@@ -59,16 +59,6 @@ const PartnersSection: React.FC = () => {
           ))}
         </div>
 
-        {/* See all link */}
-        <div className="text-center mt-8">
-          <a
-            href="#"
-            className="text-primary font-medium hover:underline inline-flex items-center gap-1"
-          >
-            {t('partners.seeAll')}
-            <ExternalLink className="w-4 h-4" />
-          </a>
-        </div>
       </div>
     </section>
   );
