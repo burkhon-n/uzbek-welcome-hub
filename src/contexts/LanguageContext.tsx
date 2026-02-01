@@ -15,7 +15,7 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.about': 'О продукте',
     'nav.benefits': 'Преимущества',
     'nav.buy': 'Где купить',
-    'nav.faq': 'ЧЗВ',
+    'nav.faq': 'ЧАВО',
     
     // Hero Section
     'hero.badge': 'Инновационная микрокапсулированная технология',
