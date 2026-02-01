@@ -19,38 +19,52 @@ const translations: Record<Language, Record<string, string>> = {
     
     // Hero Section
     'hero.badge': 'Инновационная микрокапсулированная технология',
-    'hero.title': 'Биологическая активная добавка',
+    'hero.title': 'Биологически активная добавка',
     'hero.brand': 'ФЕРФЕР',
-    'hero.subtitle': 'Быстродействующее железо с апельсиновым вкусом. Инновационная формула для эффективного восполнения дефицита железа.',
+    'hero.subtitle': 'Биологически активная добавка с микрокапсулированным липосомальным железом, витамином C и B12. Быстро растворяется во рту, хорошо переносится, без металлического вкуса.',
     'hero.cta': 'Купить сейчас',
     'hero.instructions': 'Инструкция',
-    'hero.sachets': '30 саше',
+    'hero.instructions.title': 'Инструкция по применению',
+    'hero.instructions.composition': 'Состав (на 1 саше, 1,5 г)',
+    'hero.instructions.compositionText': 'Железо — 14 мг, Витамин C — 80 мг, Витамин B12 — 2,5 мкг.',
+    'hero.instructions.dosage': 'Способ применения и дозы',
+    'hero.instructions.dosageText': 'Взрослым и подросткам старше 14 лет — 1–2 саше в день, не размешивая в воде, или по рекомендации специалиста.',
+    'hero.instructions.indication': 'Показания к применению',
+    'hero.instructions.indicationText': 'Дефицит железа — частая проблема, особенно при повышенных нагрузках и в период планирования беременности. Ferfer® разработан для эффективного и комфортного восполнения железа без типичных побочных эффектов.',
+    'hero.instructions.contraindications': 'Противопоказания',
+    'hero.instructions.contraindicationsText': 'Индивидуальная непереносимость компонентов продукта. Беременным и кормящим женщинам перед применением необходимо проконсультироваться с врачом.',
+    'hero.instructions.storage': 'Условия хранения',
+    'hero.instructions.storageText': 'Хранить в сухом, защищенном от света месте при температуре не выше 25°C. Хранить в недоступном для детей месте.',
+    'hero.instructions.shelfLife': 'Срок годности',
+    'hero.instructions.shelfLifeText': '24 месяца с даты производства.',
+    'hero.instructions.package': 'Форма выпуска',
+    'hero.instructions.packageText': '30 саше в упаковке.',
     
     // About Section
     'about.title': 'О продукте',
-    'about.description': 'Ферфер® — это биологически активная пищевая добавка, содержащая микрокапсулированный железо липосомной форме. Инновационная технология обеспечивает максимальное усвоение железа без побочных эффектов.',
+    'about.description': 'Ferfer® — это биологически активная добавка, содержащая железо в микрокапсулированной липосомальной форме с витаминами C и B12. Инновационная технология позволяет железу лучше усваиваться, не раздражает желудочно-кишечный тракт и снижает риск типичных побочных эффектов.',
     
-    'about.feature1.title': 'Высокая эффективность',
-    'about.feature1.desc': 'При одинаковой дозировке Ферфер® при однo раннем приёме даёт лучший эффект.',
+    'about.feature1.title': 'Липосомальное железо',
+    'about.feature1.desc': 'Защищено от окисления в желудке, не взаимодействует с пищей.',
     
-    'about.feature2.title': 'Без побочных эффектов',
-    'about.feature2.desc': 'Почти полное отсутствие побочных эффектов благодаря липосомной технологии.',
+    'about.feature2.title': 'Высокая биодоступность',
+    'about.feature2.desc': 'Эффективное усвоение железа, способствует повышению уровня гемоглобина и ферритина.',
     
-    'about.feature3.title': 'Удобное применение',
-    'about.feature3.desc': 'Приятный апельсиновый вкус. Принимать 1-2 саше в день.',
+    'about.feature3.title': 'Хорошая переносимость',
+    'about.feature3.desc': 'Сниженная частота побочных эффектов, не вызывает металлического вкуса.',
     
-    'about.feature4.title': 'Быстрое усвоение',
-    'about.feature4.desc': 'Быстрое растворение и усвоение благодаря микрокапсулированию.',
+    'about.feature4.title': 'Удобство приёма',
+    'about.feature4.desc': 'Быстро растворяется во рту, не требует воды, приятный апельсиновый вкус.',
     
-    'about.feature5.title': 'Высокая биодоступность',
-    'about.feature5.desc': 'Высокая биодоступность по сравнению с обычными препаратами железа.',
+    'about.feature5.title': 'Витамин C',
+    'about.feature5.desc': '80 мг в каждом саше для улучшения усвоения железа.',
     
-    'about.feature6.title': 'Приятный вкус',
-    'about.feature6.desc': 'Апельсиновый вкус делает прием добавки приятным.',
+    'about.feature6.title': 'Витамин B12',
+    'about.feature6.desc': '2,5 мкг в каждом саше для поддержки кроветворения.',
     
     // Benefits Section
-    'benefits.title': 'Преимущества липосомной формы',
-    'benefits.subtitle': 'Ферфер® микронизированный липофильный пирофосфат железа',
+    'benefits.title': 'Почему выбирают Ferfer®',
+    'benefits.subtitle': 'Ferfer® — микрокапсулированный липосомальный пирофосфат железа',
     
     'benefits.item1': 'Защищает железо от окисления в желудке',
     'benefits.item2': 'Не взаимодействует с пищей',
@@ -58,11 +72,11 @@ const translations: Record<Language, Record<string, string>> = {
     'benefits.item4': 'Без металлического привкуса',
     
     // Iron Deficiency Section
-    'deficiency.title': 'Дефицит железа',
-    'deficiency.subtitle': 'Латентный дефицит железа (ЛДЖ) — частичное использование сывороточных запасов железа, опасные для развития. При отсутствии лечения может привести к анемии.',
-    'deficiency.point1': 'Запасов железа у менструирующих женщин хватает только на 3,5 раза больше, чем мужчин.',
-    'deficiency.point2': 'Чем дольше у женщины ретроградирующие месячные, тем дольше их Дефицит Железа (ДЖ), тем сложнее его компенсировать.',
-    'deficiency.point3': 'Распределение железа, которое распределяется по организму, соответствующем происхождении восполнения запасов железа в организме.',
+    'deficiency.title': 'Почему обычное железо не подходит',
+    'deficiency.subtitle': 'Традиционные формы железа могут вызывать неприятные побочные эффекты.',
+    'deficiency.point1': 'Тошноту и дискомфорт в желудке.',
+    'deficiency.point2': 'Запоры или диарею.',
+    'deficiency.point3': 'Металлический вкус и окрашивание слизистых оболочек.',
     
     // Partners Section
     'partners.title': 'Где купить?',
@@ -71,29 +85,29 @@ const translations: Record<Language, Record<string, string>> = {
     
     // FAQ Section
     'faq.title': 'Часто задаваемые вопросы',
-    'faq.subtitle': 'Ответы на популярные вопросы о Ферфер®',
+    'faq.subtitle': 'Ответы на популярные вопросы о Ferfer®',
     
-    'faq.q1': 'Что такое Ферфер®?',
-    'faq.a1': 'Ферфер® — это биологически активная добавка, содержащая микрокапсулированный железо в липосомной форме. Препарат разработан для эффективного восполнения дефицита железа без побочных эффектов.',
+    'faq.q1': 'Что такое Ferfer®?',
+    'faq.a1': 'Ferfer® — биологически активная добавка с микрокапсулированным липосомальным железом и витаминами C и B12.',
     
-    'faq.q2': 'Как принимать Ферфер®?',
-    'faq.a2': 'Рекомендуется принимать 1-2 саше в день, растворив содержимое в стакане воды. Препарат можно принимать независимо от приема пищи благодаря липосомной технологии.',
+    'faq.q2': 'Как принимать Ferfer®?',
+    'faq.a2': 'Взрослым и подросткам старше 14 лет — 1–2 саше в день, не размешивая в воде, или по рекомендации специалиста.',
     
     'faq.q3': 'Есть ли побочные эффекты?',
-    'faq.a3': 'Благодаря инновационной липосомной технологии, Ферфер® практически не вызывает побочных эффектов, характерных для обычных препаратов железа (тошнота, запоры, металлический привкус).',
+    'faq.a3': 'Благодаря липосомальной форме частота типичных побочных эффектов железа значительно снижена.',
     
     'faq.q4': 'Можно ли принимать беременным?',
-    'faq.a4': 'Беременным и кормящим женщинам перед применением следует проконсультироваться со специалистом. Основной причиной анемии у беременных является дефицит железа.',
+    'faq.a4': 'Беременным и кормящим женщинам перед применением необходимо проконсультироваться с врачом.',
     
-    'faq.q5': 'Где купить Ферфер®?',
-    'faq.a5': 'Ферфер® можно приобрести в аптечных сетях: GO Аптека, Best Pharm, Top-Pharm, Nika Pharm и других аптеках Узбекистана.',
+    'faq.q5': 'Ferfer® — это лекарство?',
+    'faq.a5': 'Нет. Ferfer® является биологически активной добавкой и не относится к лекарственным средствам.',
     
     'faq.q6': 'Сколько саше в упаковке?',
     'faq.a6': 'В одной упаковке содержится 30 саше с апельсиновым вкусом.',
     
     // Certificates Section
     'certificates.title': 'Сертификаты качества',
-    'certificates.subtitle': 'Ферфер® соответствует международным стандартам качества и безопасности',
+    'certificates.subtitle': 'Ferfer® соответствует международным стандартам качества и безопасности',
     'certificates.cert1.title': 'Сертификат соответствия',
     'certificates.cert1.desc': 'Официальный сертификат соответствия требованиям технических регламентов.',
     'certificates.cert2.title': 'Регистрационное удостоверение',
@@ -103,11 +117,11 @@ const translations: Record<Language, Record<string, string>> = {
     'certificates.view': 'Смотреть PDF',
 
     // Footer
-    'footer.description': 'Ферфер® — инновационная биологически активная добавка для эффективного восполнения дефицита железа.',
+    'footer.description': 'Ferfer® — инновационная биологически активная добавка для восполнения дефицита железа.',
     'footer.quickLinks': 'Быстрые ссылки',
     'footer.contact': 'Контакты',
     'footer.address': 'г. Ташкент, Узбекистан',
-    'footer.rights': '© 2025 Ферфер®. Все права защищены.',
+    'footer.rights': '© 2025 Ferfer®. Все права защищены.',
     'footer.warning': 'БАД не является лекарственным средством.',
     'footer.pharmevo': 'PharmEvo — Our dream, a healthier society',
     'footer.privacy': 'Политика конфиденциальности',
@@ -125,48 +139,62 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.badge': 'Innovatsion mikrokapsulalangan texnologiya',
     'hero.title': 'Biologik faol qo\'shimcha',
     'hero.brand': 'FERFER',
-    'hero.subtitle': 'Apelsin ta\'mli tez ta\'sir qiluvchi temir. Temir tanqisligini samarali to\'ldirish uchun innovatsion formula.',
+    'hero.subtitle': 'Mikrokapsulalangan liposomal temir, C va B12 vitaminlarini o\'z ichiga olgan biologik faol qo\'shimcha. Og\'izda tez eriydi, yaxshi o\'zlashtiriladi, metall ta\'mi yo\'q.',
     'hero.cta': 'Hozir sotib olish',
     'hero.instructions': 'Ko\'rsatma',
-    'hero.sachets': '30 paket',
+    'hero.instructions.title': 'Qo\'llash bo\'yicha ko\'rsatma',
+    'hero.instructions.composition': 'Tarkibi (1 sashe, 1,5 g uchun)',
+    'hero.instructions.compositionText': 'Temir — 14 mg, Vitamin C — 80 mg, Vitamin B12 — 2,5 mkg.',
+    'hero.instructions.dosage': 'Qo\'llash usuli va dozasi',
+    'hero.instructions.dosageText': '14 yoshdan katta kattalar va o\'smirlar uchun — kuniga 1–2 sashe, suvga aralashtirmasdan yoki mutaxassis tavsiyasiga ko\'ra.',
+    'hero.instructions.indication': 'Qo\'llash ko\'rsatmalari',
+    'hero.instructions.indicationText': 'Temir tanqisligi — keng tarqalgan muammo bo\'lib, ayniqsa yuklama oshgan davrlarda va homiladorlikni rejalashtirish paytida ko\'proq uchraydi. Ferfer® temir tanqisligini samarali va qulay tarzda, odatiy nojo\'ya ta\'sirlarsiz to\'ldirish uchun ishlab chiqilgan.',
+    'hero.instructions.contraindications': 'Qarshi ko\'rsatmalar',
+    'hero.instructions.contraindicationsText': 'Mahsulot tarkibiy qismlariga individual murosasizlik. Homilador va emizikli ayollar Ferfer®ni qabul qilishdan oldin shifokor bilan maslahatlashishlari lozim.',
+    'hero.instructions.storage': 'Saqlash shartlari',
+    'hero.instructions.storageText': 'Quruq, yorug\'likdan himoyalangan joyda 25°C dan yuqori bo\'lmagan haroratda saqlang. Bolalar qo\'li yetmaydigan joyda saqlang.',
+    'hero.instructions.shelfLife': 'Yaroqlilik muddati',
+    'hero.instructions.shelfLifeText': 'Ishlab chiqarilgan sanadan boshlab 24 oy.',
+    'hero.instructions.package': 'Chiqarish shakli',
+    'hero.instructions.packageText': 'Qadoqda 30 ta sashe.',
     
     // About Section
     'about.title': 'Mahsulot haqida',
-    'about.description': 'Ferfer® — bu lipozomal shaklda mikrokapsulalangan temirni o\'z ichiga olgan biologik faol oziq-ovqat qo\'shimchasi. Innovatsion texnologiya nojo\'ya ta\'sirlarsiz temirning maksimal o\'zlashtirilishini ta\'minlaydi.',
+    'about.description': 'Ferfer® — tarkibida C va B12 vitaminlari bilan birga mikrokapsulalangan liposomal shakldagi temir mavjud bo\'lgan biologik faol qo\'shimcha. Innovatsion texnologiya temirning yaxshiroq so\'rilishiga, oshqozon-ichak traktini bezovta qilmasligiga va odatiy nojo\'ya ta\'sirlar xavfini kamaytirishga imkon beradi.',
     
-    'about.feature1.title': 'Yuqori samaradorlik',
-    'about.feature1.desc': 'Bir xil dozada Ferfer® bir martalik qabul qilishda yaxshiroq natija beradi.',
+    'about.feature1.title': 'Liposomal temir',
+    'about.feature1.desc': 'Oshqozonda oksidlanishdan himoyalangan, oziq-ovqat bilan o\'zaro ta\'sirga kirishmaydi.',
     
-    'about.feature2.title': 'Nojo\'ya ta\'sirlarsiz',
-    'about.feature2.desc': 'Lipozomal texnologiya tufayli nojo\'ya ta\'sirlar deyarli yo\'q.',
+    'about.feature2.title': 'Yuqori biokiraolishlik',
+    'about.feature2.desc': 'Temirning samarali o\'zlashtirilishi, gemoglobin va ferritin darajasining oshishiga yordam beradi.',
     
-    'about.feature3.title': 'Qulay qo\'llash',
-    'about.feature3.desc': 'Yoqimli apelsin ta\'mi. Kuniga 1-2 paket qabul qiling.',
+    'about.feature3.title': 'Yaxshi o\'zlashtirilishi',
+    'about.feature3.desc': 'Nojo\'ya ta\'sirlar chastotasi kamaytirilgan, metall ta\'mini keltirib chiqarmaydi.',
     
-    'about.feature4.title': 'Tez o\'zlashtirilishi',
-    'about.feature4.desc': 'Mikrokapsulalash tufayli tez erish va o\'zlashtirilish.',
+    'about.feature4.title': 'Qulay qabul qilish',
+    'about.feature4.desc': 'Og\'izda tez eriydi, suv talab qilmaydi, yoqimli apelsin ta\'miga ega.',
     
-    'about.feature5.title': 'Yuqori bionavbatlilik',
-    'about.feature5.desc': 'Oddiy temir preparatlariga nisbatan yuqori bionavbatlilik.',
+    'about.feature5.title': 'Vitamin C',
+    'about.feature5.desc': 'Temir o\'zlashtirilishini yaxshilash uchun har bir sashe da 80 mg.',
     
-    'about.feature6.title': 'Yoqimli ta\'m',
-    'about.feature6.desc': 'Apelsin ta\'mi qo\'shimchani qabul qilishni yoqimli qiladi.',
+    'about.feature6.title': 'Vitamin B12',
+    'about.feature6.desc': 'Qon yaratishni qo\'llab-quvvatlash uchun har bir sashe da 2,5 mkg.',
     
     // Benefits Section
-    'benefits.title': 'Lipozomal shaklning afzalliklari',
-    'benefits.subtitle': 'Ferfer® mikronizatsiyalangan lipofilik temir pirofosfati',
+    'benefits.title': 'Nima uchun Ferfer® tanlanadi',
+    'benefits.subtitle': 'Ferfer® — mikrokapsulalangan liposomal temir pirofosfati',
     
     'benefits.item1': 'Temirni oshqozonda oksidlanishdan himoya qiladi',
     'benefits.item2': 'Oziq-ovqat bilan ta\'sir qilmaydi',
-    'benefits.item3': 'Yuqori bionavbatlilik',
+    'benefits.item3': 'Yuqori biokiraolishlik',
     'benefits.item4': 'Metall ta\'misiz',
     
     // Iron Deficiency Section
-    'deficiency.title': 'Temir tanqisligi',
-    'deficiency.subtitle': 'Latent temir tanqisligi (LTT) — serum temir zaxiralarining qisman ishlatilishi, rivojlanish uchun xavfli. Davolanmasdan anemiyaga olib kelishi mumkin.',
-    'deficiency.point1': 'Menstruatsiya bo\'lgan ayollarda temir zaxiralari erkaklarga qaraganda 3,5 baravar ko\'proq sarflanadi.',
-    'deficiency.point2': 'Ayolda retrograd oylik qancha uzoq davom etsa, Temir Tanqisligi (TT) shunchalik kuchli, kompensatsiya qilish qiyinroq.',
-    'deficiency.point3': 'Organizmda taqsimlanadigan temir organizmdagi temir zaxiralarini to\'ldirishga mos keladi.',
+    'deficiency.title': 'Nima uchun oddiy temir mos kelmaydi',
+    'deficiency.subtitle': 'An\'anaviy temir shakllari noxush nojo\'ya ta\'sirlarga sabab bo\'lishi mumkin.',
+    'deficiency.point1': 'Ko\'ngil aynishi va oshqozonda noqulaylik.',
+    'deficiency.point2': 'Qabziyat yoki diareya.',
+    'deficiency.point3': 'Metall ta\'mi va shilliq qavatlarning bo\'yalishi.',
     
     // Partners Section
     'partners.title': 'Qayerdan sotib olish?',
@@ -178,22 +206,22 @@ const translations: Record<Language, Record<string, string>> = {
     'faq.subtitle': 'Ferfer® haqida mashhur savollarga javoblar',
     
     'faq.q1': 'Ferfer® nima?',
-    'faq.a1': 'Ferfer® — bu lipozomal shaklda mikrokapsulalangan temirni o\'z ichiga olgan biologik faol qo\'shimcha. Preparat nojo\'ya ta\'sirlarsiz temir tanqisligini samarali to\'ldirish uchun ishlab chiqilgan.',
+    'faq.a1': 'Ferfer® — mikrokapsulalangan liposomal temir hamda C va B12 vitaminlarini o\'z ichiga olgan biologik faol qo\'shimcha.',
     
-    'faq.q2': 'Ferfer® ni qanday qabul qilish kerak?',
-    'faq.a2': 'Kuniga 1-2 paket qabul qilish tavsiya etiladi, tarkibini bir stakan suvda eritib. Lipozomal texnologiya tufayli preparat ovqatlanishdan qat\'iy nazar qabul qilinishi mumkin.',
+    'faq.q2': 'Ferfer® qanday qabul qilinadi?',
+    'faq.a2': '14 yoshdan katta kattalar va o\'smirlar uchun — kuniga 1–2 sashe, suvga aralashtirmasdan yoki mutaxassis tavsiyasiga ko\'ra.',
     
-    'faq.q3': 'Nojo\'ya ta\'sirlar bormi?',
-    'faq.a3': 'Innovatsion lipozomal texnologiya tufayli Ferfer® oddiy temir preparatlariga xos nojo\'ya ta\'sirlarni (ko\'ngil aynishi, qabziyat, metall ta\'mi) deyarli keltirib chiqarmaydi.',
+    'faq.q3': 'Nojo\'ya ta\'sirlari bormi?',
+    'faq.a3': 'Liposomal shakli tufayli temirga xos bo\'lgan odatiy nojo\'ya ta\'sirlar chastotasi sezilarli darajada kamaygan.',
     
     'faq.q4': 'Homilador ayollar qabul qilishi mumkinmi?',
-    'faq.a4': 'Homilador va emizikli ayollar qo\'llashdan oldin mutaxassis bilan maslahatlashishlari kerak. Homilador ayollardagi anemiyaning asosiy sababi temir tanqisligi hisoblanadi.',
+    'faq.a4': 'Homilador va emizikli ayollar Ferfer®ni qabul qilishdan oldin shifokor bilan maslahatlashishlari lozim.',
     
-    'faq.q5': 'Ferfer® ni qayerdan sotib olish mumkin?',
-    'faq.a5': 'Ferfer® ni dorixona tarmoqlaridan sotib olish mumkin: GO Apteka, Best Pharm, Top-Pharm, Nika Pharm va O\'zbekistonning boshqa dorixonalari.',
+    'faq.q5': 'Ferfer® dori vositasimi?',
+    'faq.a5': 'Yo\'q. Ferfer® biologik faol qo\'shimcha hisoblanadi va dori vositalariga kirmaydi.',
     
-    'faq.q6': 'Qadoqda nechta paket bor?',
-    'faq.a6': 'Bir qadoqda apelsin ta\'mli 30 ta paket mavjud.',
+    'faq.q6': 'Qadoqda nechta sashe bor?',
+    'faq.a6': 'Bir qadoqda apelsin ta\'mli 30 ta sashe mavjud.',
     
     // Certificates Section
     'certificates.title': 'Sifat sertifikatlari',
@@ -207,12 +235,12 @@ const translations: Record<Language, Record<string, string>> = {
     'certificates.view': 'PDF ni ko\'rish',
 
     // Footer
-    'footer.description': 'Ferfer® — temir tanqisligini samarali to\'ldirish uchun innovatsion biologik faol qo\'shimcha.',
+    'footer.description': 'Ferfer® — temir tanqisligini to\'ldirish uchun mo\'ljallangan innovatsion biologik faol qo\'shimcha.',
     'footer.quickLinks': 'Tezkor havolalar',
     'footer.contact': 'Aloqa',
     'footer.address': 'Toshkent shahri, O\'zbekiston',
     'footer.rights': '© 2025 Ferfer®. Barcha huquqlar himoyalangan.',
-    'footer.warning': 'BFQ dori vositasi emas.',
+    'footer.warning': 'Biologik faol qo\'shimcha dori vositasi hisoblanmaydi.',
     'footer.pharmevo': 'PharmEvo — Bizning orzuimiz, sog\'lom jamiyat',
     'footer.privacy': 'Maxfiylik siyosati',
     'footer.terms': 'Foydalanish shartlari',

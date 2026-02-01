@@ -2,6 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { FileText } from 'lucide-react';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
 
 // Product images for carousel
 import ferferBoxSachet from '@/assets/products/ferfer-box-sachet.jpg';
@@ -19,6 +25,7 @@ const productImages = [
 const HeroSection: React.FC = () => {
   const { t } = useLanguage();
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isInstructionsOpen, setIsInstructionsOpen] = useState(false);
 
   // Auto-advance carousel
   useEffect(() => {
@@ -144,7 +151,11 @@ const HeroSection: React.FC = () => {
               <Button className="btn-primary text-sm md:text-base w-full sm:w-auto">
                 {t('hero.cta')}
               </Button>
-              <Button variant="outline" className="btn-secondary text-sm md:text-base w-full sm:w-auto">
+              <Button 
+                variant="outline" 
+                className="btn-secondary text-sm md:text-base w-full sm:w-auto"
+                onClick={() => setIsInstructionsOpen(true)}
+              >
                 <FileText className="mr-2 w-4 h-4 md:w-5 md:h-5" />
                 {t('hero.instructions')}
               </Button>
@@ -168,6 +179,49 @@ const HeroSection: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* Instructions Modal */}
+      <Dialog open={isInstructionsOpen} onOpenChange={setIsInstructionsOpen}>
+        <DialogContent className="max-w-2xl w-[95vw] max-h-[85vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="text-xl font-bold text-primary">
+              {t('hero.instructions.title')}
+            </DialogTitle>
+          </DialogHeader>
+          <div className="space-y-6 pt-4">
+            <div>
+              <h4 className="font-semibold text-foreground mb-2">{t('hero.instructions.composition')}</h4>
+              <p className="text-sm text-muted-foreground">{t('hero.instructions.compositionText')}</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-foreground mb-2">{t('hero.instructions.indication')}</h4>
+              <p className="text-sm text-muted-foreground">{t('hero.instructions.indicationText')}</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-foreground mb-2">{t('hero.instructions.dosage')}</h4>
+              <p className="text-sm text-muted-foreground">{t('hero.instructions.dosageText')}</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-foreground mb-2">{t('hero.instructions.contraindications')}</h4>
+              <p className="text-sm text-muted-foreground">{t('hero.instructions.contraindicationsText')}</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-foreground mb-2">{t('hero.instructions.storage')}</h4>
+              <p className="text-sm text-muted-foreground">{t('hero.instructions.storageText')}</p>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <h4 className="font-semibold text-foreground mb-2">{t('hero.instructions.shelfLife')}</h4>
+                <p className="text-sm text-muted-foreground">{t('hero.instructions.shelfLifeText')}</p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-foreground mb-2">{t('hero.instructions.package')}</h4>
+                <p className="text-sm text-muted-foreground">{t('hero.instructions.packageText')}</p>
+              </div>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
