@@ -126,7 +126,7 @@ const HeroSection: React.FC = () => {
           </div>
 
           {/* Content - Left Side */}
-          <div className="text-left max-w-xl lg:max-w-2xl">
+          <div className="text-left max-w-md lg:max-w-lg">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/90 backdrop-blur-sm border border-primary/20 mb-4 md:mb-6 animate-fade-in">
               <span className="text-xs sm:text-sm font-medium text-primary">
@@ -134,16 +134,16 @@ const HeroSection: React.FC = () => {
               </span>
             </div>
 
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-bold leading-tight mb-2 animate-fade-in text-foreground" style={{ animationDelay: '0.1s' }}>
+            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-bold leading-tight mb-2 animate-fade-in text-foreground" style={{ animationDelay: '0.1s' }}>
               {t('hero.title')}
             </h1>
             
-            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-bold mb-4 md:mb-6 animate-fade-in text-primary" style={{ animationDelay: '0.15s' }}>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold mb-4 md:mb-6 animate-fade-in text-primary" style={{ animationDelay: '0.15s' }}>
               {t('hero.brand')}
-              <span className="text-lg sm:text-xl md:text-2xl align-super">®</span>
+              <span className="text-base sm:text-lg md:text-xl align-super">®</span>
             </h2>
 
-            <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-md mb-6 md:mb-8 animate-fade-in text-balance leading-relaxed" style={{ animationDelay: '0.2s' }}>
+            <p className="text-xs sm:text-sm md:text-base text-muted-foreground max-w-sm mb-6 md:mb-8 animate-fade-in text-balance leading-relaxed" style={{ animationDelay: '0.2s' }}>
               {t('hero.subtitle')}
             </p>
 
