@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLanguage, Language } from '@/contexts/LanguageContext';
 import { Menu, X } from 'lucide-react';
+import pharmevoLogo from '@/assets/pharmevo.png';
 
 const Header: React.FC = () => {
   const { language, setLanguage, t } = useLanguage();
@@ -24,9 +25,12 @@ const Header: React.FC = () => {
       <div className="container-main">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-2">
-            <span className="text-xl font-bold text-primary">Pharm</span>
-            <span className="text-xl font-bold text-foreground">Evo</span>
+          <a href="#home" className="flex items-center">
+            <img 
+              src={pharmevoLogo} 
+              alt="Pharmevo" 
+              className="h-20 w-auto"
+            />
           </a>
 
           {/* Desktop Navigation */}

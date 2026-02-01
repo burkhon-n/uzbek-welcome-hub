@@ -10,16 +10,16 @@ import {
 } from '@/components/ui/dialog';
 
 // Product images for carousel
-import ferferBoxSachet from '@/assets/products/ferfer-box-sachet.jpg';
-import ferferSachet from '@/assets/products/ferfer-sachet.jpg';
-import ferferBoxFront from '@/assets/products/ferfer-box-front.jpg';
-import ferferBoxAngle from '@/assets/products/ferfer-box-angle.jpg';
+import ferferModel1 from '@/assets/products/ferfer-model-1.png';
+import ferferModel2 from '@/assets/products/ferfer-model-2.png';
+import ferferModel3 from '@/assets/products/ferfer-model-3.png';
+import ferferModel4 from '@/assets/products/ferfer-model-4.png';
 
 const productImages = [
-  { src: ferferBoxSachet, alt: 'Ferfer Box with Sachet' },
-  { src: ferferSachet, alt: 'Ferfer Sachet' },
-  { src: ferferBoxFront, alt: 'Ferfer Box Front View' },
-  { src: ferferBoxAngle, alt: 'Ferfer Box Angle View' },
+  { src: ferferModel1, alt: 'Ferfer Product Model 1' },
+  { src: ferferModel2, alt: 'Ferfer Product Model 2' },
+  { src: ferferModel3, alt: 'Ferfer Product Model 3' },
+  { src: ferferModel4, alt: 'Ferfer Product Model 4' },
 ];
 
 const HeroSection: React.FC = () => {
@@ -40,7 +40,7 @@ const HeroSection: React.FC = () => {
   };
 
   return (
-    <section id="home" className="relative min-h-screen overflow-hidden bg-gradient-to-br from-secondary/50 via-background to-background">
+    <section id="home" className="relative min-h-screen overflow-hidden bg-background">
       {/* Background Product Images - Hidden on mobile, right side on desktop */}
       <div className="hidden md:block absolute inset-y-0 left-auto right-0 w-3/5 lg:w-1/2 xl:w-[55%] pointer-events-none">
         <div className="relative h-full flex items-center justify-center">
@@ -61,9 +61,7 @@ const HeroSection: React.FC = () => {
             </div>
           ))}
           
-          {/* Gradient overlay for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/50 to-transparent" />
-          
+
           {/* Sachets badge - Bottom right of carousel on desktop */}
           <div className="absolute bottom-[15%] right-8 lg:right-12 z-20 pointer-events-auto animate-fade-in" style={{ animationDelay: '0.5s' }}>
             <div className="bg-primary text-primary-foreground px-6 py-3 rounded-full font-bold shadow-pink text-base whitespace-nowrap">
@@ -72,10 +70,6 @@ const HeroSection: React.FC = () => {
           </div>
         </div>
       </div>
-
-      {/* Background decorative elements */}
-      <div className="absolute bottom-20 left-10 w-64 md:w-96 h-64 md:h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute top-40 right-1/3 w-48 md:w-72 h-48 md:h-72 bg-accent/20 rounded-full blur-3xl pointer-events-none" />
 
       <div className="container-main relative z-10 pt-20 lg:pt-24 pb-8">
         <div className="flex flex-col md:justify-center min-h-[calc(100vh-12rem)] md:min-h-[calc(100vh-10rem)]">
@@ -126,7 +120,7 @@ const HeroSection: React.FC = () => {
           </div>
 
           {/* Content - Left Side */}
-          <div className="text-left max-w-md lg:max-w-lg">
+          <div className="text-left w-full md:w-1/2 md:pr-8 lg:pr-12">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/90 backdrop-blur-sm border border-primary/20 mb-4 md:mb-6 animate-fade-in">
               <span className="text-xs sm:text-sm font-medium text-primary">
@@ -143,13 +137,18 @@ const HeroSection: React.FC = () => {
               <span className="text-base sm:text-lg md:text-xl align-super">®</span>
             </h2>
 
-            <p className="text-xs sm:text-sm md:text-base text-muted-foreground max-w-sm mb-6 md:mb-8 animate-fade-in text-balance leading-relaxed" style={{ animationDelay: '0.2s' }}>
+            <p className="text-xs sm:text-sm md:text-base text-muted-foreground mb-6 md:mb-8 animate-fade-in text-balance leading-relaxed" style={{ animationDelay: '0.2s' }}>
               {t('hero.subtitle')}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 animate-fade-in" style={{ animationDelay: '0.3s' }}>
-              <Button className="btn-primary text-sm md:text-base w-full sm:w-auto">
-                {t('hero.cta')}
+              <Button 
+                className="btn-primary text-sm md:text-base w-full sm:w-auto"
+                asChild
+              >
+                <a href="https://arzonapteka.uz/en/search-medicines?q=%D1%84%D0%B5%D1%80%D1%84%D0%B5%D1%80" target="_blank" rel="noopener noreferrer">
+                  {t('hero.cta')}
+                </a>
               </Button>
               <Button 
                 variant="outline" 

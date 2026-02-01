@@ -12,10 +12,10 @@ const PartnersSection: React.FC = () => {
   const { t } = useLanguage();
 
   const partners = [
-    { name: 'GO АПТЕКА', logo: goApteka, url: '#' },
-    { name: 'Best Pharm', logo: bestPharm, url: '#' },
-    { name: 'Top-Pharm', logo: topPharm, url: '#' },
-    { name: 'Nika Pharm', logo: nikaPharm, url: '#' },
+    { name: 'GO АПТЕКА', logo: goApteka, url: 'https://www.instagram.com/goapteka/' },
+    { name: 'Best Pharm', logo: bestPharm, url: 'https://www.instagram.com/bestpharm_uz/' },
+    { name: 'Top-Pharm', logo: topPharm, url: 'https://www.instagram.com/toppharm.uz/' },
+    { name: 'Nika Pharm', logo: nikaPharm, url: 'https://nikapharm.uz/' },
   ];
 
   return (
@@ -51,9 +51,14 @@ const PartnersSection: React.FC = () => {
               </h3>
 
               {/* CTA Button */}
-              <Button className="btn-primary w-full group-hover:scale-105 transition-transform">
-                {t('partners.button')}
-                <ExternalLink className="ml-2 w-4 h-4" />
+              <Button 
+                className="btn-primary w-full group-hover:scale-105 transition-transform"
+                asChild
+              >
+                <a href={partner.url} target="_blank" rel="noopener noreferrer">
+                  {t('partners.button')}
+                  <ExternalLink className="ml-2 w-4 h-4" />
+                </a>
               </Button>
             </div>
           ))}
