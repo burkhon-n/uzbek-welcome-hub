@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { FileText, Award, Shield, X } from 'lucide-react';
+import { X, ZoomIn } from 'lucide-react';
 import {
   Dialog,
   DialogContent,
-  DialogHeader,
-  DialogTitle,
 } from '@/components/ui/dialog';
+
+import gmpCertificate from '@/assets/certificates/gmp-certificate.jpg';
+import ruxsatnoma from '@/assets/certificates/ruxsatnoma.jpg';
+import sanitaryCertificate from '@/assets/certificates/sanitary-certificate.jpg';
 
 const CertificatesSection: React.FC = () => {
   const { t } = useLanguage();
@@ -14,34 +16,28 @@ const CertificatesSection: React.FC = () => {
 
   const certificates = [
     {
-      icon: Award,
+      image: gmpCertificate,
       titleKey: 'certificates.cert1.title',
-      descKey: 'certificates.cert1.desc',
-      pdfUrl: '/certificate.pdf',
     },
     {
-      icon: Shield,
+      image: ruxsatnoma,
       titleKey: 'certificates.cert2.title',
-      descKey: 'certificates.cert2.desc',
-      pdfUrl: '/certificate.pdf',
     },
     {
-      icon: FileText,
+      image: sanitaryCertificate,
       titleKey: 'certificates.cert3.title',
-      descKey: 'certificates.cert3.desc',
-      pdfUrl: '/certificate.pdf',
     },
   ];
 
-  const handleViewCertificate = (pdfUrl: string) => {
-    setSelectedCertificate(pdfUrl);
+  const handleViewCertificate = (image: string) => {
+    setSelectedCertificate(image);
   };
 
   const handleCloseModal = () => {
     setSelectedCertificate(null);
   };
 
-  // Prevent right-click context menu on the PDF viewer
+  // Prevent right-click context menu
   const handleContextMenu = (e: React.MouseEvent) => {
     e.preventDefault();
     return false;
@@ -60,59 +56,50 @@ const CertificatesSection: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-          {certificates.map((cert, index) => {
-            const Icon = cert.icon;
-            return (
-              <div
-                key={index}
-                className="bg-card rounded-2xl p-6 sm:p-8 shadow-md hover:shadow-lg transition-all duration-300 border border-border/30 flex flex-col items-center text-center group cursor-pointer"
-              >
-                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-primary/10 flex items-center justify-center mb-4 sm:mb-6 group-hover:bg-primary/20 transition-colors">
-                  <Icon className="w-8 h-8 sm:w-10 sm:h-10 text-primary" />
+          {certificates.map((cert, index) => (
+            <div
+              key={index}
+              className="bg-card rounded-2xl p-4 shadow-md hover:shadow-lg transition-all duration-300 border border-border/30 flex flex-col items-center group cursor-pointer"
+              onClick={() => handleViewCertificate(cert.image)}
+              onContextMenu={handleContextMenu}
+            >
+              <div className="relative w-full aspect-[3/4] rounded-lg overflow-hidden mb-4 bg-muted">
+                <img 
+                  src={cert.image} 
+                  alt={t(cert.titleKey)}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  onContextMenu={handleContextMenu}
+                  draggable={false}
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+                  <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
-                <h3 className="text-base sm:text-lg font-semibold text-foreground mb-2 sm:mb-3">
-                  {t(cert.titleKey)}
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  {t(cert.descKey)}
-                </p>
-                <button 
-                  onClick={() => handleViewCertificate(cert.pdfUrl)}
-                  className="mt-4 sm:mt-6 text-primary font-medium text-sm hover:underline flex items-center gap-2"
-                >
-                  <FileText className="w-4 h-4" />
-                  {t('certificates.view')}
-                </button>
               </div>
-            );
-          })}
+              <h3 className="text-sm sm:text-base font-semibold text-foreground text-center">
+                {t(cert.titleKey)}
+              </h3>
+            </div>
+          ))}
         </div>
       </div>
 
-      {/* PDF Preview Modal */}
+      {/* Certificate Preview Modal */}
       <Dialog open={!!selectedCertificate} onOpenChange={handleCloseModal}>
         <DialogContent 
-          className="max-w-4xl w-[95vw] h-[85vh] p-0 overflow-hidden"
+          className="max-w-4xl w-[95vw] max-h-[90vh] p-2 overflow-hidden"
           onContextMenu={handleContextMenu}
         >
-          <DialogHeader className="p-4 pb-0">
-            <DialogTitle className="text-lg font-semibold">
-              {t('certificates.title')}
-            </DialogTitle>
-          </DialogHeader>
           <div 
-            className="flex-1 w-full h-full min-h-0 p-4 pt-2"
+            className="w-full h-full overflow-auto flex items-center justify-center"
             onContextMenu={handleContextMenu}
           >
             {selectedCertificate && (
-              <iframe
-                src={`${selectedCertificate}#toolbar=0&navpanes=0&scrollbar=1&view=FitH`}
-                className="w-full h-full rounded-lg border border-border"
-                title="Certificate PDF"
-                style={{ 
-                  minHeight: 'calc(85vh - 80px)',
-                  pointerEvents: 'auto'
-                }}
+              <img
+                src={selectedCertificate}
+                alt="Certificate"
+                className="max-w-full max-h-[85vh] object-contain rounded-lg"
+                onContextMenu={handleContextMenu}
+                draggable={false}
               />
             )}
           </div>
