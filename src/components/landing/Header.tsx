@@ -34,19 +34,19 @@ const Header: React.FC = () => {
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled 
         ? 'bg-background/95 backdrop-blur-md border-b border-border/30' 
-        : 'bg-transparent'
+        : 'bg-background/95 backdrop-blur-md border-b border-border/30 md:bg-transparent md:backdrop-blur-none md:border-transparent'
     }`}>
       <div className="container-main">
-        <div className={`flex items-center justify-between transition-all duration-300 ${
-          isScrolled ? 'h-16 md:h-20' : 'h-24 md:h-28'
+        <div className={`flex items-center justify-between transition-all duration-300 h-16 ${
+          isScrolled ? 'md:h-20' : 'md:h-28'
         }`}>
           {/* Logo */}
           <a className="flex items-center">
             <img 
               src={pharmevoLogo} 
               alt="Pharmevo" 
-              className={`transition-all duration-300 w-auto ${
-                isScrolled ? 'h-20' : 'h-40'
+              className={`transition-all duration-300 w-auto h-20 ${
+                isScrolled ? '' : 'md:h-40'
               }`}
             />
           </a>
