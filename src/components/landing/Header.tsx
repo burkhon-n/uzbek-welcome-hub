@@ -1,11 +1,21 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLanguage, Language } from '@/contexts/LanguageContext';
 import { Menu, X } from 'lucide-react';
 import pharmevoLogo from '@/assets/pharmevo.png';
 
 const Header: React.FC = () => {
   const { language, setLanguage, t } = useLanguage();
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navItems = [
     { key: 'nav.home', href: '#home' },
@@ -21,15 +31,23 @@ const Header: React.FC = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border/30">
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      isScrolled 
+        ? 'bg-background/95 backdrop-blur-md border-b border-border/30' 
+        : 'bg-transparent'
+    }`}>
       <div className="container-main">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className={`flex items-center justify-between transition-all duration-300 ${
+          isScrolled ? 'h-16 md:h-20' : 'h-24 md:h-28'
+        }`}>
           {/* Logo */}
           <a className="flex items-center">
             <img 
               src={pharmevoLogo} 
               alt="Pharmevo" 
-              className="h-20 w-auto"
+              className={`transition-all duration-300 w-auto ${
+                isScrolled ? 'h-20' : 'h-40'
+              }`}
             />
           </a>
 
