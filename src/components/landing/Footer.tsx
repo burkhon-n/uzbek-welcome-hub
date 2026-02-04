@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
   ];
 
   const socialLinks = [
-    { icon: Instagram, href: '#', label: 'Instagram' },
+    { icon: Instagram, href: 'https://www.instagram.com/meddec.uz?igsh=NXF4eXVvcWNsemRs', label: 'Instagram' },
     { icon: Send, href: '#', label: 'Telegram' },
   ];
 
@@ -85,8 +85,8 @@ const Footer: React.FC = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-primary" />
-                <a href="tel:+998711234567" className="text-background/70 hover:text-background transition-colors">
-                  +998 71 123 45 67
+                <a href="tel:+998942103322" className="text-background/70 hover:text-background transition-colors">
+                  +998 94 210 33 22
                 </a>
               </li>
               <li className="flex items-center gap-3">
