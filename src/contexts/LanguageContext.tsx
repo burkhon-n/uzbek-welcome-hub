@@ -112,9 +112,6 @@ const translations: Record<Language, Record<string, string>> = {
     'faq.q4': 'Можно ли принимать беременным?',
     'faq.a4': 'Беременным и кормящим женщинам перед применением необходимо проконсультироваться с врачом.',
     
-    'faq.q5': 'Ferfer® — это лекарство?',
-    'faq.a5': 'Нет. Ferfer® является биологически активной добавкой и не относится к лекарственным средствам.',
-    
     'faq.q6': 'Сколько саше в упаковке?',
     'faq.a6': 'В одной упаковке содержится 30 саше с апельсиновым вкусом.',
     
@@ -242,9 +239,6 @@ const translations: Record<Language, Record<string, string>> = {
     
     'faq.q4': 'Homilador ayollar qabul qilishi mumkinmi?',
     'faq.a4': 'Homilador va emizikli ayollar Ferfer®ni qabul qilishdan oldin shifokor bilan maslahatlashishlari lozim.',
-    
-    'faq.q5': 'Ferfer® dori vositasimi?',
-    'faq.a5': 'Yo\'q. Ferfer® biologik faol qo\'shimcha hisoblanadi va dori vositalariga kirmaydi.',
     
     'faq.q6': 'Qadoqda nechta sashe bor?',
     'faq.a6': 'Bir qadoqda apelsin ta\'mli 30 ta sashe mavjud.',
