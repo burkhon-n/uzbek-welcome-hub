@@ -25,7 +25,7 @@ const Header: React.FC = () => {
       <div className="container-main">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <a href="#home" className="flex items-center">
+          <a className="flex items-center">
             <img 
               src={pharmevoLogo} 
               alt="Pharmevo" 
