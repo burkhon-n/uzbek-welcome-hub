@@ -40,7 +40,7 @@ const HeroSection: React.FC = () => {
   };
 
   return (
-    <section id="home" className="relative min-h-screen overflow-hidden bg-background">
+    <section id="home" className="relative min-h-screen overflow-hidden bg-background px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
       {/* Background Product Images - Hidden on mobile, right side on desktop */}
       <div className="hidden md:block absolute inset-y-0 left-auto right-0 w-3/5 lg:w-1/2 xl:w-[55%] 2xl:w-[50%] pointer-events-none">
         <div className="relative h-full flex items-center justify-center">
