@@ -42,7 +42,7 @@ const HeroSection: React.FC = () => {
   return (
     <section id="home" className="relative min-h-screen overflow-hidden bg-background">
       {/* Background Product Images - Hidden on mobile, right side on desktop */}
-      <div className="hidden md:block absolute inset-y-0 left-auto right-0 w-3/5 lg:w-1/2 xl:w-[55%] pointer-events-none">
+      <div className="hidden md:block absolute inset-y-0 left-auto right-0 w-3/5 lg:w-1/2 xl:w-[55%] 2xl:w-[50%] pointer-events-none">
         <div className="relative h-full flex items-center justify-center">
           {productImages.map((image, index) => (
             <div
@@ -56,22 +56,22 @@ const HeroSection: React.FC = () => {
               <img
                 src={image.src}
                 alt={image.alt}
-                className="w-full h-auto max-h-[70vh] object-contain p-8 md:p-12 lg:p-16"
+                className="w-full h-auto max-h-[70vh] 2xl:max-h-[80vh] object-contain p-8 md:p-12 lg:p-16 2xl:p-20"
               />
             </div>
           ))}
           
 
           {/* Sachets badge - Bottom right of carousel on desktop */}
-          <div className="absolute bottom-[15%] right-8 lg:right-12 z-20 pointer-events-auto animate-fade-in" style={{ animationDelay: '0.5s' }}>
-            <div className="bg-primary text-primary-foreground px-6 py-3 rounded-full font-bold shadow-pink text-base whitespace-nowrap">
+          <div className="absolute bottom-[15%] right-8 lg:right-12 2xl:right-16 z-20 pointer-events-auto animate-fade-in" style={{ animationDelay: '0.5s' }}>
+            <div className="bg-primary text-primary-foreground px-6 py-3 2xl:px-8 2xl:py-4 rounded-full font-bold shadow-pink text-base 2xl:text-lg whitespace-nowrap">
               {t('hero.sachets')}
             </div>
           </div>
         </div>
       </div>
 
-      <div className="container-main relative z-10 pt-20 lg:pt-24 pb-8">
+      <div className="container-main relative z-10 pt-20 lg:pt-24 2xl:pt-32 pb-8 2xl:pb-16 max-w-[1800px]">
         <div className="flex flex-col md:justify-center min-h-[calc(100vh-12rem)] md:min-h-[calc(100vh-10rem)]">
           {/* Mobile Carousel - Above text on mobile */}
           <div className="md:hidden relative mb-6">
@@ -120,30 +120,30 @@ const HeroSection: React.FC = () => {
           </div>
 
           {/* Content - Left Side */}
-          <div className="text-left w-full md:w-1/2 md:pr-8 lg:pr-12">
+          <div className="text-left w-full md:w-1/2 md:pr-8 lg:pr-12 2xl:pr-20">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/90 backdrop-blur-sm border border-primary/20 mb-4 md:mb-6 animate-fade-in">
-              <span className="text-xs sm:text-sm font-medium text-primary">
+            <div className="inline-flex items-center gap-2 px-4 py-2 2xl:px-6 2xl:py-3 rounded-full bg-secondary/90 backdrop-blur-sm border border-primary/20 mb-4 md:mb-6 2xl:mb-8 animate-fade-in">
+              <span className="text-xs sm:text-sm 2xl:text-base font-medium text-primary">
                 {t('hero.badge')}
               </span>
             </div>
 
-            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-bold leading-tight mb-2 animate-fade-in text-foreground" style={{ animationDelay: '0.1s' }}>
+            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-bold leading-tight mb-2 2xl:mb-4 animate-fade-in text-foreground" style={{ animationDelay: '0.1s' }}>
               {t('hero.title')}
             </h1>
             
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold mb-4 md:mb-6 animate-fade-in text-primary" style={{ animationDelay: '0.15s' }}>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold mb-4 md:mb-6 2xl:mb-8 animate-fade-in text-primary" style={{ animationDelay: '0.15s' }}>
               {t('hero.brand')}
-              <span className="text-base sm:text-lg md:text-xl align-super">®</span>
+              <span className="text-base sm:text-lg md:text-xl 2xl:text-2xl align-super">®</span>
             </h2>
 
-            <p className="text-xs sm:text-sm md:text-base text-muted-foreground mb-6 md:mb-8 animate-fade-in text-balance leading-relaxed" style={{ animationDelay: '0.2s' }}>
+            <p className="text-xs sm:text-sm md:text-base 2xl:text-lg text-muted-foreground mb-6 md:mb-8 2xl:mb-10 animate-fade-in text-balance leading-relaxed 2xl:max-w-xl" style={{ animationDelay: '0.2s' }}>
               {t('hero.subtitle')}
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 2xl:gap-5 animate-fade-in" style={{ animationDelay: '0.3s' }}>
               <Button 
-                className="btn-primary text-sm md:text-base w-full sm:w-auto"
+                className="btn-primary text-sm md:text-base 2xl:text-lg 2xl:px-10 2xl:py-4 w-full sm:w-auto"
                 asChild
               >
                 <a href="https://arzonapteka.uz/en/search-medicines?q=%D1%84%D0%B5%D1%80%D1%84%D0%B5%D1%80" target="_blank" rel="noopener noreferrer">
@@ -152,24 +152,24 @@ const HeroSection: React.FC = () => {
               </Button>
               <Button 
                 variant="outline" 
-                className="btn-secondary text-sm md:text-base w-full sm:w-auto"
+                className="btn-secondary text-sm md:text-base 2xl:text-lg 2xl:px-10 2xl:py-4 w-full sm:w-auto"
                 onClick={() => setIsInstructionsOpen(true)}
               >
-                <FileText className="mr-2 w-4 h-4 md:w-5 md:h-5" />
+                <FileText className="mr-2 w-4 h-4 md:w-5 md:h-5 2xl:w-6 2xl:h-6" />
                 {t('hero.instructions')}
               </Button>
             </div>
 
             {/* Dots Indicator - Desktop only, left side */}
-            <div className="hidden md:flex gap-2 mt-8 md:mt-10 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+            <div className="hidden md:flex gap-2 2xl:gap-3 mt-8 md:mt-10 2xl:mt-14 animate-fade-in" style={{ animationDelay: '0.4s' }}>
               {productImages.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => goToSlide(index)}
-                  className={`h-2.5 rounded-full transition-all duration-300 ${
+                  className={`h-2.5 2xl:h-3 rounded-full transition-all duration-300 ${
                     index === currentSlide
-                      ? 'bg-primary w-8'
-                      : 'bg-primary/30 hover:bg-primary/50 w-2.5'
+                      ? 'bg-primary w-8 2xl:w-10'
+                      : 'bg-primary/30 hover:bg-primary/50 w-2.5 2xl:w-3'
                   }`}
                   aria-label={`Go to slide ${index + 1}`}
                 />
