@@ -41,12 +41,12 @@ const Header: React.FC = () => {
           isScrolled ? 'md:h-20' : 'md:h-28'
         }`}>
           {/* Logo */}
-          <a className="flex items-center">
+          <a className="flex items-center ">
             <img 
               src={pharmevoLogo} 
               alt="Pharmevo" 
-              className={`transition-all duration-300 w-auto h-20 ${
-                isScrolled ? '' : 'md:h-40'
+              className={`transition-all duration-300 w-auto h-20  ${
+                isScrolled ? '' : 'lg:h-40 py-4 px-6'
               }`}
             />
           </a>
