@@ -1,135 +1,106 @@
 
+# Scroll-Responsive Header with Dynamic Logo
 
-# Rewrite Instructions Based on Official Documents
+## Overview
 
-## Analysis Summary
+Create a header that transforms based on scroll position:
+- **At top (page just opened)**: Header blends into hero section with a 2x larger logo, no background/border
+- **After scrolling**: Header shrinks to current compact form with solid background
 
-I analyzed both uploaded official instruction documents and compared them with the current website content. Here are the key differences found:
+## Technical Approach
 
-### Current vs Official Content Comparison
+### Scroll Detection
+Add a scroll event listener that tracks the scroll position and updates state when crossing a threshold (e.g., 50px).
 
-| Section | Current Website | Official Document | Status |
-|---------|----------------|-------------------|--------|
-| Composition | Iron 14mg, Vit C 80mg, B12 2.5mcg | Same values | Correct |
-| Auxiliary substances | Not shown | Maltodextrin, mannitol, anhydrous dextrose, orange flavor durarom, sucralose | Missing |
-| Properties section | Not shown | Detailed iron, Vitamin C, B12 benefits | Missing |
-| Indications | Simplified text | Detailed liposomal technology explanation | Needs update |
-| Dosage | "Adults 14+" | "Adults 1-2 sachets/day" (no age restriction) | Needs update |
-| Contraindications | General text | Specific: iron salts sensitivity, hemosiderosis, hemochromatosis, hyperoxaluria | Needs update |
-| Side effects | Not shown | Detailed list with note about reduced frequency | Missing |
-| Special instructions | Not shown | BAD warning, pregnancy planning, children warning, overdose | Missing |
-| Storage | "25C" | "30C" (official) | Needs update |
-| Manufacturer | Not shown | PharmEvo (Pvt). Ltd., Pakistan | Missing |
+### Dynamic Styling
+Apply conditional classes based on scroll state:
+- **At top**: Transparent background, no border, larger height, 2x logo size
+- **Scrolled**: Current styling with background blur, border, compact height
 
-### Note on Uzbek Document
-The Uzbek document shows Iron as 40mg (likely a typo) vs 14mg in Russian. I will use the Russian document values as the authoritative source.
+## Implementation Details
 
----
+### File: `src/components/landing/Header.tsx`
 
-## Implementation Plan
-
-### Step 1: Update Translation Keys in LanguageContext
-
-Add new sections and update existing content based on official documents:
-
-**New keys to add:**
-- `hero.instructions.auxiliarySubstances` - Auxiliary ingredients
-- `hero.instructions.auxiliarySubstancesText` - Maltodextrin, mannitol, etc.
-- `hero.instructions.properties` - Properties section header
-- `hero.instructions.ironProperties` - Iron benefits (6 bullet points)
-- `hero.instructions.vitaminCProperties` - Vitamin C benefits (3 points)
-- `hero.instructions.vitaminB12Properties` - B12 benefits (5 points)
-- `hero.instructions.sideEffects` - Side effects section
-- `hero.instructions.sideEffectsText` - Detailed side effects info
-- `hero.instructions.specialInstructions` - Special instructions
-- `hero.instructions.specialInstructionsText` - BAD warning, usage guidelines
-- `hero.instructions.manufacturer` - Manufacturer section
-- `hero.instructions.manufacturerText` - PharmEvo details
-
-**Keys to update with official content:**
-- `hero.instructions.compositionText` - Keep current (correct)
-- `hero.instructions.indicationText` - Update with liposomal technology details
-- `hero.instructions.dosageText` - "1-2 sachets/day or as directed by doctor, without water"
-- `hero.instructions.contraindicationsText` - Add specific medical conditions
-- `hero.instructions.storageText` - Change to 30C, add light/heat/moisture protection
-
-### Step 2: Update HeroSection Modal Layout
-
-Reorganize the instructions modal to include all new sections:
-
+**Add scroll state tracking:**
 ```text
-Modal Structure:
-1. Title: Instructions for Use
-2. Composition (current)
-3. Auxiliary Substances (new)
-4. Properties (new - collapsible or bullet points)
-   - Iron properties
-   - Vitamin C properties  
-   - Vitamin B12 properties
-5. Indications (updated)
-6. Dosage (updated)
-7. Contraindications (updated)
-8. Side Effects (new)
-9. Special Instructions (new)
-10. Storage (updated)
-11. Shelf Life | Package (current layout)
-12. Manufacturer (new)
+- Add useState for isScrolled (boolean)
+- Add useEffect with scroll event listener
+- Set isScrolled = true when scrollY > 50
+- Clean up listener on unmount
 ```
 
----
+**Dynamic header container classes:**
 
-## Technical Details
+| State | Background | Border | Height |
+|-------|-----------|--------|--------|
+| At top | `bg-transparent` | None | `h-24 md:h-28` |
+| Scrolled | `bg-background/95 backdrop-blur-md` | `border-b border-border/30` | `h-16 md:h-20` |
 
-### Files to Modify
+**Dynamic logo sizing:**
+
+| State | Logo Height |
+|-------|-------------|
+| At top | `h-40` (2x current h-20) |
+| Scrolled | `h-20` (current) |
+
+**Smooth transitions:**
+Add `transition-all duration-300` to header and logo for smooth animation between states.
+
+### Code Structure
+
+```text
+const [isScrolled, setIsScrolled] = useState(false);
+
+useEffect(() => {
+  const handleScroll = () => {
+    setIsScrolled(window.scrollY > 50);
+  };
+  
+  window.addEventListener('scroll', handleScroll);
+  return () => window.removeEventListener('scroll', handleScroll);
+}, []);
+
+// Header classes
+className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+  isScrolled 
+    ? 'bg-background/95 backdrop-blur-md border-b border-border/30' 
+    : 'bg-transparent'
+}`}
+
+// Container height
+className={`flex items-center justify-between transition-all duration-300 ${
+  isScrolled ? 'h-16 md:h-20' : 'h-24 md:h-28'
+}`}
+
+// Logo size
+className={`transition-all duration-300 ${
+  isScrolled ? 'h-20' : 'h-40'
+} w-auto`}
+```
+
+## Visual Behavior
+
+```text
+Page Load (scroll = 0)
++--------------------------------------------------+
+|  [LARGE LOGO]           Nav Links      UZ | RU   |
+|                                                  |
+|     (transparent, no border, tall header)        |
++--------------------------------------------------+
+|                                                  |
+|              HERO CONTENT                        |
+|                                                  |
+
+After Scroll (scroll > 50px)
++--------------------------------------------------+
+| [logo]    Nav Links                    UZ | RU   |  <- compact, blurred bg
++--------------------------------------------------+
+|                                                  |
+|              PAGE CONTENT                        |
+```
+
+## Files to Modify
 
 | File | Changes |
 |------|---------|
-| `src/contexts/LanguageContext.tsx` | Add 12+ new translation keys, update 5 existing keys for both RU and UZ |
-| `src/components/landing/HeroSection.tsx` | Expand modal with new sections, improve layout for more content |
-
-### Translation Content (Russian - from official document)
-
-**Состав:**
-- Железо (в виде пирофосфат железа) — 14 мг
-- Витамин С — 80 мг  
-- Витамин В12 — 2,5 мкг
-
-**Вспомогательные вещества:**
-Мальтодекстрин, маннит, декстроза безводная, дюраром со вкусом апельсина и сукралоза.
-
-**Свойства Железа:**
-- поддерживает стабильный энергетический метаболизм
-- способствует нормальному транспорту кислорода в организме
-- способствует образованию гемоглобина
-- принимает участие в функции деления клеток
-- при планировании беременности
-- поддерживает оптимальное функционирование иммунной системы
-
-**Противопоказания (official):**
-Повышенная чувствительность к солям железа, аскорбиновой кислоте (витамин С) или любой форме витамина В12. Гемосидероз, гемохроматоз или анемии, отличные от железодефицитной анемии. Гипероксалурия.
-
-**Способ применения:**
-Дозировка для взрослых 1-2 саше в день или по назначению врача. Принимать без воды. Откройте 1 пакетик и положите в рот, не растворяя его в воде.
-
-**Условия хранения:**
-Храните в недоступном для детей месте. Защищайте от света, тепла и влаги. Хранить при температуре ниже 30°C.
-
-**Особые указания:**
-Биологически активная добавка, не являющаяся лекарственным средством. Используйте в соответствии с рекомендациями врача. Не превышайте рекомендуемую суточную дозу. Храните в недоступном для детей месте. Беременные и кормящие женщины должны проконсультироваться с врачом перед применением.
-
-**Производитель:**
-PharmEvo (Pvt). Ltd. (Nutraceutical Division), Pakistan
-
----
-
-## Summary
-
-This update will align the website instructions exactly with the official product documentation, adding:
-- Complete auxiliary ingredients list
-- Detailed properties for each active ingredient
-- Accurate medical contraindications
-- Side effects information with liposomal advantage note
-- Special usage instructions and warnings
-- Correct storage temperature (30C)
-- Manufacturer information
-
+| `src/components/landing/Header.tsx` | Add scroll listener, dynamic classes for header container, height, and logo size |
