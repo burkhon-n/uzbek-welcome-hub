@@ -67,7 +67,7 @@ const PartnersSection: React.FC = () => {
               </div>
             ))}
           </div>
-          <ScrollBar orientation="horizontal" />
+          <ScrollBar orientation="horizontal" className="invisible" />
         </ScrollArea>
 
       </div>
