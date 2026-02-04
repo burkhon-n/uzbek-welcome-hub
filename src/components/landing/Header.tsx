@@ -46,7 +46,7 @@ const Header: React.FC = () => {
               src={pharmevoLogo} 
               alt="Pharmevo" 
               className={`transition-all duration-300 w-auto h-20  ${
-                isScrolled ? '' : 'lg:h-40 py-4 px-6'
+                isScrolled ? '' : 'lg:h-40 lg:py-4 lg:px-6 xl:h-48 xl:py-6 xl:px-8'
               }`}
             />
           </a>
