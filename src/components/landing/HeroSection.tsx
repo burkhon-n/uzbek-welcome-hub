@@ -187,27 +187,66 @@ const HeroSection: React.FC = () => {
               {t('hero.instructions.title')}
             </DialogTitle>
           </DialogHeader>
-          <div className="space-y-6 pt-4">
+          <div className="space-y-5 pt-4">
+            {/* Composition */}
             <div>
               <h4 className="font-semibold text-foreground mb-2">{t('hero.instructions.composition')}</h4>
-              <p className="text-sm text-muted-foreground">{t('hero.instructions.compositionText')}</p>
+              <p className="text-sm text-muted-foreground whitespace-pre-line">{t('hero.instructions.compositionText')}</p>
             </div>
+
+            {/* Auxiliary Substances */}
+            <div>
+              <h4 className="font-semibold text-foreground mb-2">{t('hero.instructions.auxiliarySubstances')}</h4>
+              <p className="text-sm text-muted-foreground">{t('hero.instructions.auxiliarySubstancesText')}</p>
+            </div>
+
+            {/* Properties */}
+            <div>
+              <h4 className="font-semibold text-foreground mb-2">{t('hero.instructions.properties')}</h4>
+              <div className="space-y-3">
+                <p className="text-sm text-muted-foreground whitespace-pre-line">{t('hero.instructions.ironProperties')}</p>
+                <p className="text-sm text-muted-foreground whitespace-pre-line">{t('hero.instructions.vitaminCProperties')}</p>
+                <p className="text-sm text-muted-foreground whitespace-pre-line">{t('hero.instructions.vitaminB12Properties')}</p>
+              </div>
+            </div>
+
+            {/* Indications */}
             <div>
               <h4 className="font-semibold text-foreground mb-2">{t('hero.instructions.indication')}</h4>
               <p className="text-sm text-muted-foreground">{t('hero.instructions.indicationText')}</p>
             </div>
+
+            {/* Dosage */}
             <div>
               <h4 className="font-semibold text-foreground mb-2">{t('hero.instructions.dosage')}</h4>
               <p className="text-sm text-muted-foreground">{t('hero.instructions.dosageText')}</p>
             </div>
+
+            {/* Contraindications */}
             <div>
               <h4 className="font-semibold text-foreground mb-2">{t('hero.instructions.contraindications')}</h4>
               <p className="text-sm text-muted-foreground">{t('hero.instructions.contraindicationsText')}</p>
             </div>
+
+            {/* Side Effects */}
+            <div>
+              <h4 className="font-semibold text-foreground mb-2">{t('hero.instructions.sideEffects')}</h4>
+              <p className="text-sm text-muted-foreground">{t('hero.instructions.sideEffectsText')}</p>
+            </div>
+
+            {/* Special Instructions */}
+            <div>
+              <h4 className="font-semibold text-foreground mb-2">{t('hero.instructions.specialInstructions')}</h4>
+              <p className="text-sm text-muted-foreground">{t('hero.instructions.specialInstructionsText')}</p>
+            </div>
+
+            {/* Storage */}
             <div>
               <h4 className="font-semibold text-foreground mb-2">{t('hero.instructions.storage')}</h4>
               <p className="text-sm text-muted-foreground">{t('hero.instructions.storageText')}</p>
             </div>
+
+            {/* Shelf Life & Package */}
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <h4 className="font-semibold text-foreground mb-2">{t('hero.instructions.shelfLife')}</h4>
@@ -217,6 +256,12 @@ const HeroSection: React.FC = () => {
                 <h4 className="font-semibold text-foreground mb-2">{t('hero.instructions.package')}</h4>
                 <p className="text-sm text-muted-foreground">{t('hero.instructions.packageText')}</p>
               </div>
+            </div>
+
+            {/* Manufacturer */}
+            <div className="pt-2 border-t border-border">
+              <h4 className="font-semibold text-foreground mb-2">{t('hero.instructions.manufacturer')}</h4>
+              <p className="text-sm text-muted-foreground">{t('hero.instructions.manufacturerText')}</p>
             </div>
           </div>
         </DialogContent>
