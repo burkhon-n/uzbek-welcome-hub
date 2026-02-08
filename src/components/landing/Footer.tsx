@@ -101,18 +101,10 @@ const Footer: React.FC = () => {
 
         {/* Bottom bar */}
         <div className="mt-12 pt-8 border-t border-background/10">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-4">
             <p className="text-background/60 text-sm">
-              {t('footer.rights')}
+              © {new Date().getFullYear()} {t('footer.rights')}
             </p>
-            <div className="flex items-center gap-6 text-sm">
-              <a href="#" className="text-background/60 hover:text-background transition-colors">
-                {t('footer.privacy')}
-              </a>
-              <a href="#" className="text-background/60 hover:text-background transition-colors">
-                {t('footer.terms')}
-              </a>
-            </div>
           </div>
         </div>
       </div>
