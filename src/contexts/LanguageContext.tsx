@@ -83,6 +83,8 @@ const translations: Record<Language, Record<string, string>> = {
     'benefits.item2': 'Не взаимодействует с пищей',
     'benefits.item3': 'Высокая биодоступность',
     'benefits.item4': 'Без металлического привкуса',
+    'benefits.liposomalIron': 'Липосомное железо',
+    'benefits.microFormula': 'Микрокапсулированная формула',
     
     // Iron Deficiency Section
     'deficiency.title': 'Почему обычное железо не подходит',
@@ -211,6 +213,8 @@ const translations: Record<Language, Record<string, string>> = {
     'benefits.item2': 'Oziq-ovqat bilan ta\'sir qilmaydi',
     'benefits.item3': 'Yuqori biokiraolishlik',
     'benefits.item4': 'Metall ta\'misiz',
+    'benefits.liposomalIron': 'Liposomal temir',
+    'benefits.microFormula': 'Mikrokapsulalangan formula',
     
     // Iron Deficiency Section
     'deficiency.title': 'Nima uchun oddiy temir mos kelmaydi',

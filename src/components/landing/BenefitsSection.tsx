@@ -13,7 +13,7 @@ const BenefitsSection: React.FC = () => {
   ];
 
   return (
-    <section id="benefits" className="py-20 md:py-28 relative overflow-hidden">
+    <section id="benefits" aria-label="Преимущества Ferfer®" className="py-20 md:py-28 relative overflow-hidden">
       {/* Pink gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-accent/10 to-secondary" />
       
@@ -62,10 +62,10 @@ const BenefitsSection: React.FC = () => {
                     <span className="text-3xl font-bold text-primary-foreground">Fe</span>
                   </div>
                   <h3 className="text-lg font-bold text-foreground mb-2">
-                    Липосомное железо
+                    {t('benefits.liposomalIron')}
                   </h3>
                   <p className="text-sm text-muted-foreground">
-                    Микрокапсулированная формула
+                    {t('benefits.microFormula')}
                   </p>
                 </div>
 

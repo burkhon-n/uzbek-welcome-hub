@@ -19,7 +19,7 @@ const FAQSection: React.FC = () => {
   ];
 
   return (
-    <section id="faq" className="section-padding bg-secondary/30 relative overflow-hidden">
+    <section id="faq" aria-label="Часто задаваемые вопросы о Ferfer®" className="section-padding bg-secondary/30 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-20 right-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-20 left-0 w-80 h-80 bg-accent/20 rounded-full blur-3xl" />

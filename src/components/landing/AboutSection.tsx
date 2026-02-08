@@ -39,7 +39,7 @@ const AboutSection: React.FC = () => {
   ];
 
   return (
-    <section id="about" className="section-padding pt-0 bg-background relative overflow-hidden">
+    <section id="about" aria-label="О продукте Ferfer®" className="section-padding pt-0 bg-background relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 left-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-0 w-80 h-80 bg-accent/30 rounded-full blur-3xl" />
