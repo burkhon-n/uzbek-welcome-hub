@@ -1,5 +1,4 @@
 import React from 'react';
-import { LanguageProvider } from '@/contexts/LanguageContext';
 import Header from '@/components/landing/Header';
 import HeroSection from '@/components/landing/HeroSection';
 import AboutSection from '@/components/landing/AboutSection';
@@ -11,20 +10,18 @@ import Footer from '@/components/landing/Footer';
 
 const Index: React.FC = () => {
   return (
-    <LanguageProvider>
-      <div className="min-h-screen bg-background">
-        <Header />
-        <main>
-          <HeroSection />
-          <AboutSection />
-          <BenefitsSection />
-          <CertificatesSection />
-          <PartnersSection />
-          <FAQSection />
-        </main>
-        <Footer />
-      </div>
-    </LanguageProvider>
+    <div className="min-h-screen bg-background">
+      <Header />
+      <main>
+        <HeroSection />
+        <AboutSection />
+        <BenefitsSection />
+        <CertificatesSection />
+        <PartnersSection />
+        <FAQSection />
+      </main>
+      <Footer />
+    </div>
   );
 };
 
