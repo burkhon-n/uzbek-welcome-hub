@@ -22,7 +22,7 @@ const PartnersSection: React.FC = () => {
   ];
 
   return (
-    <section id="partners" className="section-padding bg-background relative overflow-hidden">
+    <section id="partners" aria-label="Партнёрские аптеки" className="section-padding bg-background relative overflow-hidden">
       <div className="container-main relative z-10">
         {/* Section header */}
         <div className="text-center mb-12">
@@ -44,8 +44,11 @@ const PartnersSection: React.FC = () => {
                 <div className="w-32 h-32 rounded-full overflow-hidden mb-6 bg-muted flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
                   <img
                     src={partner.logo}
-                    alt={partner.name}
+                    alt={`${partner.name} — партнёрская аптека Ferfer® в Узбекистане`}
                     className="w-full h-full object-cover"
+                    loading="lazy"
+                    width={128}
+                    height={128}
                   />
                 </div>
 

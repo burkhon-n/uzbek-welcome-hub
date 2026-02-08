@@ -16,10 +16,10 @@ import ferferModel3 from '@/assets/products/ferfer-model-3.png';
 import ferferModel4 from '@/assets/products/ferfer-model-4.png';
 
 const productImages = [
-  { src: ferferModel1, alt: 'Ferfer Product Model 1' },
-  { src: ferferModel2, alt: 'Ferfer Product Model 2' },
-  { src: ferferModel3, alt: 'Ferfer Product Model 3' },
-  { src: ferferModel4, alt: 'Ferfer Product Model 4' },
+  { src: ferferModel1, alt: 'Ferfer® — липосомальное железо в саше, упаковка 30 штук' },
+  { src: ferferModel2, alt: 'Ferfer® — БАД с микрокапсулированным железом и витаминами C и B12' },
+  { src: ferferModel3, alt: 'Ferfer® — инновационная формула с апельсиновым вкусом' },
+  { src: ferferModel4, alt: 'Ferfer® — биологически активная добавка для восполнения дефицита железа' },
 ];
 
 const HeroSection: React.FC = () => {
@@ -40,7 +40,7 @@ const HeroSection: React.FC = () => {
   };
 
   return (
-    <section id="home" className="relative min-h-screen overflow-hidden bg-background px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
+    <section id="home" aria-label="Ferfer® — главная секция" className="relative min-h-screen overflow-hidden bg-background px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
       {/* Background Product Images - Hidden on mobile, right side on desktop */}
       <div className="hidden md:block absolute inset-y-0 left-auto right-0 w-3/5 lg:w-1/2 xl:w-[55%] 2xl:w-[50%] pointer-events-none">
         <div className="relative h-full flex items-center justify-center">

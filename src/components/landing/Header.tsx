@@ -52,7 +52,7 @@ const Header: React.FC = () => {
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-4 lg:gap-8">
+          <nav aria-label="Main navigation" className="hidden md:flex items-center gap-4 lg:gap-8">
             {navItems.map((item) => (
               <a
                 key={item.key}
@@ -100,7 +100,7 @@ const Header: React.FC = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="md:hidden py-4 border-t border-border/30 animate-fade-in">
+          <nav aria-label="Mobile navigation" className="md:hidden py-4 border-t border-border/30 animate-fade-in">
             <div className="flex flex-col gap-2">
               {navItems.map((item) => (
                 <a

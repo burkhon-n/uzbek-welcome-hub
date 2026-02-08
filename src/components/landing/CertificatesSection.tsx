@@ -52,7 +52,7 @@ const CertificatesSection: React.FC = () => {
   };
 
   return (
-    <section id="certificates" className="section-padding bg-secondary/30">
+    <section id="certificates" aria-label="Сертификаты качества Ferfer®" className="section-padding bg-secondary/30">
       <div className="container-main">
         <div className="text-center mb-10 md:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">
