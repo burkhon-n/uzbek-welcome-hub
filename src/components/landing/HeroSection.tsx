@@ -14,12 +14,40 @@ import ferferModel1 from '@/assets/products/ferfer-model-1.png';
 import ferferModel2 from '@/assets/products/ferfer-model-2.png';
 import ferferModel3 from '@/assets/products/ferfer-model-3.png';
 import ferferModel4 from '@/assets/products/ferfer-model-4.png';
+import ferferModel1Webp from '@/assets/products/ferfer-model-1.webp';
+import ferferModel2Webp from '@/assets/products/ferfer-model-2.webp';
+import ferferModel3Webp from '@/assets/products/ferfer-model-3.webp';
+import ferferModel4Webp from '@/assets/products/ferfer-model-4.webp';
 
 const productImages = [
-  { src: ferferModel1, alt: 'Ferfer® — липосомальное железо в саше, упаковка 30 штук' },
-  { src: ferferModel2, alt: 'Ferfer® — БАД с микрокапсулированным железом и витаминами C и B12' },
-  { src: ferferModel3, alt: 'Ferfer® — инновационная формула с апельсиновым вкусом' },
-  { src: ferferModel4, alt: 'Ferfer® — биологически активная добавка для восполнения дефицита железа' },
+  {
+    src: ferferModel1,
+    webp: ferferModel1Webp,
+    alt: 'Ferfer® — липосомальное железо в саше, упаковка 30 штук',
+    width: 1080,
+    height: 864,
+  },
+  {
+    src: ferferModel2,
+    webp: ferferModel2Webp,
+    alt: 'Ferfer® — БАД с микрокапсулированным железом и витаминами C и B12',
+    width: 1080,
+    height: 864,
+  },
+  {
+    src: ferferModel3,
+    webp: ferferModel3Webp,
+    alt: 'Ferfer® — инновационная формула с апельсиновым вкусом',
+    width: 1080,
+    height: 864,
+  },
+  {
+    src: ferferModel4,
+    webp: ferferModel4Webp,
+    alt: 'Ferfer® — биологически активная добавка для восполнения дефицита железа',
+    width: 1080,
+    height: 864,
+  },
 ];
 
 const HeroSection: React.FC = () => {
@@ -35,31 +63,45 @@ const HeroSection: React.FC = () => {
     return () => clearInterval(timer);
   }, []);
 
+  useEffect(() => {
+    const nextIndex = (currentSlide + 1) % productImages.length;
+    const nextImage = productImages[nextIndex];
+    const preloadNext = new Image();
+    preloadNext.src = nextImage.src;
+    const preloadNextWebp = new Image();
+    preloadNextWebp.src = nextImage.webp;
+  }, [currentSlide]);
+
   const goToSlide = (index: number) => {
     setCurrentSlide(index);
   };
+
+  const activeImage = productImages[currentSlide];
+  const isInitialSlide = currentSlide === 0;
 
   return (
     <section id="home" aria-label="Ferfer® — главная секция" className="relative min-h-screen overflow-hidden bg-background px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
       {/* Background Product Images - Hidden on mobile, right side on desktop */}
       <div className="hidden md:block absolute inset-y-0 left-auto right-0 w-3/5 lg:w-1/2 xl:w-[55%] 2xl:w-[50%] pointer-events-none">
         <div className="relative h-full flex items-center justify-center">
-          {productImages.map((image, index) => (
-            <div
-              key={index}
-              className={`absolute inset-0 flex items-center justify-center transition-all duration-700 ease-in-out ${
-                index === currentSlide 
-                  ? 'opacity-100 scale-100' 
-                  : 'opacity-0 scale-105'
-              }`}
-            >
+          <div
+            key={activeImage.src}
+            className="absolute inset-0 flex items-center justify-center transition-all duration-700 ease-in-out animate-fade-in"
+          >
+            <picture>
+              <source srcSet={activeImage.webp} type="image/webp" />
               <img
-                src={image.src}
-                alt={image.alt}
+                src={activeImage.src}
+                alt={activeImage.alt}
+                width={activeImage.width}
+                height={activeImage.height}
                 className="w-full h-auto max-h-[70vh] 2xl:max-h-[80vh] object-contain p-8 md:p-12 lg:p-16 2xl:p-20"
+                loading="eager"
+                fetchPriority={isInitialSlide ? 'high' : 'auto'}
+                decoding="async"
               />
-            </div>
-          ))}
+            </picture>
+          </div>
           
 
           {/* Sachets badge - Bottom right of carousel on desktop */}
@@ -76,22 +118,24 @@ const HeroSection: React.FC = () => {
           {/* Mobile Carousel - Above text on mobile */}
           <div className="md:hidden relative mb-6">
             <div className="relative h-64 sm:h-80">
-              {productImages.map((image, index) => (
-                <div
-                  key={index}
-                  className={`absolute inset-0 flex items-center justify-center transition-all duration-700 ease-in-out ${
-                    index === currentSlide 
-                      ? 'opacity-100 scale-100' 
-                      : 'opacity-0 scale-105'
-                  }`}
-                >
+              <div
+                key={activeImage.src}
+                className="absolute inset-0 flex items-center justify-center transition-all duration-700 ease-in-out animate-fade-in"
+              >
+                <picture>
+                  <source srcSet={activeImage.webp} type="image/webp" />
                   <img
-                    src={image.src}
-                    alt={image.alt}
+                    src={activeImage.src}
+                    alt={activeImage.alt}
+                    width={activeImage.width}
+                    height={activeImage.height}
                     className="w-full h-full object-contain p-4"
+                    loading="eager"
+                    fetchPriority={isInitialSlide ? 'high' : 'auto'}
+                    decoding="async"
                   />
-                </div>
-              ))}
+                </picture>
+              </div>
               
               {/* Sachets badge - Bottom right of carousel on mobile */}
               <div className="absolute bottom-2 right-0 z-20 animate-fade-in" style={{ animationDelay: '0.5s' }}>
