@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useEffect, useState, ReactNode } from 'react';
 
 export type Language = 'ru' | 'uz';
 
@@ -10,6 +10,12 @@ interface LanguageContextType {
 
 const translations: Record<Language, Record<string, string>> = {
   ru: {
+    // Meta
+    'meta.title': 'Ферфер® — Биологически активная добавка с микрокапсулированным железом | Узбекистан',
+    'meta.description': 'Ферфер® — инновационная БАД с липосомальным железом 14 мг, витамином C 80 мг и B12 2,5 мкг. Высокая биодоступность, без побочных эффектов, приятный апельсиновый вкус. 30 саше в упаковке. Купить в аптеках Узбекистана.',
+    'meta.ogTitle': 'Ферфер® — Биологически активная добавка с микрокапсулированным железом',
+    'meta.ogDescription': 'Инновационная БАД с липосомальным железом 14 мг, витамином C и B12. Высокая биодоступность, без побочных эффектов. Купить в аптеках Узбекистана.',
+
     // Navigation
     'nav.home': 'Главная',
     'nav.about': 'О продукте',
@@ -140,6 +146,12 @@ const translations: Record<Language, Record<string, string>> = {
     'footer.terms': 'Условия использования',
   },
   uz: {
+    // Meta
+    'meta.title': "Ferfer® — Mikrokapsulalangan temirga ega biologik faol qo'shimcha | O'zbekiston",
+    'meta.description': "Ferfer® — 14 mg liposomal temir, 80 mg vitamin C va 2,5 mkg B12 vitaminiga ega innovatsion biologik faol qo'shimcha. Yuqori biokiraolishlik, nojo'ya ta'sirlarsiz, yoqimli apelsin ta'mi. Qadoqda 30 ta sashe. O'zbekiston dorixonalarida.",
+    'meta.ogTitle': "Ferfer® — Mikrokapsulalangan temirga ega biologik faol qo'shimcha",
+    'meta.ogDescription': "Innovatsion biologik faol qo'shimcha: 14 mg liposomal temir, vitamin C va B12. Yuqori biokiraolishlik, nojo'ya ta'sirlarsiz. O'zbekiston dorixonalarida.",
+
     // Navigation
     'nav.home': 'Bosh sahifa',
     'nav.about': 'Mahsulot haqida',
@@ -273,8 +285,121 @@ const translations: Record<Language, Record<string, string>> = {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
+const DEFAULT_LANGUAGE: Language = 'ru';
+
+const resolveInitialLanguage = (): Language => {
+  if (typeof window === 'undefined') {
+    return DEFAULT_LANGUAGE;
+  }
+
+  const path = window.location.pathname.toLowerCase();
+  if (path === '/uz' || path.startsWith('/uz/')) {
+    return 'uz';
+  }
+
+  const params = new URLSearchParams(window.location.search);
+  const urlLang = params.get('lang');
+  if (urlLang === 'ru' || urlLang === 'uz') {
+    return urlLang;
+  }
+
+  const storedLang = window.localStorage.getItem('language');
+  if (storedLang === 'ru' || storedLang === 'uz') {
+    return storedLang;
+  }
+
+  const browserLang = window.navigator.language.toLowerCase();
+  if (browserLang.startsWith('uz')) {
+    return 'uz';
+  }
+  if (browserLang.startsWith('ru')) {
+    return 'ru';
+  }
+
+  return DEFAULT_LANGUAGE;
+};
+
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>('ru');
+  const [language, setLanguage] = useState<Language>(() => resolveInitialLanguage());
+
+  useEffect(() => {
+    if (typeof window === 'undefined') {
+      return;
+    }
+
+    window.localStorage.setItem('language', language);
+    document.documentElement.lang = language;
+
+    const url = new URL(window.location.href);
+    const desiredPath = language === 'uz' ? '/uz/' : '/';
+    if (!url.pathname.startsWith(desiredPath)) {
+      url.pathname = desiredPath;
+    }
+    url.search = '';
+    const canonicalHref = `${url.origin}${url.pathname}`;
+    window.history.replaceState({}, '', canonicalHref);
+
+    const localizedTitle = translations[language]['meta.title'];
+    const localizedDescription = translations[language]['meta.description'];
+    const localizedOgTitle = translations[language]['meta.ogTitle'];
+    const localizedOgDescription = translations[language]['meta.ogDescription'];
+
+    if (localizedTitle) {
+      document.title = localizedTitle;
+      const titleMeta = document.querySelector<HTMLMetaElement>('meta[name="title"]');
+      if (titleMeta) {
+        titleMeta.content = localizedTitle;
+      }
+    }
+    if (localizedDescription) {
+      const descriptionMeta = document.querySelector<HTMLMetaElement>('meta[name="description"]');
+      if (descriptionMeta) {
+        descriptionMeta.content = localizedDescription;
+      }
+    }
+    if (localizedOgTitle) {
+      const ogTitle = document.querySelector<HTMLMetaElement>('meta[property="og:title"]');
+      if (ogTitle) {
+        ogTitle.content = localizedOgTitle;
+      }
+      const twitterTitle = document.querySelector<HTMLMetaElement>('meta[name="twitter:title"]');
+      if (twitterTitle) {
+        twitterTitle.content = localizedOgTitle;
+      }
+    }
+    if (localizedOgDescription) {
+      const ogDescription = document.querySelector<HTMLMetaElement>('meta[property="og:description"]');
+      if (ogDescription) {
+        ogDescription.content = localizedOgDescription;
+      }
+      const twitterDescription = document.querySelector<HTMLMetaElement>('meta[name="twitter:description"]');
+      if (twitterDescription) {
+        twitterDescription.content = localizedOgDescription;
+      }
+    }
+
+    const canonicalLink = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    if (canonicalLink) {
+      canonicalLink.href = canonicalHref;
+    }
+    const ogUrl = document.querySelector<HTMLMetaElement>('meta[property="og:url"]');
+    if (ogUrl) {
+      ogUrl.content = canonicalHref;
+    }
+    const twitterUrl = document.querySelector<HTMLMetaElement>('meta[name="twitter:url"]');
+    if (twitterUrl) {
+      twitterUrl.content = canonicalHref;
+    }
+
+    const ogLocale = document.querySelector<HTMLMetaElement>('meta[property="og:locale"]');
+    const ogLocaleAlt = document.querySelector<HTMLMetaElement>('meta[property="og:locale:alternate"]');
+    if (ogLocale) {
+      ogLocale.content = language === 'uz' ? 'uz_UZ' : 'ru_RU';
+    }
+    if (ogLocaleAlt) {
+      ogLocaleAlt.content = language === 'uz' ? 'ru_RU' : 'uz_UZ';
+    }
+  }, [language]);
 
   const t = (key: string): string => {
     return translations[language][key] || key;

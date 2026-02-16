@@ -1,38 +1,9 @@
 # Ferfer.uz - Robots.txt
-# https://ferfer.uz
+# https://ferfer.pharmevo.uz
 
 User-agent: *
 Allow: /
 
-# Sitemap location
-Sitemap: https://ferfer.uz/sitemap.xml
+Sitemap: https://ferfer.pharmevo.uz/sitemap.xml
 
-# Host directive for Yandex
-Host: https://ferfer.uz
-
-# Google
-User-agent: Googlebot
-Allow: /
-Crawl-delay: 1
-
-# Yandex
-User-agent: Yandex
-Allow: /
-Crawl-delay: 1
-
-# Bing
-User-agent: Bingbot
-Allow: /
-
-# Social media bots
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
-User-agent: LinkedInBot
-Allow: /
-
-# Disallow admin/private paths (none currently)
-# Disallow: /admin/
+Host: ferfer.pharmevo.uz

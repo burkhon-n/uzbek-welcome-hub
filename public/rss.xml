@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:yandex="http://news.yandex.ru"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ферфер®</title>
+    <link>https://ferfer.pharmevo.uz/</link>
+    <description>Обновления и информация о продукте Ferfer®.</description>
+    <language>ru</language>
+    <lastBuildDate>Mon, 16 Feb 2026 00:00:00 GMT</lastBuildDate>
+    <atom:link href="https://ferfer.pharmevo.uz/rss.xml" rel="self" type="application/rss+xml" />
+
+    <item>
+      <title>Ferfer®: описание продукта</title>
+      <link>https://ferfer.pharmevo.uz/</link>
+      <guid isPermaLink="true">https://ferfer.pharmevo.uz/</guid>
+      <pubDate>Mon, 16 Feb 2026 00:00:00 GMT</pubDate>
+      <yandex:full-text>Ферфер® — биологически активная добавка с микрокапсулированным липосомальным железом, витамином C и B12. Продукт хорошо переносится, не имеет металлического вкуса и выпускается в форме 30 саше.</yandex:full-text>
+    </item>
+  </channel>
+</rss>
