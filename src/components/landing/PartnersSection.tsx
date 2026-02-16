@@ -47,8 +47,10 @@ const PartnersSection: React.FC = () => {
                     alt={`${partner.name} — партнёрская аптека Ferfer® в Узбекистане`}
                     className="w-full h-full object-cover"
                     loading="lazy"
+                    decoding="async"
                     width={128}
                     height={128}
+                    srcSet={`${partner.logo}?w=128&h=128&fit=cover 1x, ${partner.logo}?w=256&h=256&fit=cover 2x`}
                   />
                 </div>
 

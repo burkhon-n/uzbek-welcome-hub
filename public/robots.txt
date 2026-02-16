@@ -1,9 +1,24 @@
 # Ferfer.uz - Robots.txt
 # https://ferfer.pharmevo.uz
 
+# Allow all search engines
 User-agent: *
 Allow: /
+Disallow: /admin
+Disallow: /.next
+Disallow: /.git
 
+# Google specific rules
+User-agent: Googlebot
+Allow: /
+
+# Yandex specific rules
+User-agent: Yandex
+Allow: /
+Crawl-delay: 0.1
+
+# Sitemap
 Sitemap: https://ferfer.pharmevo.uz/sitemap.xml
 
+# Host declaration
 Host: ferfer.pharmevo.uz

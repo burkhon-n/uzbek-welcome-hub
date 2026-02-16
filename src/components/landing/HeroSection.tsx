@@ -63,13 +63,26 @@ const HeroSection: React.FC = () => {
     return () => clearInterval(timer);
   }, []);
 
+  // Preload next image for smooth transitions
   useEffect(() => {
     const nextIndex = (currentSlide + 1) % productImages.length;
     const nextImage = productImages[nextIndex];
-    const preloadNext = new Image();
-    preloadNext.src = nextImage.src;
-    const preloadNextWebp = new Image();
-    preloadNextWebp.src = nextImage.webp;
+    
+    // Preload WebP version (modern browsers)
+    const linkWebp = document.createElement('link');
+    linkWebp.rel = 'preload';
+    linkWebp.as = 'image';
+    linkWebp.type = 'image/webp';
+    linkWebp.href = nextImage.webp;
+    document.head.appendChild(linkWebp);
+    
+    // Preload fallback PNG
+    const linkPng = document.createElement('link');
+    linkPng.rel = 'preload';
+    linkPng.as = 'image';
+    linkPng.type = 'image/png';
+    linkPng.href = nextImage.src;
+    document.head.appendChild(linkPng);
   }, [currentSlide]);
 
   const goToSlide = (index: number) => {

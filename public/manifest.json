@@ -1,0 +1,45 @@
+{
+  "name": "Ферфер® - Биологически активная добавка с микрокапсулированным железом",
+  "short_name": "Ферфер®",
+  "description": "Инновационная БАД с липосомальным железом 14 мг, витамином C 80 мг и B12 2,5 мкг. Высокая биодоступность, без побочных эффектов.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "#E91E8C",
+  "background_color": "#FFFFFF",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/og-image.jpg",
+      "sizes": "1200x630",
+      "type": "image/jpeg",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["health", "medical"],
+  "screenshots": [
+    {
+      "src": "/og-image.jpg",
+      "sizes": "1200x630",
+      "type": "image/jpeg",
+      "form_factor": "wide"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Инструкция по применению",
+      "short_name": "Инструкция",
+      "description": "Справка по использованию Ферфер®",
+      "url": "/?instructions=true",
+      "icons": []
+    }
+  ],
+  "prefer_related_applications": false,
+  "related_applications": []
+}
