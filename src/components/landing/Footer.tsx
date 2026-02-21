@@ -6,17 +6,17 @@ import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
 
 const Footer: React.FC = () => {
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
   const { toast } = useToast();
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const navLinks = [
-    { key: 'nav.home', href: '#home' },
-    { key: 'nav.about', href: '#about' },
-    { key: 'nav.benefits', href: '#benefits' },
-    { key: 'nav.buy', href: '#partners' },
-    { key: 'nav.faq', href: '#faq' },
+    { key: 'nav.home', href: `/${language}#home` },
+    { key: 'nav.about', href: `/${language}#about` },
+    { key: 'nav.benefits', href: `/${language}#benefits` },
+    { key: 'nav.buy', href: `/${language}#partners` },
+    { key: 'nav.faq', href: `/${language}#faq` },
   ];
 
   const socialLinks = [

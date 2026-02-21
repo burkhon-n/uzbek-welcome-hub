@@ -18,11 +18,11 @@ const Header: React.FC = () => {
   }, []);
 
   const navItems = [
-    { key: 'nav.home', href: '#home' },
-    { key: 'nav.about', href: '#about' },
-    { key: 'nav.benefits', href: '#benefits' },
-    { key: 'nav.buy', href: '#partners' },
-    { key: 'nav.faq', href: '#faq' },
+    { key: 'nav.home', href: `/${language}#home` },
+    { key: 'nav.about', href: `/${language}#about` },
+    { key: 'nav.benefits', href: `/${language}#benefits` },
+    { key: 'nav.buy', href: `/${language}#partners` },
+    { key: 'nav.faq', href: `/${language}#faq` },
   ];
 
   const languages: { code: Language; label: string }[] = [
