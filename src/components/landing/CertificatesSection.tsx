@@ -11,6 +11,7 @@ import {
 import gmpCertificate from '@/assets/certificates/gmp-certificate.jpg';
 import ruxsatnoma from '@/assets/certificates/ruxsatnoma.jpg';
 import sanitaryCertificate from '@/assets/certificates/sanitary-certificate.jpg';
+import halalCert from '@/assets/certificates/halal-cert.png';
 
 const CertificatesSection: React.FC = () => {
   const { t } = useLanguage();
@@ -58,9 +59,45 @@ const CertificatesSection: React.FC = () => {
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">
             {t('certificates.title')}
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-sm sm:text-base">
+          <p className="text-muted-foreground max-w-2xl mx-auto text-sm sm:text-base mb-8">
             {t('certificates.subtitle')}
           </p>
+          
+          {/* Trust Badges */}
+          <div className="flex items-center justify-center gap-6 sm:gap-10 md:gap-14 flex-wrap">
+            {/* GMP Badge */}
+            <div className="flex flex-col items-center gap-2 group">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-card border-2 border-border/50 flex items-center justify-center shadow-sm group-hover:shadow-md group-hover:border-primary/30 transition-all duration-300">
+                <svg viewBox="0 0 64 64" className="w-10 h-10 sm:w-12 sm:h-12" fill="none">
+                  <circle cx="32" cy="32" r="28" stroke="hsl(var(--muted-foreground))" strokeWidth="2" fill="hsl(var(--muted-foreground) / 0.1)" />
+                  <text x="32" y="36" textAnchor="middle" fill="hsl(var(--foreground))" fontSize="14" fontWeight="bold" fontFamily="sans-serif">GMP</text>
+                </svg>
+              </div>
+              <span className="text-xs sm:text-sm font-medium text-muted-foreground">GMP</span>
+            </div>
+
+            {/* ISO Badge */}
+            <div className="flex flex-col items-center gap-2 group">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-card border-2 border-border/50 flex items-center justify-center shadow-sm group-hover:shadow-md group-hover:border-primary/30 transition-all duration-300">
+                <svg viewBox="0 0 64 64" className="w-10 h-10 sm:w-12 sm:h-12" fill="none">
+                  <circle cx="32" cy="32" r="20" stroke="hsl(var(--muted-foreground))" strokeWidth="1.5" fill="none" />
+                  <ellipse cx="32" cy="32" rx="10" ry="20" stroke="hsl(var(--muted-foreground))" strokeWidth="1.5" fill="none" />
+                  <line x1="12" y1="32" x2="52" y2="32" stroke="hsl(var(--muted-foreground))" strokeWidth="1.5" />
+                  <line x1="32" y1="12" x2="32" y2="52" stroke="hsl(var(--muted-foreground))" strokeWidth="1.5" />
+                  <text x="32" y="60" textAnchor="middle" fill="hsl(var(--foreground))" fontSize="8" fontWeight="bold" fontFamily="sans-serif">ISO</text>
+                </svg>
+              </div>
+              <span className="text-xs sm:text-sm font-medium text-muted-foreground">ISO</span>
+            </div>
+
+            {/* Halal Badge */}
+            <div className="flex flex-col items-center gap-2 group">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-card border-2 border-border/50 flex items-center justify-center shadow-sm group-hover:shadow-md group-hover:border-primary/30 transition-all duration-300 overflow-hidden p-1">
+                <img src={halalCert} alt="Halal Certified" className="w-full h-full object-contain" />
+              </div>
+              <span className="text-xs sm:text-sm font-medium text-muted-foreground">Halal</span>
+            </div>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
