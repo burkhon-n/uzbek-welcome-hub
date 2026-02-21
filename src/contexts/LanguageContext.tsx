@@ -61,7 +61,8 @@ const translations: Record<Language, Record<string, string>> = {
     
     // About Section — Composition & How to Take
     'about.title': 'О продукте',
-    'about.description': 'Ferfer® — биологически активная добавка с тройной формулой: железо, витамин C и витамин B12 в каждом саше.',
+    'about.description1': 'Ferfer® — это биологически активная добавка, содержащая железо в микрокапсулированной липосомальной форме с витаминами C и B12.',
+    'about.description2': 'Инновационная технология позволяет железу лучше усваиваться, не раздражает желудочно-кишечный тракт и снижает риск типичных побочных эффектов.',
     
     'about.feature1.title': 'Железо — 14 мг',
     'about.feature1.desc': 'Микрокапсулированный пирофосфат железа в липосомальной оболочке. Защищён от разрушения в желудке.',
@@ -199,7 +200,8 @@ const translations: Record<Language, Record<string, string>> = {
     
     // About Section — Composition & How to Take
     'about.title': 'Mahsulot haqida',
-    'about.description': "Ferfer® — uchlik formulali biologik faol qo'shimcha: har bir sasheda temir, vitamin C va vitamin B12.",
+    'about.description1': "Ferfer® — bu tarkibida temir, vitamin C va vitamin B12 bo'lgan mikrokapsulalangan liposomal shakldagi biologik faol qo'shimcha.",
+    'about.description2': "Innovatsion texnologiya temirning yaxshiroq so'rilishini ta'minlaydi, oshqozon-ichak traktini bezovta qilmaydi va odatiy nojo'ya ta'sirlar xavfini kamaytiradi.",
     
     'about.feature1.title': 'Temir — 14 mg',
     'about.feature1.desc': "Liposomal qobiqli mikrokapsulalangan temir pirofosfat. Oshqozonda parchalanishdan himoyalangan.",

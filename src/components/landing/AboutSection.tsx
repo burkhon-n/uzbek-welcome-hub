@@ -27,7 +27,10 @@ const AboutSection: React.FC = () => {
             {t('about.title')}
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            {t('about.description')}
+            <strong className="text-foreground">Ferfer®</strong> {t('about.description1').replace('Ferfer® — ', '— ')}
+          </p>
+          <p className="text-lg text-muted-foreground leading-relaxed mt-3">
+            {t('about.description2')}
           </p>
         </div>
 
