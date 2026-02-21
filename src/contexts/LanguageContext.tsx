@@ -124,17 +124,6 @@ const translations: Record<Language, Record<string, string>> = {
     'faq.q5': 'Ferfer® — это лекарство?',
     'faq.a5': 'Нет. Ferfer® является биологически активной добавкой к пище и не относится к лекарственным средствам.',
     
-    'faq.q6': 'Сколько саше в упаковке?',
-    'faq.a6': '30 саше по 1,5 г каждый.',
-    
-    'faq.q7': 'Какие побочные эффекты возможны?',
-    'faq.a7': 'В редких случаях — дискомфорт в желудке, тошнота, запор или диарея. Благодаря липосомальной форме частота таких эффектов значительно ниже, чем у обычных препаратов железа.',
-    
-    'faq.q8': 'Как и где хранить?',
-    'faq.a8': 'При температуре ниже 30°C, в защищённом от света, тепла и влаги месте. Хранить в недоступном для детей месте. Срок годности — 24 месяца.',
-    
-    'faq.q9': 'Кто производитель?',
-    'faq.a9': 'PharmEvo (Pvt). Ltd. (Nutraceutical Division), Пакистан.',
     
     // Certificates Section
     'certificates.title': 'Сертификаты качества',
@@ -273,17 +262,6 @@ const translations: Record<Language, Record<string, string>> = {
     'faq.q5': "Ferfer® dori vositasimi?",
     'faq.a5': "Yo'q. Ferfer® biologik faol qo'shimcha hisoblanadi va dori vositalariga kirmaydi.",
     
-    'faq.q6': 'Qadoqda nechta sashe bor?',
-    'faq.a6': "30 ta sashe, har biri 1,5 g.",
-    
-    'faq.q7': "Qanday nojo'ya ta'sirlar bo'lishi mumkin?",
-    'faq.a7': "Kamdan-kam hollarda — oshqozonda noqulaylik, ko'ngil aynishi, qabziyat yoki diareya. Liposomal shakl tufayli bunday ta'sirlar chastotasi oddiy temir preparatlariga nisbatan ancha past.",
-    
-    'faq.q8': "Qanday va qayerda saqlash kerak?",
-    'faq.a8': "30°C dan past haroratda, yorug'lik, issiqlik va namlikdan himoyalangan joyda. Bolalar qo'li yetmaydigan joyda saqlang. Yaroqlilik muddati — 24 oy.",
-    
-    'faq.q9': "Ishlab chiqaruvchi kim?",
-    'faq.a9': 'PharmEvo (Pvt). Ltd. (Nutraceutical Division), Pokiston.',
     
     // Certificates Section
     'certificates.title': 'Sifat sertifikatlari',
