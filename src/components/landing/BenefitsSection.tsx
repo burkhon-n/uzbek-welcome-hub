@@ -1,15 +1,15 @@
 import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Check } from 'lucide-react';
+import { ShieldCheck, Sparkles, HeartPulse, Coffee } from 'lucide-react';
 
 const BenefitsSection: React.FC = () => {
   const { t } = useLanguage();
 
   const benefits = [
-    'benefits.item1',
-    'benefits.item2',
-    'benefits.item3',
-    'benefits.item4',
+    { key: 'benefits.item1', icon: ShieldCheck },
+    { key: 'benefits.item2', icon: Sparkles },
+    { key: 'benefits.item3', icon: HeartPulse },
+    { key: 'benefits.item4', icon: Coffee },
   ];
 
   return (
@@ -29,20 +29,28 @@ const BenefitsSection: React.FC = () => {
             </p>
             
             <div className="space-y-4">
-              {benefits.map((benefit, index) => (
-                <div
-                  key={benefit}
-                  className="flex items-start gap-4 p-4 bg-card/80 backdrop-blur-sm rounded-xl border border-border/50 shadow-sm hover:shadow-md transition-all duration-300"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
-                    <Check className="w-5 h-5 text-primary-foreground" />
+              {benefits.map((benefit, index) => {
+                const Icon = benefit.icon;
+                return (
+                  <div
+                    key={benefit.key}
+                    className="flex items-start gap-4 p-5 bg-card/80 backdrop-blur-sm rounded-xl border border-border/50 shadow-sm hover:shadow-md transition-all duration-300"
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                  >
+                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Icon className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="text-foreground font-semibold mb-1">
+                        {t(`${benefit.key}.title`)}
+                      </h3>
+                      <p className="text-muted-foreground text-sm leading-relaxed">
+                        {t(`${benefit.key}.desc`)}
+                      </p>
+                    </div>
                   </div>
-                  <p className="text-foreground font-medium pt-1">
-                    {t(benefit)}
-                  </p>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
 

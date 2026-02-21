@@ -1,41 +1,17 @@
 import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Zap, ShieldCheck, Clock, Sparkles, Activity, Heart } from 'lucide-react';
+import { Atom, Sun, Brain, Package, Pill, Thermometer } from 'lucide-react';
 
 const AboutSection: React.FC = () => {
   const { t } = useLanguage();
 
   const features = [
-    {
-      icon: Zap,
-      titleKey: 'about.feature1.title',
-      descKey: 'about.feature1.desc',
-    },
-    {
-      icon: ShieldCheck,
-      titleKey: 'about.feature2.title',
-      descKey: 'about.feature2.desc',
-    },
-    {
-      icon: Clock,
-      titleKey: 'about.feature3.title',
-      descKey: 'about.feature3.desc',
-    },
-    {
-      icon: Sparkles,
-      titleKey: 'about.feature4.title',
-      descKey: 'about.feature4.desc',
-    },
-    {
-      icon: Activity,
-      titleKey: 'about.feature5.title',
-      descKey: 'about.feature5.desc',
-    },
-    {
-      icon: Heart,
-      titleKey: 'about.feature6.title',
-      descKey: 'about.feature6.desc',
-    },
+    { icon: Atom, titleKey: 'about.feature1.title', descKey: 'about.feature1.desc' },
+    { icon: Sun, titleKey: 'about.feature2.title', descKey: 'about.feature2.desc' },
+    { icon: Brain, titleKey: 'about.feature3.title', descKey: 'about.feature3.desc' },
+    { icon: Package, titleKey: 'about.feature4.title', descKey: 'about.feature4.desc' },
+    { icon: Pill, titleKey: 'about.feature5.title', descKey: 'about.feature5.desc' },
+    { icon: Thermometer, titleKey: 'about.feature6.title', descKey: 'about.feature6.desc' },
   ];
 
   return (
