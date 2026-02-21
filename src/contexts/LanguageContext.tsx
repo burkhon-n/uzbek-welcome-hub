@@ -58,6 +58,8 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.instructions.packageText': '30 саше в упаковке.',
     'hero.instructions.manufacturer': 'Производитель',
     'hero.instructions.manufacturerText': 'PharmEvo (Pvt). Ltd. (Nutraceutical Division), Пакистан',
+    'hero.instructions.dispensing': 'Условия отпуска',
+    'hero.instructions.dispensingText': 'Отпускается без рецепта.',
     
     // About Section — Composition & How to Take
     'about.title': 'О продукте',
@@ -142,11 +144,16 @@ const translations: Record<Language, Record<string, string>> = {
     'footer.quickLinks': 'Быстрые ссылки',
     'footer.contact': 'Контакты',
     'footer.address': 'Ц-5 Киёт 68А, г. Ташкент, Узбекистан',
-    'footer.rights': 'Ferfer®. Все права защищены.',
+    'footer.rights': 'PharmEvo. Все права защищены.',
     'footer.warning': 'БАД не является лекарственным средством.',
     'footer.pharmevo': 'PharmEvo — Our dream, a healthier society',
     'footer.privacy': 'Политика конфиденциальности',
     'footer.terms': 'Условия использования',
+    'footer.subscribe.title': 'Подпишитесь на новости',
+    'footer.subscribe.placeholder': 'Укажите свой E-mail',
+    'footer.subscribe.button': 'Подписаться',
+    'footer.subscribe.disclaimer': 'Предложение действительно только для новых подписчиков. Нажимая на кнопку вы соглашаетесь с Политикой обработки данных.',
+    'footer.subscribe.success': 'Вы успешно подписались!',
   },
   uz: {
     // Meta
@@ -197,6 +204,8 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.instructions.packageText': 'Qadoqda 30 ta sashe.',
     'hero.instructions.manufacturer': 'Ishlab chiqaruvchi',
     'hero.instructions.manufacturerText': 'PharmEvo (Pvt). Ltd. (Nutraceutical Division), Pokiston',
+    'hero.instructions.dispensing': 'Berilish shartlari',
+    'hero.instructions.dispensingText': 'Retseptsiz beriladi.',
     
     // About Section — Composition & How to Take
     'about.title': 'Mahsulot haqida',
@@ -281,11 +290,16 @@ const translations: Record<Language, Record<string, string>> = {
     'footer.quickLinks': 'Tezkor havolalar',
     'footer.contact': 'Aloqa',
     'footer.address': "C-5 Qiyot 68А, Toshkent shahri, O'zbekiston",
-    'footer.rights': 'Ferfer®. Barcha huquqlar himoyalangan.',
+    'footer.rights': 'PharmEvo. Barcha huquqlar himoyalangan.',
     'footer.warning': "Biologik faol qo'shimcha dori vositasi hisoblanmaydi.",
     'footer.pharmevo': "PharmEvo — Bizning orzuimiz, sog'lom jamiyat",
     'footer.privacy': 'Maxfiylik siyosati',
     'footer.terms': 'Foydalanish shartlari',
+    'footer.subscribe.title': 'Yangiliklarga obuna bo\'ling',
+    'footer.subscribe.placeholder': 'E-mail manzilingizni kiriting',
+    'footer.subscribe.button': 'Obuna bo\'lish',
+    'footer.subscribe.disclaimer': 'Taklif faqat yangi obunachilar uchun amal qiladi. Tugmani bosish orqali siz Ma\'lumotlarni qayta ishlash siyosatiga rozilik bildirasiz.',
+    'footer.subscribe.success': 'Siz muvaffaqiyatli obuna bo\'ldingiz!',
   },
 };
 
