@@ -1,4 +1,5 @@
-import React, { createContext, useContext, useEffect, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useEffect, ReactNode, useMemo, useCallback } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 
 export type Language = 'ru' | 'uz';
 
@@ -61,7 +62,7 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.instructions.dispensing': 'Условия отпуска',
     'hero.instructions.dispensingText': 'Отпускается без рецепта.',
     
-    // About Section — Composition & How to Take
+    // About Section
     'about.title': 'О продукте',
     'about.description1': 'Ferfer® — это биологически активная добавка, содержащая железо в микрокапсулированной липосомальной форме с витаминами C и B₁₂.',
     'about.description2': 'Инновационная технология позволяет железу лучше усваиваться, не раздражает желудочно-кишечный тракт и снижает риск типичных побочных эффектов.',
@@ -84,7 +85,7 @@ const translations: Record<Language, Record<string, string>> = {
     'about.feature6.title': 'Хранение',
     'about.feature6.desc': 'При температуре до 30°C, в защищённом от света и влаги месте. Срок годности — 24 месяца.',
     
-    // Benefits Section — Liposomal vs Traditional Iron
+    // Benefits Section
     'benefits.title': 'Преимущества липосомальной формы',
     'benefits.subtitle': 'Почему Ferfer® переносится лучше обычных препаратов железа',
     
@@ -126,7 +127,6 @@ const translations: Record<Language, Record<string, string>> = {
     
     'faq.q5': 'Ferfer® — это лекарство?',
     'faq.a5': 'Нет. Ferfer® является биологически активной добавкой к пище и не относится к лекарственным средствам.',
-    
     
     // Certificates Section
     'certificates.title': 'Сертификаты качества',
@@ -207,7 +207,7 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.instructions.dispensing': 'Berilish shartlari',
     'hero.instructions.dispensingText': 'Retseptsiz beriladi.',
     
-    // About Section — Composition & How to Take
+    // About Section
     'about.title': 'Mahsulot haqida',
     'about.description1': "Ferfer® — bu tarkibida temir, vitamin C va vitamin B₁₂ bo'lgan mikrokapsulalangan liposomal shakldagi biologik faol qo'shimcha.",
     'about.description2': "Innovatsion texnologiya temirning yaxshiroq so'rilishini ta'minlaydi, oshqozon-ichak traktini bezovta qilmaydi va odatiy nojo'ya ta'sirlar xavfini kamaytiradi.",
@@ -230,7 +230,7 @@ const translations: Record<Language, Record<string, string>> = {
     'about.feature6.title': 'Saqlash',
     'about.feature6.desc': "30°C gacha haroratda, yorug'lik va namlikdan himoyalangan joyda. Yaroqlilik muddati — 24 oy.",
     
-    // Benefits Section — Liposomal vs Traditional Iron
+    // Benefits Section
     'benefits.title': 'Liposomal shaklning afzalliklari',
     'benefits.subtitle': "Nima uchun Ferfer® oddiy temir preparatlaridan yaxshiroq o'zlashtiriladi",
     
@@ -273,7 +273,6 @@ const translations: Record<Language, Record<string, string>> = {
     'faq.q5': "Ferfer® dori vositasimi?",
     'faq.a5': "Yo'q. Ferfer® biologik faol qo'shimcha hisoblanadi va dori vositalariga kirmaydi.",
     
-    
     // Certificates Section
     'certificates.title': 'Sifat sertifikatlari',
     'certificates.subtitle': 'Ferfer® xalqaro sifat va xavfsizlik standartlariga mos keladi',
@@ -305,59 +304,19 @@ const translations: Record<Language, Record<string, string>> = {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-const DEFAULT_LANGUAGE: Language = 'ru';
-
-const resolveInitialLanguage = (): Language => {
-  if (typeof window === 'undefined') {
-    return DEFAULT_LANGUAGE;
-  }
-
-  const path = window.location.pathname.toLowerCase();
-  if (path === '/uz' || path.startsWith('/uz/')) {
-    return 'uz';
-  }
-
-  const params = new URLSearchParams(window.location.search);
-  const urlLang = params.get('lang');
-  if (urlLang === 'ru' || urlLang === 'uz') {
-    return urlLang;
-  }
-
-  const storedLang = window.localStorage.getItem('language');
-  if (storedLang === 'ru' || storedLang === 'uz') {
-    return storedLang;
-  }
-
-  const browserLang = window.navigator.language.toLowerCase();
-  if (browserLang.startsWith('uz')) {
-    return 'uz';
-  }
-  if (browserLang.startsWith('ru')) {
-    return 'ru';
-  }
-
-  return DEFAULT_LANGUAGE;
-};
-
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>(() => resolveInitialLanguage());
+  const { lang } = useParams<{ lang: string }>();
+  const navigate = useNavigate();
+  
+  const language: Language = lang === 'uz' ? 'uz' : 'ru';
+
+  const setLanguage = useCallback((newLang: Language) => {
+    const hash = window.location.hash;
+    navigate(`/${newLang}${hash}`);
+  }, [navigate]);
 
   useEffect(() => {
-    if (typeof window === 'undefined') {
-      return;
-    }
-
-    window.localStorage.setItem('language', language);
     document.documentElement.lang = language;
-
-    const url = new URL(window.location.href);
-    const desiredPath = language === 'uz' ? '/uz/' : '/';
-    if (!url.pathname.startsWith(desiredPath)) {
-      url.pathname = desiredPath;
-    }
-    url.search = '';
-    const canonicalHref = `${url.origin}${url.pathname}`;
-    window.history.replaceState({}, '', canonicalHref);
 
     const localizedTitle = translations[language]['meta.title'];
     const localizedDescription = translations[language]['meta.description'];
@@ -367,66 +326,47 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
     if (localizedTitle) {
       document.title = localizedTitle;
       const titleMeta = document.querySelector<HTMLMetaElement>('meta[name="title"]');
-      if (titleMeta) {
-        titleMeta.content = localizedTitle;
-      }
+      if (titleMeta) titleMeta.content = localizedTitle;
     }
     if (localizedDescription) {
       const descriptionMeta = document.querySelector<HTMLMetaElement>('meta[name="description"]');
-      if (descriptionMeta) {
-        descriptionMeta.content = localizedDescription;
-      }
+      if (descriptionMeta) descriptionMeta.content = localizedDescription;
     }
     if (localizedOgTitle) {
       const ogTitle = document.querySelector<HTMLMetaElement>('meta[property="og:title"]');
-      if (ogTitle) {
-        ogTitle.content = localizedOgTitle;
-      }
+      if (ogTitle) ogTitle.content = localizedOgTitle;
       const twitterTitle = document.querySelector<HTMLMetaElement>('meta[name="twitter:title"]');
-      if (twitterTitle) {
-        twitterTitle.content = localizedOgTitle;
-      }
+      if (twitterTitle) twitterTitle.content = localizedOgTitle;
     }
     if (localizedOgDescription) {
       const ogDescription = document.querySelector<HTMLMetaElement>('meta[property="og:description"]');
-      if (ogDescription) {
-        ogDescription.content = localizedOgDescription;
-      }
+      if (ogDescription) ogDescription.content = localizedOgDescription;
       const twitterDescription = document.querySelector<HTMLMetaElement>('meta[name="twitter:description"]');
-      if (twitterDescription) {
-        twitterDescription.content = localizedOgDescription;
-      }
+      if (twitterDescription) twitterDescription.content = localizedOgDescription;
     }
 
+    const canonicalHref = `${window.location.origin}/${language}`;
     const canonicalLink = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
-    if (canonicalLink) {
-      canonicalLink.href = canonicalHref;
-    }
+    if (canonicalLink) canonicalLink.href = canonicalHref;
     const ogUrl = document.querySelector<HTMLMetaElement>('meta[property="og:url"]');
-    if (ogUrl) {
-      ogUrl.content = canonicalHref;
-    }
+    if (ogUrl) ogUrl.content = canonicalHref;
     const twitterUrl = document.querySelector<HTMLMetaElement>('meta[name="twitter:url"]');
-    if (twitterUrl) {
-      twitterUrl.content = canonicalHref;
-    }
+    if (twitterUrl) twitterUrl.content = canonicalHref;
 
     const ogLocale = document.querySelector<HTMLMetaElement>('meta[property="og:locale"]');
     const ogLocaleAlt = document.querySelector<HTMLMetaElement>('meta[property="og:locale:alternate"]');
-    if (ogLocale) {
-      ogLocale.content = language === 'uz' ? 'uz_UZ' : 'ru_RU';
-    }
-    if (ogLocaleAlt) {
-      ogLocaleAlt.content = language === 'uz' ? 'ru_RU' : 'uz_UZ';
-    }
+    if (ogLocale) ogLocale.content = language === 'uz' ? 'uz_UZ' : 'ru_RU';
+    if (ogLocaleAlt) ogLocaleAlt.content = language === 'uz' ? 'ru_RU' : 'uz_UZ';
   }, [language]);
 
-  const t = (key: string): string => {
+  const t = useCallback((key: string): string => {
     return translations[language][key] || key;
-  };
+  }, [language]);
+
+  const value = useMemo(() => ({ language, setLanguage, t }), [language, setLanguage, t]);
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+    <LanguageContext.Provider value={value}>
       {children}
     </LanguageContext.Provider>
   );
