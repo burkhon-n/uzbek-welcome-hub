@@ -16,10 +16,6 @@ const FAQSection: React.FC = () => {
     { question: 'faq.q3', answer: 'faq.a3' },
     { question: 'faq.q4', answer: 'faq.a4' },
     { question: 'faq.q5', answer: 'faq.a5' },
-    { question: 'faq.q6', answer: 'faq.a6' },
-    { question: 'faq.q7', answer: 'faq.a7' },
-    { question: 'faq.q8', answer: 'faq.a8' },
-    { question: 'faq.q9', answer: 'faq.a9' },
   ];
 
   return (
