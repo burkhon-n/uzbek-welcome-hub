@@ -228,8 +228,11 @@ const HeroSection: React.FC = () => {
         <DialogContent className="max-w-2xl w-[95vw] max-h-[85vh] overflow-y-auto">
           <DialogHeader>
             <DialogTitle className="text-xl font-bold text-primary">
-              {t('hero.instructions.title')}
+              Ferfer® (Ферфер)
             </DialogTitle>
+            <p className="text-sm text-muted-foreground">
+              {t('hero.instructions.title')}
+            </p>
           </DialogHeader>
           <div className="space-y-5 pt-4">
             {/* Composition */}
