@@ -27,7 +27,7 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.badge': 'Инновационная микрокапсулированная технология',
     'hero.title': 'Биологически активная добавка',
     'hero.brand': 'ФЕРФЕР',
-    'hero.subtitle': 'Биологически активная добавка с микрокапсулированным липосомальным железом, витамином C и B12. Быстро растворяется во рту, хорошо переносится, без металлического вкуса.',
+    'hero.subtitle': 'Восполнение дефицита железа без дискомфорта. Быстро растворяется во рту, приятный апельсиновый вкус, не требует воды.',
     'hero.cta': 'Купить сейчас',
     'hero.instructions': 'Инструкция',
     'hero.sachets': '30 саше',
@@ -59,45 +59,46 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.instructions.manufacturer': 'Производитель',
     'hero.instructions.manufacturerText': 'PharmEvo (Pvt). Ltd. (Nutraceutical Division), Пакистан',
     
-    // About Section
+    // About Section — Composition & How to Take
     'about.title': 'О продукте',
-    'about.description': 'Ferfer® — это биологически активная добавка, содержащая железо в микрокапсулированной липосомальной форме с витаминами C и B12. Инновационная технология позволяет железу лучше усваиваться, не раздражает желудочно-кишечный тракт и снижает риск типичных побочных эффектов.',
+    'about.description': 'Ferfer® — биологически активная добавка с тройной формулой: железо, витамин C и витамин B12 в каждом саше.',
     
-    'about.feature1.title': 'Липосомальное железо',
-    'about.feature1.desc': 'Защищено от окисления в желудке, не взаимодействует с пищей.',
+    'about.feature1.title': 'Железо — 14 мг',
+    'about.feature1.desc': 'Микрокапсулированный пирофосфат железа в липосомальной оболочке. Защищён от разрушения в желудке.',
     
-    'about.feature2.title': 'Высокая биодоступность',
-    'about.feature2.desc': 'Эффективное усвоение железа, способствует повышению уровня гемоглобина и ферритина.',
+    'about.feature2.title': 'Витамин С — 80 мг',
+    'about.feature2.desc': 'Усиливает всасывание железа, поддерживает синтез коллагена и укрепляет иммунитет.',
     
-    'about.feature3.title': 'Хорошая переносимость',
-    'about.feature3.desc': 'Сниженная частота побочных эффектов, не вызывает металлического вкуса.',
+    'about.feature3.title': 'Витамин B12 — 2,5 мкг',
+    'about.feature3.desc': 'Участвует в кроветворении, снижает утомляемость и поддерживает нервную систему.',
     
-    'about.feature4.title': 'Удобство приёма',
-    'about.feature4.desc': 'Быстро растворяется во рту, не требует воды, приятный апельсиновый вкус.',
+    'about.feature4.title': 'Форма саше',
+    'about.feature4.desc': '1,5 г гранул с апельсиновым вкусом. Растворяются во рту — не нужна вода.',
     
-    'about.feature5.title': 'Витамин C',
-    'about.feature5.desc': '80 мг в каждом саше для улучшения усвоения железа.',
+    'about.feature5.title': 'Дозировка',
+    'about.feature5.desc': 'Взрослым и подросткам от 14 лет — 1–2 саше в день или по назначению врача.',
     
-    'about.feature6.title': 'Витамин B12',
-    'about.feature6.desc': '2,5 мкг в каждом саше для поддержки кроветворения.',
+    'about.feature6.title': 'Хранение',
+    'about.feature6.desc': 'При температуре до 30°C, в защищённом от света и влаги месте. Срок годности — 24 месяца.',
     
-    // Benefits Section
-    'benefits.title': 'Почему выбирают Ferfer®',
-    'benefits.subtitle': 'Ferfer® — микрокапсулированный липосомальный пирофосфат железа',
+    // Benefits Section — Liposomal vs Traditional Iron
+    'benefits.title': 'Преимущества липосомальной формы',
+    'benefits.subtitle': 'Почему Ferfer® переносится лучше обычных препаратов железа',
     
-    'benefits.item1': 'Защищает железо от окисления в желудке',
-    'benefits.item2': 'Не взаимодействует с пищей',
-    'benefits.item3': 'Высокая биодоступность',
-    'benefits.item4': 'Без металлического привкуса',
+    'benefits.item1.title': 'Защита от окисления',
+    'benefits.item1.desc': 'Липосомальная оболочка защищает железо от контакта с желудочным соком, исключая окисление и раздражение слизистой.',
+    
+    'benefits.item2.title': 'Нет металлического привкуса',
+    'benefits.item2.desc': 'Традиционные формы железа оставляют неприятный вкус. Lipосомальная капсула полностью нейтрализует этот эффект.',
+    
+    'benefits.item3.title': 'Меньше побочных эффектов',
+    'benefits.item3.desc': 'Обычное железо часто вызывает тошноту, запоры и диарею. Липосомальная технология значительно снижает их частоту.',
+    
+    'benefits.item4.title': 'Независимость от приёма пищи',
+    'benefits.item4.desc': 'Ferfer® не взаимодействует с едой, чаем или кофе — принимайте в любое удобное время.',
+    
     'benefits.liposomalIron': 'Липосомное железо',
     'benefits.microFormula': 'Микрокапсулированная формула',
-    
-    // Iron Deficiency Section
-    'deficiency.title': 'Почему обычное железо не подходит',
-    'deficiency.subtitle': 'Традиционные формы железа могут вызывать неприятные побочные эффекты.',
-    'deficiency.point1': 'Тошноту и дискомфорт в желудке.',
-    'deficiency.point2': 'Запоры или диарею.',
-    'deficiency.point3': 'Металлический вкус и окрашивание слизистых оболочек.',
     
     // Partners Section
     'partners.title': 'Где купить?',
@@ -109,19 +110,31 @@ const translations: Record<Language, Record<string, string>> = {
     'faq.subtitle': 'Ответы на популярные вопросы о Ferfer®',
     
     'faq.q1': 'Что такое Ferfer®?',
-    'faq.a1': 'Ferfer® — биологически активная добавка с микрокапсулированным липосомальным железом и витаминами C и B12.',
+    'faq.a1': 'Ferfer® — биологически активная добавка с железом 14 мг, витамином C 80 мг и витамином B12 2,5 мкг в форме саше с апельсиновым вкусом. Не является лекарственным средством.',
     
     'faq.q2': 'Как принимать Ferfer®?',
-    'faq.a2': 'Взрослым и подросткам старше 14 лет — 1–2 саше в день, не размешивая в воде, или по рекомендации специалиста.',
+    'faq.a2': 'Откройте саше и высыпьте содержимое прямо в рот — гранулы растворятся самостоятельно. Вода не требуется. Рекомендуется 1–2 саше в день для взрослых и подростков от 14 лет.',
     
-    'faq.q3': 'Есть ли побочные эффекты?',
-    'faq.a3': 'Благодаря липосомальной форме частота типичных побочных эффектов железа значительно снижена.',
+    'faq.q3': 'Какие противопоказания?',
+    'faq.a3': 'Повышенная чувствительность к солям железа, витамину С или B12. Гемосидероз, гемохроматоз и анемии, не связанные с дефицитом железа. При гипероксалурии также следует воздержаться от приёма.',
     
     'faq.q4': 'Можно ли принимать беременным?',
-    'faq.a4': 'Беременным и кормящим женщинам перед применением необходимо проконсультироваться с врачом.',
+    'faq.a4': 'Беременным и кормящим женщинам перед началом приёма необходимо проконсультироваться с врачом.',
+    
+    'faq.q5': 'Ferfer® — это лекарство?',
+    'faq.a5': 'Нет. Ferfer® является биологически активной добавкой к пище и не относится к лекарственным средствам.',
     
     'faq.q6': 'Сколько саше в упаковке?',
-    'faq.a6': 'В одной упаковке содержится 30 саше с апельсиновым вкусом.',
+    'faq.a6': '30 саше по 1,5 г каждый.',
+    
+    'faq.q7': 'Какие побочные эффекты возможны?',
+    'faq.a7': 'В редких случаях — дискомфорт в желудке, тошнота, запор или диарея. Благодаря липосомальной форме частота таких эффектов значительно ниже, чем у обычных препаратов железа.',
+    
+    'faq.q8': 'Как и где хранить?',
+    'faq.a8': 'При температуре ниже 30°C, в защищённом от света, тепла и влаги месте. Хранить в недоступном для детей месте. Срок годности — 24 месяца.',
+    
+    'faq.q9': 'Кто производитель?',
+    'faq.a9': 'PharmEvo (Pvt). Ltd. (Nutraceutical Division), Пакистан.',
     
     // Certificates Section
     'certificates.title': 'Сертификаты качества',
@@ -161,33 +174,33 @@ const translations: Record<Language, Record<string, string>> = {
     
     // Hero Section
     'hero.badge': 'Innovatsion mikrokapsulalangan texnologiya',
-    'hero.title': 'Biologik faol qo\'shimcha',
+    'hero.title': "Biologik faol qo'shimcha",
     'hero.brand': 'FERFER',
-    'hero.subtitle': 'Mikrokapsulalangan liposomal temir, C va B12 vitaminlarini o\'z ichiga olgan biologik faol qo\'shimcha. Og\'izda tez eriydi, yaxshi o\'zlashtiriladi, metall ta\'mi yo\'q.',
+    'hero.subtitle': "Temir tanqisligini noqulayliksiz to'ldirish. Og'izda tez eriydi, yoqimli apelsin ta'mi, suv talab qilmaydi.",
     'hero.cta': 'Hozir sotib olish',
-    'hero.instructions': 'Ko\'rsatma',
+    'hero.instructions': "Ko'rsatma",
     'hero.sachets': '30 sashe',
-    'hero.instructions.title': 'Qo\'llash bo\'yicha ko\'rsatma',
+    'hero.instructions.title': "Qo'llash bo'yicha ko'rsatma",
     'hero.instructions.composition': 'Tarkibi (1 sashe, 1,5 g uchun)',
     'hero.instructions.compositionText': 'Temir (temir pirofosfat shaklida) — 14 mg\nVitamin C — 80 mg\nVitamin B12 — 2,5 mkg',
     'hero.instructions.auxiliarySubstances': 'Yordamchi moddalar',
-    'hero.instructions.auxiliarySubstancesText': 'Maltodekstrin, mannit, suvsiz dekstroza, apelsin ta\'mli durarom va sukraloza.',
+    'hero.instructions.auxiliarySubstancesText': "Maltodekstrin, mannit, suvsiz dekstroza, apelsin ta'mli durarom va sukraloza.",
     'hero.instructions.properties': 'Xususiyatlari',
-    'hero.instructions.ironProperties': 'Temir:\n• barqaror energiya almashinuvini qo\'llab-quvvatlaydi\n• organizmda kislorodning normal tashilishiga yordam beradi\n• gemoglobin hosil bo\'lishiga yordam beradi\n• hujayra bo\'linishi funktsiyasida ishtirok etadi\n• homiladorlikni rejalashtirishda muhim\n• immunitet tizimining optimal ishlashini qo\'llab-quvvatlaydi',
-    'hero.instructions.vitaminCProperties': 'Vitamin C:\n• temirning o\'zlashtirilishini yaxshilaydi\n• kollagen sinteziga yordam beradi\n• immun funktsiyasini qo\'llab-quvvatlaydi',
-    'hero.instructions.vitaminB12Properties': 'Vitamin B12:\n• qizil qon hujayralarining samarali hosil bo\'lishiga yordam beradi\n• charchoq va toliqishni kamaytiradi\n• asab va immun tizimining optimal ishlashiga yordam beradi\n• hujayra bo\'linishi jarayonida muhim rol o\'ynaydi\n• normal energiya almashinuviga yordam beradi',
-    'hero.instructions.indication': 'Qo\'llash ko\'rsatmalari',
-    'hero.instructions.indicationText': 'Ferfer® — liposomal shakldagi temirni o\'z ichiga olgan biologik faol qo\'shimcha. Liposomal texnologiya temirning yuqori biokiruvchanligini ta\'minlab, uni oshqozonda oksidlanishdan himoya qiladi va odatiy nojo\'ya ta\'sirlarsiz samarali so\'rilishini ta\'minlaydi.',
-    'hero.instructions.dosage': 'Qo\'llash usuli va dozasi',
-    'hero.instructions.dosageText': 'Kattalar uchun dozasi: kuniga 1–2 sashe yoki shifokor ko\'rsatmasiga ko\'ra. Suvsiz qabul qiling. 1 paketni oching va tarkibini og\'izga qo\'ying, suvda eritmasdan.',
-    'hero.instructions.contraindications': 'Qarshi ko\'rsatmalar',
-    'hero.instructions.contraindicationsText': 'Temir tuzlariga, askorbin kislotasiga (vitamin C) yoki vitamin B12ning har qanday shakliga yuqori sezuvchanlik. Gemosideroz, gemoxromatoz yoki temir tanqisligi anemiyasidan boshqa anemiyalar. Giperoksoluriya.',
-    'hero.instructions.sideEffects': 'Nojo\'ya ta\'sirlari',
-    'hero.instructions.sideEffectsText': 'Oshqozon-ichak buzilishlari (ko\'ngil aynishi, qabziyat, diareya) kuzatilishi mumkin. Liposomal shakl tufayli nojo\'ya ta\'sirlar chastotasi an\'anaviy temir shakllariga nisbatan sezilarli darajada kamaygan.',
-    'hero.instructions.specialInstructions': 'Maxsus ko\'rsatmalar',
-    'hero.instructions.specialInstructionsText': 'Biologik faol qo\'shimcha, dori vositasi emas. Shifokor tavsiyalariga muvofiq foydalaning. Tavsiya etilgan kunlik dozadan oshirmang. Bolalar qo\'li yetmaydigan joyda saqlang. Homilador va emizikli ayollar qo\'llashdan oldin shifokor bilan maslahatlashishlari lozim.',
+    'hero.instructions.ironProperties': "Temir:\n• barqaror energiya almashinuvini qo'llab-quvvatlaydi\n• organizmda kislorodning normal tashilishiga yordam beradi\n• gemoglobin hosil bo'lishiga yordam beradi\n• hujayra bo'linishi funktsiyasida ishtirok etadi\n• homiladorlikni rejalashtirishda muhim\n• immunitet tizimining optimal ishlashini qo'llab-quvvatlaydi",
+    'hero.instructions.vitaminCProperties': "Vitamin C:\n• temirning o'zlashtirilishini yaxshilaydi\n• kollagen sinteziga yordam beradi\n• immun funktsiyasini qo'llab-quvvatlaydi",
+    'hero.instructions.vitaminB12Properties': "Vitamin B12:\n• qizil qon hujayralarining samarali hosil bo'lishiga yordam beradi\n• charchoq va toliqishni kamaytiradi\n• asab va immun tizimining optimal ishlashiga yordam beradi\n• hujayra bo'linishi jarayonida muhim rol o'ynaydi\n• normal energiya almashinuviga yordam beradi",
+    'hero.instructions.indication': "Qo'llash ko'rsatmalari",
+    'hero.instructions.indicationText': "Ferfer® — liposomal shakldagi temirni o'z ichiga olgan biologik faol qo'shimcha. Liposomal texnologiya temirning yuqori biokiruvchanligini ta'minlab, uni oshqozonda oksidlanishdan himoya qiladi va odatiy nojo'ya ta'sirlarsiz samarali so'rilishini ta'minlaydi.",
+    'hero.instructions.dosage': "Qo'llash usuli va dozasi",
+    'hero.instructions.dosageText': "Kattalar uchun dozasi: kuniga 1–2 sashe yoki shifokor ko'rsatmasiga ko'ra. Suvsiz qabul qiling. 1 paketni oching va tarkibini og'izga qo'ying, suvda eritmasdan.",
+    'hero.instructions.contraindications': "Qarshi ko'rsatmalar",
+    'hero.instructions.contraindicationsText': "Temir tuzlariga, askorbin kislotasiga (vitamin C) yoki vitamin B12ning har qanday shakliga yuqori sezuvchanlik. Gemosideroz, gemoxromatoz yoki temir tanqisligi anemiyasidan boshqa anemiyalar. Giperoksoluriya.",
+    'hero.instructions.sideEffects': "Nojo'ya ta'sirlari",
+    'hero.instructions.sideEffectsText': "Oshqozon-ichak buzilishlari (ko'ngil aynishi, qabziyat, diareya) kuzatilishi mumkin. Liposomal shakl tufayli nojo'ya ta'sirlar chastotasi an'anaviy temir shakllariga nisbatan sezilarli darajada kamaygan.",
+    'hero.instructions.specialInstructions': "Maxsus ko'rsatmalar",
+    'hero.instructions.specialInstructionsText': "Biologik faol qo'shimcha, dori vositasi emas. Shifokor tavsiyalariga muvofiq foydalaning. Tavsiya etilgan kunlik dozadan oshirmang. Bolalar qo'li yetmaydigan joyda saqlang. Homilador va emizikli ayollar qo'llashdan oldin shifokor bilan maslahatlashishlari lozim.",
     'hero.instructions.storage': 'Saqlash shartlari',
-    'hero.instructions.storageText': 'Bolalar qo\'li yetmaydigan joyda saqlang. Yorug\'lik, issiqlik va namlikdan himoya qiling. 30°C dan past haroratda saqlang.',
+    'hero.instructions.storageText': "Bolalar qo'li yetmaydigan joyda saqlang. Yorug'lik, issiqlik va namlikdan himoya qiling. 30°C dan past haroratda saqlang.",
     'hero.instructions.shelfLife': 'Yaroqlilik muddati',
     'hero.instructions.shelfLifeText': 'Ishlab chiqarilgan sanadan boshlab 24 oy.',
     'hero.instructions.package': 'Chiqarish shakli',
@@ -195,89 +208,102 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.instructions.manufacturer': 'Ishlab chiqaruvchi',
     'hero.instructions.manufacturerText': 'PharmEvo (Pvt). Ltd. (Nutraceutical Division), Pokiston',
     
-    // About Section
+    // About Section — Composition & How to Take
     'about.title': 'Mahsulot haqida',
-    'about.description': 'Ferfer® — tarkibida C va B12 vitaminlari bilan birga mikrokapsulalangan liposomal shakldagi temir mavjud bo\'lgan biologik faol qo\'shimcha. Innovatsion texnologiya temirning yaxshiroq so\'rilishiga, oshqozon-ichak traktini bezovta qilmasligiga va odatiy nojo\'ya ta\'sirlar xavfini kamaytirishga imkon beradi.',
+    'about.description': "Ferfer® — uchlik formulali biologik faol qo'shimcha: har bir sasheda temir, vitamin C va vitamin B12.",
     
-    'about.feature1.title': 'Liposomal temir',
-    'about.feature1.desc': 'Oshqozonda oksidlanishdan himoyalangan, oziq-ovqat bilan o\'zaro ta\'sirga kirishmaydi.',
+    'about.feature1.title': 'Temir — 14 mg',
+    'about.feature1.desc': "Liposomal qobiqli mikrokapsulalangan temir pirofosfat. Oshqozonda parchalanishdan himoyalangan.",
     
-    'about.feature2.title': 'Yuqori biokiraolishlik',
-    'about.feature2.desc': 'Temirning samarali o\'zlashtirilishi, gemoglobin va ferritin darajasining oshishiga yordam beradi.',
+    'about.feature2.title': 'Vitamin C — 80 mg',
+    'about.feature2.desc': "Temirning so'rilishini kuchaytiradi, kollagen sintezini qo'llab-quvvatlaydi va immunitetni mustahkamlaydi.",
     
-    'about.feature3.title': 'Yaxshi o\'zlashtirilishi',
-    'about.feature3.desc': 'Nojo\'ya ta\'sirlar chastotasi kamaytirilgan, metall ta\'mini keltirib chiqarmaydi.',
+    'about.feature3.title': 'Vitamin B12 — 2,5 mkg',
+    'about.feature3.desc': "Qon yaratishda ishtirok etadi, charchoqni kamaytiradi va asab tizimini qo'llab-quvvatlaydi.",
     
-    'about.feature4.title': 'Qulay qabul qilish',
-    'about.feature4.desc': 'Og\'izda tez eriydi, suv talab qilmaydi, yoqimli apelsin ta\'miga ega.',
+    'about.feature4.title': 'Sashe shakli',
+    'about.feature4.desc': "1,5 g apelsin ta'mli granulalar. Og'izda eriydi — suv kerak emas.",
     
-    'about.feature5.title': 'Vitamin C',
-    'about.feature5.desc': 'Temir o\'zlashtirilishini yaxshilash uchun har bir sashe da 80 mg.',
+    'about.feature5.title': 'Dozalash',
+    'about.feature5.desc': "Kattalar va 14 yoshdan oshgan o'smirlar uchun — kuniga 1–2 sashe yoki shifokor ko'rsatmasiga ko'ra.",
     
-    'about.feature6.title': 'Vitamin B12',
-    'about.feature6.desc': 'Qon yaratishni qo\'llab-quvvatlash uchun har bir sashe da 2,5 mkg.',
+    'about.feature6.title': 'Saqlash',
+    'about.feature6.desc': "30°C gacha haroratda, yorug'lik va namlikdan himoyalangan joyda. Yaroqlilik muddati — 24 oy.",
     
-    // Benefits Section
-    'benefits.title': 'Nima uchun Ferfer® tanlanadi',
-    'benefits.subtitle': 'Ferfer® — mikrokapsulalangan liposomal temir pirofosfati',
+    // Benefits Section — Liposomal vs Traditional Iron
+    'benefits.title': 'Liposomal shaklning afzalliklari',
+    'benefits.subtitle': "Nima uchun Ferfer® oddiy temir preparatlaridan yaxshiroq o'zlashtiriladi",
     
-    'benefits.item1': 'Temirni oshqozonda oksidlanishdan himoya qiladi',
-    'benefits.item2': 'Oziq-ovqat bilan ta\'sir qilmaydi',
-    'benefits.item3': 'Yuqori biokiraolishlik',
-    'benefits.item4': 'Metall ta\'misiz',
+    'benefits.item1.title': 'Oksidlanishdan himoya',
+    'benefits.item1.desc': "Liposomal qobiq temirni oshqozon shirasi bilan kontaktdan himoya qiladi, oksidlanish va shilliq qavatni bezovta qilishni bartaraf etadi.",
+    
+    'benefits.item2.title': "Metall ta'mi yo'q",
+    'benefits.item2.desc': "An'anaviy temir shakllari yoqimsiz ta'm qoldiradi. Liposomal kapsula bu ta'sirni to'liq yo'q qiladi.",
+    
+    'benefits.item3.title': "Kamroq nojo'ya ta'sirlar",
+    'benefits.item3.desc': "Oddiy temir ko'pincha ko'ngil aynishi, qabziyat va diareya keltirib chiqaradi. Liposomal texnologiya ularning chastotasini sezilarli darajada kamaytiradi.",
+    
+    'benefits.item4.title': "Ovqatlanishdan mustaqil",
+    'benefits.item4.desc': "Ferfer® oziq-ovqat, choy yoki qahva bilan ta'sir qilmaydi — qulay vaqtda qabul qiling.",
+    
     'benefits.liposomalIron': 'Liposomal temir',
     'benefits.microFormula': 'Mikrokapsulalangan formula',
-    
-    // Iron Deficiency Section
-    'deficiency.title': 'Nima uchun oddiy temir mos kelmaydi',
-    'deficiency.subtitle': 'An\'anaviy temir shakllari noxush nojo\'ya ta\'sirlarga sabab bo\'lishi mumkin.',
-    'deficiency.point1': 'Ko\'ngil aynishi va oshqozonda noqulaylik.',
-    'deficiency.point2': 'Qabziyat yoki diareya.',
-    'deficiency.point3': 'Metall ta\'mi va shilliq qavatlarning bo\'yalishi.',
     
     // Partners Section
     'partners.title': 'Qayerdan sotib olish?',
     'partners.button': 'Dorixonaga',
-    'partners.seeAll': 'Hammasini ko\'rish',
+    'partners.seeAll': "Hammasini ko'rish",
     
     // FAQ Section
-    'faq.title': 'Ko\'p beriladigan savollar',
+    'faq.title': "Ko'p beriladigan savollar",
     'faq.subtitle': 'Ferfer® haqida mashhur savollarga javoblar',
     
     'faq.q1': 'Ferfer® nima?',
-    'faq.a1': 'Ferfer® — mikrokapsulalangan liposomal temir hamda C va B12 vitaminlarini o\'z ichiga olgan biologik faol qo\'shimcha.',
+    'faq.a1': "Ferfer® — tarkibida 14 mg temir, 80 mg vitamin C va 2,5 mkg vitamin B12 mavjud bo'lgan apelsin ta'mli sashe shaklidagi biologik faol qo'shimcha. Dori vositasi emas.",
     
     'faq.q2': 'Ferfer® qanday qabul qilinadi?',
-    'faq.a2': '14 yoshdan katta kattalar va o\'smirlar uchun — kuniga 1–2 sashe, suvga aralashtirmasdan yoki mutaxassis tavsiyasiga ko\'ra.',
+    'faq.a2': "Sasheni oching va tarkibini to'g'ridan-to'g'ri og'izga soling — granulalar o'zi eriydi. Suv kerak emas. Kattalar va 14 yoshdan oshgan o'smirlar uchun kuniga 1–2 sashe tavsiya etiladi.",
     
-    'faq.q3': 'Nojo\'ya ta\'sirlari bormi?',
-    'faq.a3': 'Liposomal shakli tufayli temirga xos bo\'lgan odatiy nojo\'ya ta\'sirlar chastotasi sezilarli darajada kamaygan.',
+    'faq.q3': "Qanday qarshi ko'rsatmalar bor?",
+    'faq.a3': "Temir tuzlariga, vitamin C yoki B12 ga yuqori sezuvchanlik. Gemosideroz, gemoxromatoz va temir tanqisligi bilan bog'liq bo'lmagan anemiyalar. Giperoksoluriya ham qabul qilishdan tiyilish sababidir.",
     
-    'faq.q4': 'Homilador ayollar qabul qilishi mumkinmi?',
-    'faq.a4': 'Homilador va emizikli ayollar Ferfer®ni qabul qilishdan oldin shifokor bilan maslahatlashishlari lozim.',
+    'faq.q4': "Homilador ayollar qabul qilishi mumkinmi?",
+    'faq.a4': "Homilador va emizikli ayollar qabul qilishdan oldin shifokor bilan maslahatlashishlari lozim.",
+    
+    'faq.q5': "Ferfer® dori vositasimi?",
+    'faq.a5': "Yo'q. Ferfer® biologik faol qo'shimcha hisoblanadi va dori vositalariga kirmaydi.",
     
     'faq.q6': 'Qadoqda nechta sashe bor?',
-    'faq.a6': 'Bir qadoqda apelsin ta\'mli 30 ta sashe mavjud.',
+    'faq.a6': "30 ta sashe, har biri 1,5 g.",
+    
+    'faq.q7': "Qanday nojo'ya ta'sirlar bo'lishi mumkin?",
+    'faq.a7': "Kamdan-kam hollarda — oshqozonda noqulaylik, ko'ngil aynishi, qabziyat yoki diareya. Liposomal shakl tufayli bunday ta'sirlar chastotasi oddiy temir preparatlariga nisbatan ancha past.",
+    
+    'faq.q8': "Qanday va qayerda saqlash kerak?",
+    'faq.a8': "30°C dan past haroratda, yorug'lik, issiqlik va namlikdan himoyalangan joyda. Bolalar qo'li yetmaydigan joyda saqlang. Yaroqlilik muddati — 24 oy.",
+    
+    'faq.q9': "Ishlab chiqaruvchi kim?",
+    'faq.a9': 'PharmEvo (Pvt). Ltd. (Nutraceutical Division), Pokiston.',
     
     // Certificates Section
     'certificates.title': 'Sifat sertifikatlari',
     'certificates.subtitle': 'Ferfer® xalqaro sifat va xavfsizlik standartlariga mos keladi',
     'certificates.cert1.title': 'Muvofiqlik sertifikati',
     'certificates.cert1.desc': 'Texnik reglamentlar talablariga muvofiqlikning rasmiy sertifikati.',
-    'certificates.cert2.title': 'Ro\'yxatdan o\'tish guvohnomasi',
-    'certificates.cert2.desc': 'O\'zbekiston Respublikasida BFQ davlat ro\'yxatidan o\'tkazildi.',
+    'certificates.cert2.title': "Ro'yxatdan o'tish guvohnomasi",
+    'certificates.cert2.desc': "O'zbekiston Respublikasida BFQ davlat ro'yxatidan o'tkazildi.",
     'certificates.cert3.title': 'GMP sertifikati',
     'certificates.cert3.desc': 'Ishlab chiqarish xalqaro GMP standartlariga mos keladi.',
-    'certificates.view': 'PDF ni ko\'rish',
+    'certificates.view': "PDF ni ko'rish",
 
     // Footer
-    'footer.description': 'Ferfer® — temir tanqisligini to\'ldirish uchun mo\'ljallangan innovatsion biologik faol qo\'shimcha.',
+    'footer.description': "Ferfer® — temir tanqisligini to'ldirish uchun mo'ljallangan innovatsion biologik faol qo'shimcha.",
     'footer.quickLinks': 'Tezkor havolalar',
     'footer.contact': 'Aloqa',
-    'footer.address': 'C-5 Qiyot 68А, Toshkent shahri, O\'zbekiston',
+    'footer.address': "C-5 Qiyot 68А, Toshkent shahri, O'zbekiston",
     'footer.rights': 'Ferfer®. Barcha huquqlar himoyalangan.',
-    'footer.warning': 'Biologik faol qo\'shimcha dori vositasi hisoblanmaydi.',
-    'footer.pharmevo': 'PharmEvo — Bizning orzuimiz, sog\'lom jamiyat',
+    'footer.warning': "Biologik faol qo'shimcha dori vositasi hisoblanmaydi.",
+    'footer.pharmevo': "PharmEvo — Bizning orzuimiz, sog'lom jamiyat",
     'footer.privacy': 'Maxfiylik siyosati',
     'footer.terms': 'Foydalanish shartlari',
   },
