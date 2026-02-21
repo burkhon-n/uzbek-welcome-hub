@@ -12,9 +12,9 @@ const translations: Record<Language, Record<string, string>> = {
   ru: {
     // Meta
     'meta.title': 'Ферфер® — Биологически активная добавка с микрокапсулированным железом | Узбекистан',
-    'meta.description': 'Ферфер® — инновационная БАД с липосомальным железом 14 мг, витамином C 80 мг и B12 2,5 мкг. Высокая биодоступность, без побочных эффектов, приятный апельсиновый вкус. 30 саше в упаковке. Купить в аптеках Узбекистана.',
+    'meta.description': 'Ферфер® — инновационная БАД с липосомальным железом 14 мг, витамином C 80 мг и B₁₂ 2,5 мкг. Высокая биодоступность, без побочных эффектов, приятный апельсиновый вкус. 30 саше в упаковке. Купить в аптеках Узбекистана.',
     'meta.ogTitle': 'Ферфер® — Биологически активная добавка с микрокапсулированным железом',
-    'meta.ogDescription': 'Инновационная БАД с липосомальным железом 14 мг, витамином C и B12. Высокая биодоступность, без побочных эффектов. Купить в аптеках Узбекистана.',
+    'meta.ogDescription': 'Инновационная БАД с липосомальным железом 14 мг, витамином C и B₁₂. Высокая биодоступность, без побочных эффектов. Купить в аптеках Узбекистана.',
 
     // Navigation
     'nav.home': 'Главная',
@@ -33,19 +33,19 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.sachets': '30 саше',
     'hero.instructions.title': 'Инструкция по применению',
     'hero.instructions.composition': 'Состав (на 1 саше, 1,5 г)',
-    'hero.instructions.compositionText': 'Железо (в виде пирофосфата железа) — 14 мг\nВитамин С — 80 мг\nВитамин В12 — 2,5 мкг',
+    'hero.instructions.compositionText': 'Железо (в виде пирофосфата железа) — 14 мг\nВитамин С — 80 мг\nВитамин В₁₂ — 2,5 мкг',
     'hero.instructions.auxiliarySubstances': 'Вспомогательные вещества',
     'hero.instructions.auxiliarySubstancesText': 'Мальтодекстрин, маннит, декстроза безводная, дюраром со вкусом апельсина и сукралоза.',
     'hero.instructions.properties': 'Свойства',
     'hero.instructions.ironProperties': 'Железо:\n• поддерживает стабильный энергетический метаболизм\n• способствует нормальному транспорту кислорода в организме\n• способствует образованию гемоглобина\n• принимает участие в функции деления клеток\n• важно при планировании беременности\n• поддерживает оптимальное функционирование иммунной системы',
     'hero.instructions.vitaminCProperties': 'Витамин С:\n• улучшает усвоение железа\n• способствует синтезу коллагена\n• поддерживает иммунную функцию',
-    'hero.instructions.vitaminB12Properties': 'Витамин В12:\n• способствует эффективному образованию красных кровяных клеток\n• уменьшает усталость и утомляемость\n• способствует оптимальному функционированию нервной и иммунной системы\n• играет важную роль в процессе деления клеток\n• способствует нормальному энергетическому метаболизму',
+    'hero.instructions.vitaminB12Properties': 'Витамин В₁₂:\n• способствует эффективному образованию красных кровяных клеток\n• уменьшает усталость и утомляемость\n• способствует оптимальному функционированию нервной и иммунной системы\n• играет важную роль в процессе деления клеток\n• способствует нормальному энергетическому метаболизму',
     'hero.instructions.indication': 'Показания к применению',
     'hero.instructions.indicationText': 'Ferfer® — биологически активная добавка, содержащая железо в липосомальной форме. Липосомальная технология обеспечивает высокую биодоступность железа, защищая его от окисления в желудке и обеспечивая эффективное всасывание без типичных побочных эффектов.',
     'hero.instructions.dosage': 'Способ применения и дозы',
     'hero.instructions.dosageText': 'Дозировка для взрослых: 1–2 саше в день или по назначению врача. Принимать без воды. Откройте 1 пакетик и положите содержимое в рот, не растворяя в воде.',
     'hero.instructions.contraindications': 'Противопоказания',
-    'hero.instructions.contraindicationsText': 'Повышенная чувствительность к солям железа, аскорбиновой кислоте (витамину С) или любой форме витамина В12. Гемосидероз, гемохроматоз или анемии, отличные от железодефицитной анемии. Гипероксалурия.',
+    'hero.instructions.contraindicationsText': 'Повышенная чувствительность к солям железа, аскорбиновой кислоте (витамину С) или любой форме витамина В₁₂. Гемосидероз, гемохроматоз или анемии, отличные от железодефицитной анемии. Гипероксалурия.',
     'hero.instructions.sideEffects': 'Побочные эффекты',
     'hero.instructions.sideEffectsText': 'Возможны желудочно-кишечные расстройства (тошнота, запор, диарея). Благодаря липосомальной форме частота побочных эффектов значительно снижена по сравнению с традиционными формами железа.',
     'hero.instructions.specialInstructions': 'Особые указания',
@@ -57,13 +57,13 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.instructions.package': 'Форма выпуска',
     'hero.instructions.packageText': '30 саше в упаковке.',
     'hero.instructions.manufacturer': 'Производитель',
-    'hero.instructions.manufacturerText': 'PharmEvo (Pvt). Ltd. (Nutraceutical Division), Пакистан',
+    'hero.instructions.manufacturerText': 'PharmEvo (Pvt). Ltd. (Nutraceutical Division)',
     'hero.instructions.dispensing': 'Условия отпуска',
     'hero.instructions.dispensingText': 'Отпускается без рецепта.',
     
     // About Section — Composition & How to Take
     'about.title': 'О продукте',
-    'about.description1': 'Ferfer® — это биологически активная добавка, содержащая железо в микрокапсулированной липосомальной форме с витаминами C и B12.',
+    'about.description1': 'Ferfer® — это биологически активная добавка, содержащая железо в микрокапсулированной липосомальной форме с витаминами C и B₁₂.',
     'about.description2': 'Инновационная технология позволяет железу лучше усваиваться, не раздражает желудочно-кишечный тракт и снижает риск типичных побочных эффектов.',
     
     'about.feature1.title': 'Железо — 14 мг',
@@ -72,7 +72,7 @@ const translations: Record<Language, Record<string, string>> = {
     'about.feature2.title': 'Витамин С — 80 мг',
     'about.feature2.desc': 'Усиливает всасывание железа, поддерживает синтез коллагена и укрепляет иммунитет.',
     
-    'about.feature3.title': 'Витамин B12 — 2,5 мкг',
+    'about.feature3.title': 'Витамин B₁₂ — 2,5 мкг',
     'about.feature3.desc': 'Участвует в кроветворении, снижает утомляемость и поддерживает нервную систему.',
     
     'about.feature4.title': 'Форма саше',
@@ -113,13 +113,13 @@ const translations: Record<Language, Record<string, string>> = {
     'faq.subtitle': 'Ответы на популярные вопросы о Ferfer®',
     
     'faq.q1': 'Что такое Ferfer®?',
-    'faq.a1': 'Ferfer® — биологически активная добавка с железом 14 мг, витамином C 80 мг и витамином B12 2,5 мкг в форме саше с апельсиновым вкусом. Не является лекарственным средством.',
+    'faq.a1': 'Ferfer® — биологически активная добавка с железом 14 мг, витамином C 80 мг и витамином B₁₂ 2,5 мкг в форме саше с апельсиновым вкусом. Не является лекарственным средством.',
     
     'faq.q2': 'Как принимать Ferfer®?',
     'faq.a2': 'Откройте саше и высыпьте содержимое прямо в рот — гранулы растворятся самостоятельно. Вода не требуется. Рекомендуется 1–2 саше в день для взрослых и подростков от 14 лет.',
     
     'faq.q3': 'Какие противопоказания?',
-    'faq.a3': 'Повышенная чувствительность к солям железа, витамину С или B12. Гемосидероз, гемохроматоз и анемии, не связанные с дефицитом железа. При гипероксалурии также следует воздержаться от приёма.',
+    'faq.a3': 'Повышенная чувствительность к солям железа, витамину С или B₁₂. Гемосидероз, гемохроматоз и анемии, не связанные с дефицитом железа. При гипероксалурии также следует воздержаться от приёма.',
     
     'faq.q4': 'Можно ли принимать беременным?',
     'faq.a4': 'Беременным и кормящим женщинам перед началом приёма необходимо проконсультироваться с врачом.',
@@ -158,9 +158,9 @@ const translations: Record<Language, Record<string, string>> = {
   uz: {
     // Meta
     'meta.title': "Ferfer® — Mikrokapsulalangan temirga ega biologik faol qo'shimcha | O'zbekiston",
-    'meta.description': "Ferfer® — 14 mg liposomal temir, 80 mg vitamin C va 2,5 mkg B12 vitaminiga ega innovatsion biologik faol qo'shimcha. Yuqori biokiraolishlik, nojo'ya ta'sirlarsiz, yoqimli apelsin ta'mi. Qadoqda 30 ta sashe. O'zbekiston dorixonalarida.",
+    'meta.description': "Ferfer® — 14 mg liposomal temir, 80 mg vitamin C va 2,5 mkg B₁₂ vitaminiga ega innovatsion biologik faol qo'shimcha. Yuqori biokiraolishlik, nojo'ya ta'sirlarsiz, yoqimli apelsin ta'mi. Qadoqda 30 ta sashe. O'zbekiston dorixonalarida.",
     'meta.ogTitle': "Ferfer® — Mikrokapsulalangan temirga ega biologik faol qo'shimcha",
-    'meta.ogDescription': "Innovatsion biologik faol qo'shimcha: 14 mg liposomal temir, vitamin C va B12. Yuqori biokiraolishlik, nojo'ya ta'sirlarsiz. O'zbekiston dorixonalarida.",
+    'meta.ogDescription': "Innovatsion biologik faol qo'shimcha: 14 mg liposomal temir, vitamin C va B₁₂. Yuqori biokiraolishlik, nojo'ya ta'sirlarsiz. O'zbekiston dorixonalarida.",
 
     // Navigation
     'nav.home': 'Bosh sahifa',
@@ -179,19 +179,19 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.sachets': '30 sashe',
     'hero.instructions.title': "Qo'llash bo'yicha ko'rsatma",
     'hero.instructions.composition': 'Tarkibi (1 sashe, 1,5 g uchun)',
-    'hero.instructions.compositionText': 'Temir (temir pirofosfat shaklida) — 14 mg\nVitamin C — 80 mg\nVitamin B12 — 2,5 mkg',
+    'hero.instructions.compositionText': 'Temir (temir pirofosfat shaklida) — 14 mg\nVitamin C — 80 mg\nVitamin B₁₂ — 2,5 mkg',
     'hero.instructions.auxiliarySubstances': 'Yordamchi moddalar',
     'hero.instructions.auxiliarySubstancesText': "Maltodekstrin, mannit, suvsiz dekstroza, apelsin ta'mli durarom va sukraloza.",
     'hero.instructions.properties': 'Xususiyatlari',
     'hero.instructions.ironProperties': "Temir:\n• barqaror energiya almashinuvini qo'llab-quvvatlaydi\n• organizmda kislorodning normal tashilishiga yordam beradi\n• gemoglobin hosil bo'lishiga yordam beradi\n• hujayra bo'linishi funktsiyasida ishtirok etadi\n• homiladorlikni rejalashtirishda muhim\n• immunitet tizimining optimal ishlashini qo'llab-quvvatlaydi",
     'hero.instructions.vitaminCProperties': "Vitamin C:\n• temirning o'zlashtirilishini yaxshilaydi\n• kollagen sinteziga yordam beradi\n• immun funktsiyasini qo'llab-quvvatlaydi",
-    'hero.instructions.vitaminB12Properties': "Vitamin B12:\n• qizil qon hujayralarining samarali hosil bo'lishiga yordam beradi\n• charchoq va toliqishni kamaytiradi\n• asab va immun tizimining optimal ishlashiga yordam beradi\n• hujayra bo'linishi jarayonida muhim rol o'ynaydi\n• normal energiya almashinuviga yordam beradi",
+    'hero.instructions.vitaminB12Properties': "Vitamin B₁₂:\n• qizil qon hujayralarining samarali hosil bo'lishiga yordam beradi\n• charchoq va toliqishni kamaytiradi\n• asab va immun tizimining optimal ishlashiga yordam beradi\n• hujayra bo'linishi jarayonida muhim rol o'ynaydi\n• normal energiya almashinuviga yordam beradi",
     'hero.instructions.indication': "Qo'llash ko'rsatmalari",
     'hero.instructions.indicationText': "Ferfer® — liposomal shakldagi temirni o'z ichiga olgan biologik faol qo'shimcha. Liposomal texnologiya temirning yuqori biokiruvchanligini ta'minlab, uni oshqozonda oksidlanishdan himoya qiladi va odatiy nojo'ya ta'sirlarsiz samarali so'rilishini ta'minlaydi.",
     'hero.instructions.dosage': "Qo'llash usuli va dozasi",
     'hero.instructions.dosageText': "Kattalar uchun dozasi: kuniga 1–2 sashe yoki shifokor ko'rsatmasiga ko'ra. Suvsiz qabul qiling. 1 paketni oching va tarkibini og'izga qo'ying, suvda eritmasdan.",
     'hero.instructions.contraindications': "Qarshi ko'rsatmalar",
-    'hero.instructions.contraindicationsText': "Temir tuzlariga, askorbin kislotasiga (vitamin C) yoki vitamin B12ning har qanday shakliga yuqori sezuvchanlik. Gemosideroz, gemoxromatoz yoki temir tanqisligi anemiyasidan boshqa anemiyalar. Giperoksoluriya.",
+    'hero.instructions.contraindicationsText': "Temir tuzlariga, askorbin kislotasiga (vitamin C) yoki vitamin B₁₂ning har qanday shakliga yuqori sezuvchanlik. Gemosideroz, gemoxromatoz yoki temir tanqisligi anemiyasidan boshqa anemiyalar. Giperoksoluriya.",
     'hero.instructions.sideEffects': "Nojo'ya ta'sirlari",
     'hero.instructions.sideEffectsText': "Oshqozon-ichak buzilishlari (ko'ngil aynishi, qabziyat, diareya) kuzatilishi mumkin. Liposomal shakl tufayli nojo'ya ta'sirlar chastotasi an'anaviy temir shakllariga nisbatan sezilarli darajada kamaygan.",
     'hero.instructions.specialInstructions': "Maxsus ko'rsatmalar",
@@ -203,13 +203,13 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.instructions.package': 'Chiqarish shakli',
     'hero.instructions.packageText': 'Qadoqda 30 ta sashe.',
     'hero.instructions.manufacturer': 'Ishlab chiqaruvchi',
-    'hero.instructions.manufacturerText': 'PharmEvo (Pvt). Ltd. (Nutraceutical Division), Pokiston',
+    'hero.instructions.manufacturerText': 'PharmEvo (Pvt). Ltd. (Nutraceutical Division)',
     'hero.instructions.dispensing': 'Berilish shartlari',
     'hero.instructions.dispensingText': 'Retseptsiz beriladi.',
     
     // About Section — Composition & How to Take
     'about.title': 'Mahsulot haqida',
-    'about.description1': "Ferfer® — bu tarkibida temir, vitamin C va vitamin B12 bo'lgan mikrokapsulalangan liposomal shakldagi biologik faol qo'shimcha.",
+    'about.description1': "Ferfer® — bu tarkibida temir, vitamin C va vitamin B₁₂ bo'lgan mikrokapsulalangan liposomal shakldagi biologik faol qo'shimcha.",
     'about.description2': "Innovatsion texnologiya temirning yaxshiroq so'rilishini ta'minlaydi, oshqozon-ichak traktini bezovta qilmaydi va odatiy nojo'ya ta'sirlar xavfini kamaytiradi.",
     
     'about.feature1.title': 'Temir — 14 mg',
@@ -218,7 +218,7 @@ const translations: Record<Language, Record<string, string>> = {
     'about.feature2.title': 'Vitamin C — 80 mg',
     'about.feature2.desc': "Temirning so'rilishini kuchaytiradi, kollagen sintezini qo'llab-quvvatlaydi va immunitetni mustahkamlaydi.",
     
-    'about.feature3.title': 'Vitamin B12 — 2,5 mkg',
+    'about.feature3.title': 'Vitamin B₁₂ — 2,5 mkg',
     'about.feature3.desc': "Qon yaratishda ishtirok etadi, charchoqni kamaytiradi va asab tizimini qo'llab-quvvatlaydi.",
     
     'about.feature4.title': 'Sashe shakli',
@@ -259,13 +259,13 @@ const translations: Record<Language, Record<string, string>> = {
     'faq.subtitle': 'Ferfer® haqida mashhur savollarga javoblar',
     
     'faq.q1': 'Ferfer® nima?',
-    'faq.a1': "Ferfer® — tarkibida 14 mg temir, 80 mg vitamin C va 2,5 mkg vitamin B12 mavjud bo'lgan apelsin ta'mli sashe shaklidagi biologik faol qo'shimcha. Dori vositasi emas.",
+    'faq.a1': "Ferfer® — tarkibida 14 mg temir, 80 mg vitamin C va 2,5 mkg vitamin B₁₂ mavjud bo'lgan apelsin ta'mli sashe shaklidagi biologik faol qo'shimcha. Dori vositasi emas.",
     
     'faq.q2': 'Ferfer® qanday qabul qilinadi?',
     'faq.a2': "Sasheni oching va tarkibini to'g'ridan-to'g'ri og'izga soling — granulalar o'zi eriydi. Suv kerak emas. Kattalar va 14 yoshdan oshgan o'smirlar uchun kuniga 1–2 sashe tavsiya etiladi.",
     
     'faq.q3': "Qanday qarshi ko'rsatmalar bor?",
-    'faq.a3': "Temir tuzlariga, vitamin C yoki B12 ga yuqori sezuvchanlik. Gemosideroz, gemoxromatoz va temir tanqisligi bilan bog'liq bo'lmagan anemiyalar. Giperoksoluriya ham qabul qilishdan tiyilish sababidir.",
+    'faq.a3': "Temir tuzlariga, vitamin C yoki B₁₂ ga yuqori sezuvchanlik. Gemosideroz, gemoxromatoz va temir tanqisligi bilan bog'liq bo'lmagan anemiyalar. Giperoksoluriya ham qabul qilishdan tiyilish sababidir.",
     
     'faq.q4': "Homilador ayollar qabul qilishi mumkinmi?",
     'faq.a4': "Homilador va emizikli ayollar qabul qilishdan oldin shifokor bilan maslahatlashishlari lozim.",
