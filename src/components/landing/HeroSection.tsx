@@ -310,6 +310,12 @@ const HeroSection: React.FC = () => {
               <h4 className="font-semibold text-foreground mb-2">{t('hero.instructions.manufacturer')}</h4>
               <p className="text-sm text-muted-foreground">{t('hero.instructions.manufacturerText')}</p>
             </div>
+
+            {/* Dispensing */}
+            <div>
+              <h4 className="font-semibold text-foreground mb-2">{t('hero.instructions.dispensing')}</h4>
+              <p className="text-sm text-muted-foreground">{t('hero.instructions.dispensingText')}</p>
+            </div>
           </div>
         </DialogContent>
       </Dialog>

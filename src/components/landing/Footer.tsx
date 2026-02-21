@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Mail, Phone, MapPin, Send, Facebook, Instagram, Youtube } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Instagram, ArrowRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { useToast } from '@/hooks/use-toast';
 
 const Footer: React.FC = () => {
   const { t } = useLanguage();
+  const { toast } = useToast();
+  const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const navLinks = [
     { key: 'nav.home', href: '#home' },
@@ -17,6 +23,23 @@ const Footer: React.FC = () => {
     { icon: Instagram, href: 'https://www.instagram.com/meddec.uz?igsh=NXF4eXVvcWNsemRs', label: 'Instagram' },
     { icon: Send, href: '#', label: 'Telegram' },
   ];
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email || !email.includes('@')) return;
+    
+    setIsSubmitting(true);
+    try {
+      // TODO: Connect to Google Sheets via edge function
+      await new Promise(resolve => setTimeout(resolve, 500));
+      toast({ title: t('footer.subscribe.success') });
+      setEmail('');
+    } catch {
+      toast({ title: 'Error', variant: 'destructive' });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <footer role="contentinfo" aria-label="Ferfer® — контакты и информация" className="bg-foreground text-background relative overflow-hidden">
@@ -91,16 +114,40 @@ const Footer: React.FC = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-primary" />
-                <a href="mailto:info@ferfer.uz" className="text-background/70 hover:text-background transition-colors">
-                  info@ferfer.uz
+                <a href="mailto:info@meddec.uz" className="text-background/70 hover:text-background transition-colors">
+                  info@meddec.uz
                 </a>
               </li>
             </ul>
           </div>
         </div>
 
-        {/* Bottom bar */}
+        {/* Email Subscription */}
         <div className="mt-12 pt-8 border-t border-background/10">
+          <div className="max-w-xl mx-auto text-center">
+            <h4 className="text-lg font-bold mb-4">{t('footer.subscribe.title')}</h4>
+            <form onSubmit={handleSubscribe} className="flex gap-2 mb-3">
+              <Input
+                type="email"
+                placeholder={t('footer.subscribe.placeholder')}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="bg-background/10 border-background/20 text-background placeholder:text-background/50 focus:border-primary"
+                required
+              />
+              <Button type="submit" disabled={isSubmitting} className="bg-primary hover:bg-primary/90 text-primary-foreground whitespace-nowrap gap-2">
+                {t('footer.subscribe.button')}
+                <ArrowRight className="w-4 h-4" />
+              </Button>
+            </form>
+            <p className="text-background/40 text-xs">
+              {t('footer.subscribe.disclaimer')}
+            </p>
+          </div>
+        </div>
+
+        {/* Bottom bar */}
+        <div className="mt-8 pt-8 border-t border-background/10">
           <div className="flex flex-col md:flex-row justify-center items-center gap-4">
             <p className="text-background/60 text-sm">
               © {new Date().getFullYear()} {t('footer.rights')}
