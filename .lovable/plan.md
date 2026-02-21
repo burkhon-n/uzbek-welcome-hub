@@ -1,26 +1,41 @@
 
 
-## Plan: Add Trade Name as Title in Instructions Modal + Fix Build
+## Plan: URL-Based Language Switching + Build Fix
+
+### Build Fix (Manual Step Required)
+You need to manually add `"build:dev": "vite build --mode development"` to the `scripts` section in `package.json`. Open `package.json`, find the `"scripts"` block, and add this line.
+
+### URL-Based Language Routing
+
+**Current behavior:** Language is stored in React state/localStorage. URL is always `/`.
+
+**New behavior:** `/ru` shows Russian, `/uz` shows Uzbek, `/` redirects to `/ru`.
 
 ### Changes
 
-**1. `package.json`** -- Add missing build script:
-```json
-"build:dev": "vite build --mode development"
+**1. `src/App.tsx`** -- Update routes to use `/:lang` parameter:
+- Add route `/:lang` pointing to `Index`
+- Add route `/` that redirects to `/ru`
+- Remove the old `/` route for Index
+
+**2. `src/contexts/LanguageContext.tsx`** -- Sync language with URL:
+- Use `useParams()` to read the `:lang` param from the URL
+- Use `useNavigate()` to update the URL when `setLanguage` is called (e.g., navigating from `/ru` to `/uz`)
+- Remove localStorage-based persistence (URL is now the source of truth)
+- Wrap `LanguageProvider` to require being inside a `<BrowserRouter>`
+
+**3. `src/components/landing/Header.tsx`** -- Update language switcher and nav links:
+- Language buttons call `setLanguage()` which now navigates to the new URL
+- Update anchor links (e.g., `#about`) to stay relative to the current language route
+
+### Technical Details
+
+```text
+URL Structure:
+  /        --> redirect to /ru
+  /ru      --> Russian version
+  /uz      --> Uzbek version
+  /ru#faq  --> Russian version, scrolled to FAQ
 ```
 
-**2. `src/components/landing/HeroSection.tsx`** -- Replace the current DialogTitle with the trade name "Ferfer® (Ферфер)" displayed prominently as the modal title, and move the current generic title (e.g. "Инструкция по применению") to a subtitle below it:
-
-```tsx
-<DialogHeader>
-  <DialogTitle className="text-xl font-bold text-primary">
-    Ferfer® (Ферфер)
-  </DialogTitle>
-  <p className="text-sm text-muted-foreground">
-    {t('hero.instructions.title')}
-  </p>
-</DialogHeader>
-```
-
-**3. `src/contexts/LanguageContext.tsx`** -- No changes needed since `hero.instructions.title` already exists and will now serve as the subtitle. The trade name "Ferfer® (Ферфер)" is universal across both languages so it can be hardcoded directly.
-
+The `LanguageProvider` will be moved inside `BrowserRouter` (or receive the lang param as a prop) so it can access router context. The `setLanguage` function will call `navigate('/{newLang}')` to switch URLs while preserving hash fragments.
