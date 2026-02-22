@@ -37,7 +37,7 @@ const AboutSection: React.FC = () => {
         {/* Features grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {features.map((feature, index) => (
-            <div
+            <article
               key={feature.titleKey}
               className="group card-elevated hover:-translate-y-1 cursor-pointer relative overflow-hidden"
               style={{ animationDelay: `${index * 0.1}s` }}
@@ -57,7 +57,7 @@ const AboutSection: React.FC = () => {
 
               {/* Hover accent line */}
               <div className="absolute bottom-0 left-0 right-0 h-1 bg-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </div>
+            </article>
           ))}
         </div>
       </div>

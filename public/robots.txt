@@ -1,6 +1,18 @@
 # Ferfer.uz - Robots.txt
 # https://ferfer.pharmevo.uz
 
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
 User-agent: *
 Allow: /
 

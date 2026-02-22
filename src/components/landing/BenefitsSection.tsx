@@ -32,7 +32,7 @@ const BenefitsSection: React.FC = () => {
               {benefits.map((benefit, index) => {
                 const Icon = benefit.icon;
                 return (
-                  <div
+                  <article
                     key={benefit.key}
                     className="flex items-start gap-4 p-5 bg-card/80 backdrop-blur-sm rounded-xl border border-border/50 shadow-sm hover:shadow-md transition-all duration-300"
                     style={{ animationDelay: `${index * 0.1}s` }}
@@ -48,7 +48,7 @@ const BenefitsSection: React.FC = () => {
                         {t(`${benefit.key}.desc`)}
                       </p>
                     </div>
-                  </div>
+                  </article>
                 );
               })}
             </div>
