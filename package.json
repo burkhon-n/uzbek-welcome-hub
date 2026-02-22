@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "start": "node server.js"
+    "start": "node server.js",
+    "build:dev": "vite build --mode development"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
@@ -84,6 +85,5 @@
     "typescript-eslint": "^8.38.0",
     "vite": "^5.4.19",
     "vitest": "^3.2.4"
-  },
-  "build:dev": "vite build --mode development"
+  }
 }
