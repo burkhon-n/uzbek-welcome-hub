@@ -14,39 +14,23 @@ import ferferModel1 from '@/assets/products/ferfer-model-1.png';
 import ferferModel2 from '@/assets/products/ferfer-model-2.png';
 import ferferModel3 from '@/assets/products/ferfer-model-3.png';
 import ferferModel4 from '@/assets/products/ferfer-model-4.png';
-import ferferModel1Webp from '@/assets/products/ferfer-model-1.webp';
-import ferferModel2Webp from '@/assets/products/ferfer-model-2.webp';
-import ferferModel3Webp from '@/assets/products/ferfer-model-3.webp';
-import ferferModel4Webp from '@/assets/products/ferfer-model-4.webp';
 
 const productImages = [
   {
     src: ferferModel1,
-    webp: ferferModel1Webp,
     alt: 'Ferfer® — липосомальное железо в саше, упаковка 30 штук',
-    width: 1080,
-    height: 864,
   },
   {
     src: ferferModel2,
-    webp: ferferModel2Webp,
-    alt: 'Ferfer® — БАД с микрокапсулированным железом и витаминами C и B12',
-    width: 1080,
-    height: 864,
+    alt: 'Ferfer® — саше Ferfer с апельсиновым вкусом',
   },
   {
     src: ferferModel3,
-    webp: ferferModel3Webp,
     alt: 'Ferfer® — инновационная формула с апельсиновым вкусом',
-    width: 1080,
-    height: 864,
   },
   {
     src: ferferModel4,
-    webp: ferferModel4Webp,
     alt: 'Ferfer® — биологически активная добавка для восполнения дефицита железа',
-    width: 1080,
-    height: 864,
   },
 ];
 
@@ -68,8 +52,6 @@ const HeroSection: React.FC = () => {
     const nextImage = productImages[nextIndex];
     const preloadNext = new Image();
     preloadNext.src = nextImage.src;
-    const preloadNextWebp = new Image();
-    preloadNextWebp.src = nextImage.webp;
   }, [currentSlide]);
 
   const goToSlide = (index: number) => {
@@ -88,19 +70,14 @@ const HeroSection: React.FC = () => {
             key={activeImage.src}
             className="absolute inset-0 flex items-center justify-center transition-all duration-700 ease-in-out animate-fade-in"
           >
-            <picture>
-              <source srcSet={activeImage.webp} type="image/webp" />
-              <img
-                src={activeImage.src}
-                alt={activeImage.alt}
-                width={activeImage.width}
-                height={activeImage.height}
-                className="w-full h-auto max-h-[70vh] 2xl:max-h-[80vh] object-contain p-8 md:p-12 lg:p-16 2xl:p-20"
-                loading="eager"
-                fetchPriority={isInitialSlide ? 'high' : 'auto'}
-                decoding="async"
-              />
-            </picture>
+            <img
+              src={activeImage.src}
+              alt={activeImage.alt}
+              className="w-full h-auto max-h-[70vh] 2xl:max-h-[80vh] object-contain p-8 md:p-12 lg:p-16 2xl:p-20"
+              loading="eager"
+              fetchPriority={isInitialSlide ? 'high' : 'auto'}
+              decoding="async"
+            />
           </div>
           
 
@@ -122,19 +99,14 @@ const HeroSection: React.FC = () => {
                 key={activeImage.src}
                 className="absolute inset-0 flex items-center justify-center transition-all duration-700 ease-in-out animate-fade-in"
               >
-                <picture>
-                  <source srcSet={activeImage.webp} type="image/webp" />
-                  <img
-                    src={activeImage.src}
-                    alt={activeImage.alt}
-                    width={activeImage.width}
-                    height={activeImage.height}
-                    className="w-full h-full object-contain p-4"
-                    loading="eager"
-                    fetchPriority={isInitialSlide ? 'high' : 'auto'}
-                    decoding="async"
-                  />
-                </picture>
+                <img
+                  src={activeImage.src}
+                  alt={activeImage.alt}
+                  className="w-full h-full object-contain p-4"
+                  loading="eager"
+                  fetchPriority={isInitialSlide ? 'high' : 'auto'}
+                  decoding="async"
+                />
               </div>
               
               {/* Sachets badge - Bottom right of carousel on mobile */}
