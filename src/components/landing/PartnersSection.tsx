@@ -35,7 +35,7 @@ const PartnersSection: React.FC = () => {
         <ScrollArea className="w-full">
           <div className="flex gap-6 lg:gap-8 pb-4">
             {partners.map((partner, index) => (
-              <div
+              <article
                 key={partner.name}
                 className="pharmacy-card group flex-shrink-0 w-64"
                 style={{ animationDelay: `${index * 0.1}s` }}
@@ -67,7 +67,7 @@ const PartnersSection: React.FC = () => {
                     <ExternalLink className="ml-2 w-4 h-4" />
                   </a>
                 </Button>
-              </div>
+              </article>
             ))}
           </div>
           <ScrollBar orientation="horizontal" className="invisible" />
