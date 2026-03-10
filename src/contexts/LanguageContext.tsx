@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, ReactNode, useMemo, useCallback } from 'react';
+import React, { createContext, useContext, ReactNode, useMemo, useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
 export type Language = 'ru' | 'uz';
@@ -314,50 +314,6 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
     const hash = window.location.hash;
     navigate(`/${newLang}${hash}`);
   }, [navigate]);
-
-  useEffect(() => {
-    document.documentElement.lang = language;
-
-    const localizedTitle = translations[language]['meta.title'];
-    const localizedDescription = translations[language]['meta.description'];
-    const localizedOgTitle = translations[language]['meta.ogTitle'];
-    const localizedOgDescription = translations[language]['meta.ogDescription'];
-
-    if (localizedTitle) {
-      document.title = localizedTitle;
-      const titleMeta = document.querySelector<HTMLMetaElement>('meta[name="title"]');
-      if (titleMeta) titleMeta.content = localizedTitle;
-    }
-    if (localizedDescription) {
-      const descriptionMeta = document.querySelector<HTMLMetaElement>('meta[name="description"]');
-      if (descriptionMeta) descriptionMeta.content = localizedDescription;
-    }
-    if (localizedOgTitle) {
-      const ogTitle = document.querySelector<HTMLMetaElement>('meta[property="og:title"]');
-      if (ogTitle) ogTitle.content = localizedOgTitle;
-      const twitterTitle = document.querySelector<HTMLMetaElement>('meta[name="twitter:title"]');
-      if (twitterTitle) twitterTitle.content = localizedOgTitle;
-    }
-    if (localizedOgDescription) {
-      const ogDescription = document.querySelector<HTMLMetaElement>('meta[property="og:description"]');
-      if (ogDescription) ogDescription.content = localizedOgDescription;
-      const twitterDescription = document.querySelector<HTMLMetaElement>('meta[name="twitter:description"]');
-      if (twitterDescription) twitterDescription.content = localizedOgDescription;
-    }
-
-    const canonicalHref = `${window.location.origin}/${language}`;
-    const canonicalLink = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
-    if (canonicalLink) canonicalLink.href = canonicalHref;
-    const ogUrl = document.querySelector<HTMLMetaElement>('meta[property="og:url"]');
-    if (ogUrl) ogUrl.content = canonicalHref;
-    const twitterUrl = document.querySelector<HTMLMetaElement>('meta[name="twitter:url"]');
-    if (twitterUrl) twitterUrl.content = canonicalHref;
-
-    const ogLocale = document.querySelector<HTMLMetaElement>('meta[property="og:locale"]');
-    const ogLocaleAlt = document.querySelector<HTMLMetaElement>('meta[property="og:locale:alternate"]');
-    if (ogLocale) ogLocale.content = language === 'uz' ? 'uz_UZ' : 'ru_RU';
-    if (ogLocaleAlt) ogLocaleAlt.content = language === 'uz' ? 'ru_RU' : 'uz_UZ';
-  }, [language]);
 
   const t = useCallback((key: string): string => {
     return translations[language][key] || key;

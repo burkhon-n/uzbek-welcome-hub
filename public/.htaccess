@@ -1,0 +1,15 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Force non-www canonical domain
+  RewriteCond %{HTTP_HOST} ^www\.ferfer\.pharmevo\.uz$ [NC]
+  RewriteRule ^(.*)$ https://ferfer.pharmevo.uz/$1 [L,R=301]
+
+  # SPA fallback: serve index.html for client-routed URLs
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>
+
