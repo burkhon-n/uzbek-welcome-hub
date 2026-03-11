@@ -2,6 +2,11 @@
   RewriteEngine On
   RewriteBase /
 
+  # Redirect legacy query language URLs to clean paths
+  RewriteCond %{QUERY_STRING} ^lang=(ru|uz)$ [NC]
+  RewriteCond %{HTTP_HOST} ^(www\.)?ferfer\.pharmevo\.uz$ [NC]
+  RewriteRule ^$ https://ferfer.pharmevo.uz/%1? [L,R=301]
+
   # Force non-www canonical domain
   RewriteCond %{HTTP_HOST} ^www\.ferfer\.pharmevo\.uz$ [NC]
   RewriteRule ^(.*)$ https://ferfer.pharmevo.uz/$1 [L,R=301]
