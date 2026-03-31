@@ -19,6 +19,7 @@ const Index: React.FC = () => {
         title={t("meta.title")}
         description={t("meta.description")}
         canonicalPath={`/${language}`}
+        ampPath={`/amp/${language}`}
         ogType="website"
         language={language}
         ogLocale={language === "ru" ? "ru_RU" : "uz_UZ"}

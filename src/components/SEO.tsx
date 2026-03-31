@@ -6,6 +6,7 @@ export type SEOProps = {
   title: string;
   description: string;
   canonicalPath?: string;
+  ampPath?: string;
   ogImagePath?: string;
   ogType?: OgType;
   noIndex?: boolean;
@@ -32,6 +33,7 @@ export function SEO({
   title,
   description,
   canonicalPath,
+  ampPath,
   ogImagePath = "/og-image.jpg",
   ogType = "website",
   noIndex = false,
@@ -41,6 +43,7 @@ export function SEO({
 }: SEOProps) {
   const siteUrl = getSiteUrl();
   const canonicalUrl = toAbsoluteUrl(siteUrl, canonicalPath ?? "/");
+  const ampUrl = ampPath ? toAbsoluteUrl(siteUrl, ampPath) : undefined;
   const ogImageUrl = ogImagePath ? toAbsoluteUrl(siteUrl, ogImagePath) : undefined;
   const isLovablePreview =
     typeof window !== "undefined" && window.location.hostname.includes("lovable.app");
@@ -55,6 +58,7 @@ export function SEO({
       <meta name="description" content={description} />
 
       <link rel="canonical" href={canonicalUrl} />
+      {ampUrl && <link rel="amphtml" href={ampUrl} />}
 
       <meta
         name="robots"
