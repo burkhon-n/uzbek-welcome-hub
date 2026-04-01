@@ -15,6 +15,8 @@ Allow: /
 
 User-agent: *
 Allow: /
+Disallow: /*?lang=
+Disallow: /*&lang=
 
 Sitemap: https://ferfer.pharmevo.uz/sitemap.xml
 

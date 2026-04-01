@@ -2,17 +2,24 @@ import { Helmet } from "react-helmet-async";
 
 type OgType = "website" | "article" | "product";
 
+type AlternateLink = {
+  hrefLang: string;
+  href: string;
+};
+
 export type SEOProps = {
   title: string;
   description: string;
   canonicalPath?: string;
   ampPath?: string;
+  alternateLinks?: AlternateLink[];
   ogImagePath?: string;
   ogType?: OgType;
   noIndex?: boolean;
   language?: string;
   ogLocale?: string;
   ogLocaleAlternate?: string;
+  structuredData?: Record<string, unknown>;
 };
 
 const DEFAULT_SITE_URL = "https://ferfer.pharmevo.uz";
@@ -34,12 +41,14 @@ export function SEO({
   description,
   canonicalPath,
   ampPath,
+  alternateLinks,
   ogImagePath = "/og-image.jpg",
   ogType = "website",
   noIndex = false,
   language,
   ogLocale,
   ogLocaleAlternate,
+  structuredData,
 }: SEOProps) {
   const siteUrl = getSiteUrl();
   const canonicalUrl = toAbsoluteUrl(siteUrl, canonicalPath ?? "/");
@@ -59,6 +68,14 @@ export function SEO({
 
       <link rel="canonical" href={canonicalUrl} />
       {ampUrl && <link rel="amphtml" href={ampUrl} />}
+      {alternateLinks?.map((link) => (
+        <link
+          key={`${link.hrefLang}-${link.href}`}
+          rel="alternate"
+          hrefLang={link.hrefLang}
+          href={link.href}
+        />
+      ))}
 
       <meta
         name="robots"
@@ -84,6 +101,10 @@ export function SEO({
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       {ogImageUrl && <meta name="twitter:image" content={ogImageUrl} />}
+
+      {structuredData && (
+        <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
+      )}
     </Helmet>
   );
 }

@@ -12,18 +12,65 @@ import Footer from '@/components/landing/Footer';
 
 const Index: React.FC = () => {
   const { language, t } = useLanguage();
+  const siteUrl = "https://ferfer.pharmevo.uz";
+  const currentPath = `/${language}`;
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": `${siteUrl}#organization`,
+        name: "PharmEvo",
+        url: siteUrl,
+        logo: `${siteUrl}/og-image.jpg`,
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${siteUrl}#website`,
+        url: siteUrl,
+        name: "Ferfer",
+        inLanguage: ["ru", "uz"],
+        publisher: {
+          "@id": `${siteUrl}#organization`,
+        },
+      },
+      {
+        "@type": "Product",
+        "@id": `${siteUrl}${currentPath}#product`,
+        name: "Ferfer",
+        category: "Dietary Supplement",
+        description: t("meta.description"),
+        image: `${siteUrl}/og-image.jpg`,
+        brand: {
+          "@type": "Brand",
+          name: "Ferfer",
+        },
+        manufacturer: {
+          "@id": `${siteUrl}#organization`,
+        },
+        url: `${siteUrl}${currentPath}`,
+      },
+    ],
+  };
 
   return (
     <div className="min-h-screen bg-background">
       <SEO
         title={t("meta.title")}
         description={t("meta.description")}
-        canonicalPath={`/${language}`}
+        canonicalPath={currentPath}
         ampPath={`/amp/${language}`}
+        alternateLinks={[
+          { hrefLang: "ru", href: `${siteUrl}/ru` },
+          { hrefLang: "uz", href: `${siteUrl}/uz` },
+          { hrefLang: "x-default", href: `${siteUrl}/ru` },
+        ]}
         ogType="website"
         language={language}
         ogLocale={language === "ru" ? "ru_RU" : "uz_UZ"}
         ogLocaleAlternate={language === "ru" ? "uz_UZ" : "ru_RU"}
+        structuredData={structuredData}
       />
       <Header />
       <main>
