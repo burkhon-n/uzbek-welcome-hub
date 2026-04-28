@@ -12,7 +12,16 @@ app.get('/', (req, res) => {
   return res.redirect(301, '/ru');
 });
 
-app.use(express.static(path.join(__dirname, 'dist')));
+app.use(express.static(path.join(__dirname, 'dist'), {
+  setHeaders(res, filePath) {
+    if (filePath.endsWith('.xml')) {
+      res.setHeader('Content-Type', 'application/xml; charset=utf-8');
+    }
+    if (filePath.endsWith('.xsl')) {
+      res.setHeader('Content-Type', 'application/xslt+xml; charset=utf-8');
+    }
+  },
+}));
 
 app.get('/amp', (req, res) => {
   res.redirect(301, '/amp/ru');

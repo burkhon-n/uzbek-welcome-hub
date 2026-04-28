@@ -1,3 +1,8 @@
+<IfModule mod_mime.c>
+  AddType application/xml;charset=utf-8 .xml
+  AddType application/xslt+xml;charset=utf-8 .xsl
+</IfModule>
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
