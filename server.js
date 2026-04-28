@@ -2,14 +2,14 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
-app.get('/', (req, res, next) => {
+app.get('/', (req, res) => {
   const lang = req.query.lang;
 
   if (lang === 'ru' || lang === 'uz') {
     return res.redirect(301, `/${lang}`);
   }
 
-  return next();
+  return res.redirect(301, '/ru');
 });
 
 app.use(express.static(path.join(__dirname, 'dist')));

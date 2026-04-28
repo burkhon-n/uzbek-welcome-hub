@@ -7,6 +7,9 @@
   RewriteCond %{HTTP_HOST} ^(www\.)?ferfer\.pharmevo\.uz$ [NC]
   RewriteRule ^$ https://ferfer.pharmevo.uz/%1? [L,R=301]
 
+  # Redirect root to default language (no query string, no www check needed here)
+  RewriteRule ^$ https://ferfer.pharmevo.uz/ru [L,R=301]
+
   # Force non-www canonical domain
   RewriteCond %{HTTP_HOST} ^www\.ferfer\.pharmevo\.uz$ [NC]
   RewriteRule ^(.*)$ https://ferfer.pharmevo.uz/$1 [L,R=301]
