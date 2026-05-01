@@ -8,14 +8,12 @@ function isBot(req) {
   return BOT_UA.test(req.headers['user-agent'] || '');
 }
 
-app.get('/', (req, res) => {
+app.get('/', (req, res, next) => {
   const lang = req.query.lang;
-
   if (lang === 'ru' || lang === 'uz') {
     return res.redirect(301, `/${lang}`);
   }
-
-  return res.redirect(301, '/ru');
+  return next();
 });
 
 app.get('/ru', (req, res, next) => {
