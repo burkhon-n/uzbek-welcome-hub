@@ -2,6 +2,12 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
+const BOT_UA = /Googlebot|bingbot|Slurp|DuckDuckBot|Baiduspider|YandexBot|Sogou|Exabot|facebot|facebookexternalhit|Twitterbot|LinkedInBot|WhatsApp|TelegramBot|GPTBot|PerplexityBot|ClaudeBot|Google-Extended|anthropic-ai|CCBot|Applebot|ia_archiver/i;
+
+function isBot(req) {
+  return BOT_UA.test(req.headers['user-agent'] || '');
+}
+
 app.get('/', (req, res) => {
   const lang = req.query.lang;
 
@@ -10,6 +16,24 @@ app.get('/', (req, res) => {
   }
 
   return res.redirect(301, '/ru');
+});
+
+app.get('/ru', (req, res, next) => {
+  if (isBot(req)) {
+    return res.sendFile(path.join(__dirname, 'dist', 'prerender-ru.html'));
+  }
+  return next();
+});
+
+app.get('/uz', (req, res, next) => {
+  if (isBot(req)) {
+    return res.sendFile(path.join(__dirname, 'dist', 'prerender-uz.html'));
+  }
+  return next();
+});
+
+app.get('/llm', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist', 'llm.html'));
 });
 
 app.use(express.static(path.join(__dirname, 'dist'), {
