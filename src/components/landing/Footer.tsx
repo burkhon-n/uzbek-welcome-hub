@@ -62,9 +62,14 @@ const Footer: React.FC = () => {
             <p className="text-background/50 text-sm mb-6 italic">
               {t('footer.warning')}
             </p>
-            <p className="text-primary text-sm font-medium mb-6">
+            <a
+              href="https://pharmevo.uz"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary text-sm font-medium mb-6 inline-block hover:underline"
+            >
               {t('footer.pharmevo')}
-            </p>
+            </a>
             
             {/* Social links */}
             <div className="flex items-center gap-3">
