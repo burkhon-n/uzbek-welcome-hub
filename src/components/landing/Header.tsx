@@ -41,10 +41,10 @@ const Header: React.FC = () => {
           isScrolled ? 'md:h-20' : 'md:h-28'
         }`}>
           {/* Logo */}
-          <a className="flex items-center ">
+          <a href="https://pharmevo.uz" target="_blank" rel="noopener noreferrer" aria-label="PharmEvo" className="flex items-center ">
             <img 
               src={pharmevoLogo} 
-              alt="Pharmevo" 
+              alt="PharmEvo" 
               className={`transition-all duration-300 w-auto h-20  ${
                 isScrolled ? '' : 'lg:h-40 lg:py-4 lg:px-6 xl:h-48 xl:py-6 xl:px-8'
               }`}
