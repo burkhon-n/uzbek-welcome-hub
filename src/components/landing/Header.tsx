@@ -41,7 +41,7 @@ const Header: React.FC = () => {
           isScrolled ? 'md:h-20' : 'md:h-28'
         }`}>
           {/* Logo */}
-          <a href="https://pharmevo.uz" target="_blank" rel="noopener noreferrer" aria-label="PharmEvo" className="flex items-center ">
+          <a href={`https://pharmevo.uz/${language}`} target="_blank" rel="noopener noreferrer" aria-label="PharmEvo" className="flex items-center ">
             <img 
               src={pharmevoLogo} 
               alt="PharmEvo" 

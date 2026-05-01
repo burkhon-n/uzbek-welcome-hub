@@ -63,7 +63,7 @@ const Footer: React.FC = () => {
               {t('footer.warning')}
             </p>
             <a
-              href="https://pharmevo.uz"
+              href={`https://pharmevo.uz/${language}`}
               target="_blank"
               rel="noopener noreferrer"
               className="text-primary text-sm font-medium mb-6 inline-block hover:underline"
